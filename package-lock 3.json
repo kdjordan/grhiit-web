@@ -10,10 +10,8 @@
       "hasInstallScript": true,
       "dependencies": {
         "@headlessui/vue": "^1.7.23",
-        "@hypernym/nuxt-gsap": "^2.4.3",
         "@nuxt/content": "^3.6.3",
         "better-sqlite3": "^12.2.0",
-        "gsap": "^3.13.0",
         "nuxt": "^3.19.0",
         "sqlite3": "^5.1.7",
         "vue": "^3.5.20",
@@ -946,18 +944,6 @@
       },
       "peerDependencies": {
         "vue": "^3.2.0"
-      }
-    },
-    "node_modules/@hypernym/nuxt-gsap": {
-      "version": "2.4.3",
-      "resolved": "https://registry.npmjs.org/@hypernym/nuxt-gsap/-/nuxt-gsap-2.4.3.tgz",
-      "integrity": "sha512-l3m7Z6NHWqPtz5Q7o18WKW1vOu0XVHtNZurRdE+Es5zKWdIUoHd6L5mNz440drE0bzCN7jIDicRlE5fcj30rpQ==",
-      "license": "MIT",
-      "dependencies": {
-        "gsap": "^3.12.5"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/ivodolenc"
       }
     },
     "node_modules/@ioredis/commands": {
@@ -6783,12 +6769,6 @@
       "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz",
       "integrity": "sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==",
       "license": "ISC"
-    },
-    "node_modules/gsap": {
-      "version": "3.13.0",
-      "resolved": "https://registry.npmjs.org/gsap/-/gsap-3.13.0.tgz",
-      "integrity": "sha512-QL7MJ2WMjm1PHWsoFrAQH/J8wUeqZvMtHO58qdekHpCfhvhSL4gSiz6vJf5EeMP0LOn3ZCprL2ki/gjED8ghVw==",
-      "license": "Standard 'no charge' license: https://gsap.com/standard-license."
     },
     "node_modules/gzip-size": {
       "version": "7.0.0",

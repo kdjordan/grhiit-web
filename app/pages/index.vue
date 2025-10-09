@@ -1,13 +1,13 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="relative h-screen max-h-[800px] flex items-center bg-grhiit-black overflow-hidden">
-      <!-- Background Image -->
-      <div 
-        class="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+    <section class="relative h-screen max-h-[800px] flex items-center bg-grhiit-black overflow-hidden px-2 pt-2">
+      <!-- Background Image with rounded corners -->
+      <div
+        class="absolute inset-2 bg-cover bg-center bg-no-repeat rounded-lg"
         style="background-image: url('/images/hero-back.webp')"
       >
-        <div class="absolute inset-0 bg-gradient-to-r from-grhiit-black/90 via-grhiit-black/60 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-grhiit-black/90 via-grhiit-black/60 to-transparent rounded-lg"></div>
       </div>
       
       <!-- Content -->
@@ -44,33 +44,33 @@
       </div>
     </section>
 
-    <!-- Core Values -->
-    <section class="py-20 bg-grhiit-gray">
+    <!-- Core Principles - Bento Grid -->
+    <!-- <section class="py-20 bg-grhiit-black">
       <div class="container mx-auto px-4">
-        <div class="grid md:grid-cols-5 gap-8 text-center">
-          <div>
-            <h3 class="text-grhiit-red font-bold text-lg mb-2 uppercase">Intensity</h3>
-            <p class="text-gray-400">Over duration</p>
-          </div>
-          <div>
-            <h3 class="text-grhiit-red font-bold text-lg mb-2 uppercase">Discipline</h3>
-            <p class="text-gray-400">Over motivation</p>
-          </div>
-          <div>
-            <h3 class="text-grhiit-red font-bold text-lg mb-2 uppercase">Grit</h3>
-            <p class="text-gray-400">Focused determination</p>
-          </div>
-          <div>
-            <h3 class="text-grhiit-red font-bold text-lg mb-2 uppercase">Consistency</h3>
-            <p class="text-gray-400">Over perfection</p>
-          </div>
-          <div>
-            <h3 class="text-grhiit-red font-bold text-lg mb-2 uppercase">Determination</h3>
-            <p class="text-gray-400">Focused determination</p>
-          </div>
+        <div ref="bentoGrid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <UiPrincipleBento
+            title="Intensity"
+            subtitle="Over duration"
+            variant="intensity"
+          />
+          <UiPrincipleBento
+            title="Discipline"
+            subtitle="Over motivation"
+            variant="discipline"
+          />
+          <UiPrincipleBento
+            title="Consistency"
+            subtitle="Over perfection"
+            variant="consistency"
+          />
+          <UiPrincipleBento
+            title="Grit"
+            subtitle="Focused determination"
+            variant="grit"
+          />
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- What It Is -->
     <section class="py-20 bg-grhiit-black">
@@ -174,7 +174,10 @@
 </template>
 
 <script setup lang="ts">
+const { $gsap } = useNuxtApp()
+
 const isUiWaitlistModalOpen = ref(false)
+const bentoGrid = ref<HTMLElement | null>(null)
 
 const openUiWaitlistModal = () => {
   isUiWaitlistModalOpen.value = true
@@ -187,8 +190,38 @@ const closeUiWaitlistModal = () => {
 const handleWaitlistSubmit = (data: { email: string; name: string }) => {
   // TODO: Send to backend/email service
   console.log('Waitlist signup:', data)
-  
+
   // Show success message or redirect
   alert(`Thanks ${data.name}! We'll be in touch soon.`)
 }
+
+// GSAP Animations
+onMounted(() => {
+  // Animate bento cards on scroll
+  if (bentoGrid.value) {
+    const cards = bentoGrid.value.querySelectorAll('.principle-bento')
+
+    // Set initial state
+    $gsap.set(cards, {
+      y: 60,
+      opacity: 0,
+      scale: 0.9
+    })
+
+    // Animate to visible state on scroll
+    $gsap.to(cards, {
+      scrollTrigger: {
+        trigger: bentoGrid.value,
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'power3.out'
+    })
+  }
+})
 </script>

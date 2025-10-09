@@ -28,7 +28,7 @@ defineEmits<{
   click: [event: Event]
 }>()
 
-const baseClasses = 'font-bold uppercase tracking-wide transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-grhiit-red focus:ring-offset-2 focus:ring-offset-grhiit-black disabled:opacity-50 disabled:cursor-not-allowed'
+const baseClasses = 'font-bold uppercase tracking-wide transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-grhiit-red focus:ring-offset-2 focus:ring-offset-grhiit-black disabled:opacity-50 disabled:cursor-not-allowed rounded-lg'
 
 const variantClasses = {
   primary: 'bg-grhiit-red text-white hover:bg-red-700 active:bg-red-800',

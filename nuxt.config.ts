@@ -9,9 +9,16 @@ export default defineNuxtConfig({
     public: '../public'
   },
   devtools: { enabled: true },
-  modules: ["@nuxt/content", "@nuxtjs/tailwindcss"],
-  
-  // Nuxt Content v3 configuration 
+  modules: ["@nuxt/content", "@nuxtjs/tailwindcss", "@hypernym/nuxt-gsap"],
+
+  // GSAP Configuration
+  gsap: {
+    extraPlugins: {
+      scrollTrigger: true
+    }
+  },
+
+  // Nuxt Content v3 configuration
   content: {
     // Content config is handled by content.config.ts
   },
