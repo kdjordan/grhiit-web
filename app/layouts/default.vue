@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-grhiit-black text-white font-secondary">
+  <div class="min-h-screen bg-zinc-50 text-gray-900 font-secondary relative">
     <LayoutTopNav @open-waitlist="openWaitlistModal" />
     <main>
       <slot />
@@ -70,3 +70,4 @@ const handleWaitlistSubmit = (data: { email: string; name: string }) => {
   alert(`Thanks ${data.name}! We'll be in touch soon.`);
 };
 </script>
+

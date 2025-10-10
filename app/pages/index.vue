@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="relative h-screen max-h-[800px] flex items-center bg-grhiit-black overflow-hidden px-2 pt-2">
+    <section class="relative h-screen max-h-[800px] flex items-center overflow-hidden px-2 pt-2">
       <!-- Background Image with rounded corners -->
       <div
         class="absolute inset-2 bg-cover bg-center bg-no-repeat rounded-lg"
@@ -17,15 +17,9 @@
       
           
           <!-- Identity-Focused Message -->
-          <div class="mb-6 space-y-1">
-            <p class="text-lg text-white font-secondary leading-relaxed uppercase">
-              You are the decision.
-            </p>
-            <p class="text-lg text-white font-secondary leading-relaxed uppercase">
-              Every interval installs identity.
-            </p>
-            <h1 class="text-3xl font-primary font-bold text-grhiit-red leading-tight">
-              GRHIIT builds who you become.
+          <div class="mb-6">
+            <h1 class="text-3xl md:text-4xl font-primary font-bold text-white leading-tight">
+              ALL IT TAKES IS ALL YOU GOT
             </h1>
           </div>
           
@@ -36,7 +30,7 @@
             </UiGButton>
             <NuxtLink to="/program">
               <UiGButton variant="outline" size="md">
-                Explore Our Method
+                What we Do
               </UiGButton>
             </NuxtLink>
           </div>
@@ -44,84 +38,45 @@
       </div>
     </section>
 
-    <!-- Core Principles - Bento Grid -->
-    <!-- <section class="py-20 bg-grhiit-black">
+    <!-- Identity Statement -->
+    <section class="py-32">
+      <div class="container mx-auto px-4">
+        <h2 class="text-6xl md:text-8xl lg:text-9xl font-primary font-bold text-center leading-none tracking-tight">
+          GRHIIT IS A SYSTEM FOR BUILDING IDENTITY
+        </h2>
+      </div>
+    </section>
+
+      <!-- Core Principles - Bento Grid -->
+    <section class="py-20 bg-grhiit-black">
       <div class="container mx-auto px-4">
         <div ref="bentoGrid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <UiPrincipleBento
-            title="Intensity"
-            subtitle="Over duration"
+            title="8 Week cycles"
+            subtitle="Progressive Overload"
             variant="intensity"
           />
           <UiPrincipleBento
-            title="Discipline"
-            subtitle="Over motivation"
+            title="BodyWeight Only"
+            subtitle="Learn to move your body"
             variant="discipline"
           />
           <UiPrincipleBento
-            title="Consistency"
-            subtitle="Over perfection"
+            title="Play the Game"
+            subtitle="It's you vs you"
             variant="consistency"
           />
           <UiPrincipleBento
-            title="Grit"
-            subtitle="Focused determination"
+            title="Meet your limit"
+            subtitle="It's not about the numbers, it's about the effort"
             variant="grit"
           />
         </div>
       </div>
-    </section> -->
-
-    <!-- What It Is -->
-    <section class="py-20 bg-grhiit-black">
-      <div class="container mx-auto px-4">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 class="text-4xl md:text-5xl font-primary font-bold mb-8">
-              DO HARD THINGS<br>
-              <span class="text-grhiit-red">ON PURPOSE</span>
-            </h2>
-            <div class="space-y-4 text-gray-300">
-              <p class="text-lg">
-                <strong class="text-white">Time-based.</strong> 20:10 / 6:3 / 60:20 intervals with progressive overload.
-              </p>
-              <p class="text-lg">
-                <strong class="text-white">Bodyweight-only.</strong> No equipment. No excuses. Train anywhere.
-              </p>
-              <p class="text-lg">
-                <strong class="text-white">Mental toughness.</strong> Build discipline and grit through focused effort.
-              </p>
-              <p class="text-lg">
-                <strong class="text-white">Progressive system.</strong> 8-week cycles with measurable progress.
-              </p>
-            </div>
-          </div>
-          <div class="bg-grhiit-gray p-8 border-l-4 border-grhiit-red">
-            <h3 class="text-2xl font-bold mb-4 uppercase">The Promise</h3>
-            <p class="text-gray-300 mb-6">
-              Show up, do the work, and we'll give you:
-            </p>
-            <ul class="space-y-3 text-gray-300">
-              <li class="flex items-start">
-                <span class="text-grhiit-red mr-2">→</span>
-                Clear timers and progressions
-              </li>
-              <li class="flex items-start">
-                <span class="text-grhiit-red mr-2">→</span>
-                Scalable intensity for any fitness level
-              </li>
-              <li class="flex items-start">
-                <span class="text-grhiit-red mr-2">→</span>
-                A system that builds grit as much as capacity
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+    </section> 
 
     <!-- Stats/Numbers -->
-    <section class="py-20 bg-grhiit-gray">
+    <section class="py-20">
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-4 gap-8 text-center">
           <div>
@@ -145,7 +100,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-grhiit-black border-t border-grhiit-gray">
+    <section class="py-20">
       <div class="container mx-auto px-4 text-center">
         <h2 class="text-4xl md:text-5xl font-primary font-bold mb-6">
           JOIN THE FIRST <span class="text-grhiit-red">1,000</span>

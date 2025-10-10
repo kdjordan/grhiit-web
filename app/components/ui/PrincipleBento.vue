@@ -1,7 +1,7 @@
 <template>
   <div
     ref="bentoCard"
-    class="principle-bento group relative overflow-hidden rounded-lg p-8 h-64 flex flex-col justify-end cursor-pointer transition-all duration-500 hover:scale-105"
+    class="principle-bento group relative overflow-hidden rounded-lg p-8 h-64 flex flex-col justify-start cursor-pointer transition-all duration-500 hover:scale-105"
     :class="gradientClass"
   >
     <!-- Animated gradient overlay -->
@@ -12,7 +12,7 @@
 
     <!-- Content -->
     <div class="relative z-10">
-      <h3 class="text-4xl md:text-5xl font-primary font-bold text-white mb-3 uppercase tracking-tight">
+      <h3 class="text-4xl md:text-5xl font-primary font-bold text-grhiit-red mb-3 uppercase tracking-tight">
         {{ title }}
       </h3>
       <p class="text-white/80 text-lg font-secondary">
@@ -20,11 +20,6 @@
       </p>
     </div>
 
-    <!-- Decorative corner accent -->
-    <div class="absolute top-0 right-0 w-32 h-32 opacity-20">
-      <div class="absolute top-4 right-4 w-16 h-16 border-2 border-white/30 rounded-lg rotate-12"></div>
-      <div class="absolute top-8 right-8 w-12 h-12 border-2 border-white/20 rounded-lg -rotate-6"></div>
-    </div>
   </div>
 </template>
 
@@ -40,20 +35,20 @@ const bentoCard = ref<HTMLElement | null>(null)
 
 const gradients = {
   intensity: {
-    base: 'bg-gradient-to-br from-slate-800 via-gray-900 to-black',
-    hover: 'bg-gradient-to-tl from-slate-700 via-gray-800 to-zinc-900'
+    base: 'bg-gradient-to-br from-slate-600 via-gray-700 to-slate-800',
+    hover: 'bg-gradient-to-tl from-slate-500 via-gray-600 to-slate-700'
   },
   discipline: {
-    base: 'bg-gradient-to-br from-slate-800 via-gray-900 to-black',
-    hover: 'bg-gradient-to-tl from-slate-700 via-gray-800 to-zinc-900'
+    base: 'bg-gradient-to-br from-slate-600 via-gray-700 to-slate-800',
+    hover: 'bg-gradient-to-tl from-slate-500 via-gray-600 to-slate-700'
   },
   consistency: {
-    base: 'bg-gradient-to-br from-slate-800 via-gray-900 to-black',
-    hover: 'bg-gradient-to-tl from-slate-700 via-gray-800 to-zinc-900'
+    base: 'bg-gradient-to-br from-slate-600 via-gray-700 to-slate-800',
+    hover: 'bg-gradient-to-tl from-slate-500 via-gray-600 to-slate-700'
   },
   grit: {
-    base: 'bg-gradient-to-br from-slate-800 via-gray-900 to-black',
-    hover: 'bg-gradient-to-tl from-slate-700 via-gray-800 to-zinc-900'
+    base: 'bg-gradient-to-br from-slate-600 via-gray-700 to-slate-800',
+    hover: 'bg-gradient-to-tl from-slate-500 via-gray-600 to-slate-700'
   }
 }
 

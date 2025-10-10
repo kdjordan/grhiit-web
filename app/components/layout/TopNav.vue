@@ -1,8 +1,8 @@
 <template>
   <header class="absolute top-0 left-0 right-0 z-20 flex justify-center pt-6">
-    <nav class="backdrop-blur-md bg-white/5 border border-white/10 rounded-lg px-8 py-4 shadow-xl">
+    <nav class="backdrop-blur-md bg-black/60 border border-white/20 rounded-lg px-8 py-4 shadow-xl">
       <div class="flex items-center gap-8">
-        <NuxtLink to="/" class="text-2xl font-primary uppercase font-bold mr-4"
+        <NuxtLink to="/" class="text-2xl font-primary uppercase font-bold mr-4 text-white"
           >GRHIIT</NuxtLink
         >
         <NuxtLink
