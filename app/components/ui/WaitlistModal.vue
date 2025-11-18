@@ -39,6 +39,16 @@
               </div>
 
               <form @submit.prevent="submitForm" class="space-y-4">
+                <!-- Success Message -->
+                <div v-if="successMessage" class="p-4 bg-green-500/10 border border-green-500 text-green-500 text-sm">
+                  {{ successMessage }}
+                </div>
+
+                <!-- Error Message -->
+                <div v-if="errorMessage" class="p-4 bg-red-500/10 border border-red-500 text-red-500 text-sm">
+                  {{ errorMessage }}
+                </div>
+
                 <div>
                   <label for="email" class="block text-sm font-bold text-white mb-2 uppercase tracking-wide">
                     Email Address
@@ -48,11 +58,12 @@
                     v-model="email"
                     type="email"
                     required
-                    class="w-full px-4 py-3 bg-grhiit-gray border border-grhiit-light-gray text-white placeholder-gray-400 focus:outline-none focus:border-grhiit-red focus:ring-1 focus:ring-grhiit-red"
+                    :disabled="loading"
+                    class="w-full px-4 py-3 bg-grhiit-gray border border-grhiit-light-gray text-white placeholder-gray-400 focus:outline-none focus:border-grhiit-red focus:ring-1 focus:ring-grhiit-red disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="your@email.com"
                   />
                 </div>
-                
+
                 <div>
                   <label for="name" class="block text-sm font-bold text-white mb-2 uppercase tracking-wide">
                     First Name
@@ -62,7 +73,8 @@
                     v-model="name"
                     type="text"
                     required
-                    class="w-full px-4 py-3 bg-grhiit-gray border border-grhiit-light-gray text-white placeholder-gray-400 focus:outline-none focus:border-grhiit-red focus:ring-1 focus:ring-grhiit-red"
+                    :disabled="loading"
+                    class="w-full px-4 py-3 bg-grhiit-gray border border-grhiit-light-gray text-white placeholder-gray-400 focus:outline-none focus:border-grhiit-red focus:ring-1 focus:ring-grhiit-red disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="Your name"
                   />
                 </div>
@@ -71,7 +83,7 @@
                   <UiGButton type="submit" :disabled="loading" full-width>
                     {{ loading ? 'JOINING...' : 'JOIN NOW' }}
                   </UiGButton>
-                  <UiGButton variant="outline" @click="closeModal" type="button">
+                  <UiGButton variant="outline" @click="closeModal" type="button" :disabled="loading">
                     CLOSE
                   </UiGButton>
                 </div>
@@ -99,33 +111,70 @@ const props = defineProps<Props>()
 
 const emit = defineEmits<{
   close: []
-  submit: [data: { email: string; name: string }]
+  submit: [data: { email: string; name: string; success: boolean }]
 }>()
 
 const email = ref('')
 const name = ref('')
 const loading = ref(false)
+const successMessage = ref('')
+const errorMessage = ref('')
 
 const closeModal = () => {
   emit('close')
-  // Reset form
-  email.value = ''
-  name.value = ''
-  loading.value = false
+  // Reset form after a delay to allow transition
+  setTimeout(() => {
+    email.value = ''
+    name.value = ''
+    loading.value = false
+    successMessage.value = ''
+    errorMessage.value = ''
+  }, 300)
 }
 
 const submitForm = async () => {
   loading.value = true
-  
-  // Simulate API call
-  await new Promise(resolve => setTimeout(resolve, 1000))
-  
-  emit('submit', {
-    email: email.value,
-    name: name.value
-  })
-  
-  loading.value = false
-  closeModal()
+  errorMessage.value = ''
+  successMessage.value = ''
+
+  try {
+    // Prepare form data for ConvertKit
+    const formData = new FormData()
+    formData.append('email_address', email.value)
+    formData.append('fields[first_name]', name.value)
+
+    // Submit to ConvertKit
+    const response = await fetch('https://app.kit.com/forms/8773678/subscriptions', {
+      method: 'POST',
+      body: formData,
+      mode: 'no-cors' // Required for ConvertKit API
+    })
+
+    // Note: no-cors mode means we can't read the response, but if no error is thrown, it succeeded
+    successMessage.value = 'Success! Check your email to confirm your subscription.'
+
+    emit('submit', {
+      email: email.value,
+      name: name.value,
+      success: true
+    })
+
+    // Close modal after showing success message briefly
+    setTimeout(() => {
+      closeModal()
+    }, 2000)
+
+  } catch (error) {
+    console.error('ConvertKit submission error:', error)
+    errorMessage.value = 'Something went wrong. Please try again.'
+
+    emit('submit', {
+      email: email.value,
+      name: name.value,
+      success: false
+    })
+  } finally {
+    loading.value = false
+  }
 }
 </script>

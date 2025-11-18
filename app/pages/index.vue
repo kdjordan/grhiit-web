@@ -142,12 +142,17 @@ const closeUiWaitlistModal = () => {
   isUiWaitlistModalOpen.value = false
 }
 
-const handleWaitlistSubmit = (data: { email: string; name: string }) => {
-  // TODO: Send to backend/email service
-  console.log('Waitlist signup:', data)
+const handleWaitlistSubmit = (data: { email: string; name: string; success: boolean }) => {
+  // Log submission to console for tracking
+  console.log('ConvertKit waitlist signup:', {
+    email: data.email,
+    name: data.name,
+    success: data.success,
+    timestamp: new Date().toISOString()
+  })
 
-  // Show success message or redirect
-  alert(`Thanks ${data.name}! We'll be in touch soon.`)
+  // You can add additional analytics tracking here if needed
+  // For example: gtag('event', 'signup', { method: 'ConvertKit' })
 }
 
 // GSAP Animations
