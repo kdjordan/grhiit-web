@@ -23,7 +23,7 @@ No equipment. No fluff. **Intensity, discipline, consistency**—anywhere, anyti
 ## What GRHIIT Is Not
 - It’s not an AI-assembled, influencer routine.
 - It’s not equipment-dependent or space-dependent.
-- It’s not random “sweat for the sake of sweat.” Every interval has intent.
+- It’s not random “sweat for the sake of sweat.” Every interval has intention.
 
 ---
 
