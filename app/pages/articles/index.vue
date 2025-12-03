@@ -1,38 +1,83 @@
 <template>
   <div>
-    <section class="py-20 bg-grhiit-black border-b border-grhiit-gray">
-      <div class="container mx-auto px-4">
-        <h1 class="text-5xl font-primary font-bold mb-6">ARTICLES</h1>
-        <p class="text-xl text-gray-300">Evidence-based training insights. No fluff.</p>
+    <!-- Hero Section -->
+    <section class="py-24 md:py-32 bg-grhiit-black-warm relative overflow-hidden">
+      <!-- Subtle noise texture -->
+      <div class="absolute inset-0 opacity-[0.02] pointer-events-none noise-overlay"></div>
+
+      <!-- Red accent bar -->
+      <div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 md:w-2 h-32 md:h-48 bg-grhiit-red"></div>
+
+      <div class="container mx-auto px-4 md:px-8 relative z-10">
+        <div class="max-w-4xl">
+          <h1 class="font-display font-extrabold italic text-5xl md:text-6xl lg:text-7xl uppercase text-grhiit-white tracking-tight-brutal leading-brutal">
+            Articles
+          </h1>
+          <p class="mt-6 text-xl md:text-2xl font-body text-grhiit-white/70 max-w-2xl leading-relaxed">
+            Evidence-based training insights. No fluff. Just the science and mindset behind building real capacity.
+          </p>
+        </div>
       </div>
     </section>
-    
-    <section class="py-20 bg-grhiit-gray">
-      <div class="container mx-auto px-4">
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <article v-for="article in articles" :key="article._path || article.id" class="bg-grhiit-black border border-grhiit-light-gray hover:border-grhiit-red transition-colors">
-            <NuxtLink 
-              :to="article.path || article._path || `/articles/${article.stem}`" 
-              class="block p-6"
-              @click="handleArticleClick(article)"
+
+    <!-- Articles Grid -->
+    <section class="py-16 md:py-24 bg-grhiit-black">
+      <div class="container mx-auto px-4 md:px-8">
+        <!-- Loading state -->
+        <div v-if="!articles" class="text-center py-20">
+          <div class="font-mono text-grhiit-white/40 uppercase tracking-widest">Loading...</div>
+        </div>
+
+        <!-- Empty state -->
+        <div v-else-if="articles.length === 0" class="text-center py-20">
+          <div class="font-display font-bold text-2xl text-grhiit-white/60 uppercase mb-4">No articles yet</div>
+          <p class="font-body text-grhiit-white/40">Check back soon for training insights.</p>
+        </div>
+
+        <!-- Articles grid -->
+        <div v-else class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          <article
+            v-for="article in articles"
+            :key="article.path || article._path || article.id"
+            class="group bg-grhiit-gray-900 border-l-[3px] border-grhiit-red hover:border-grhiit-white transition-colors duration-300"
+          >
+            <NuxtLink
+              :to="article.path || article._path || `/articles/${article.stem}`"
+              class="block p-6 md:p-8 h-full"
             >
-              <h2 class="text-2xl font-bold mb-3 hover:text-grhiit-red transition-colors">{{ article.title }}</h2>
-              <p class="text-gray-400 mb-4">{{ article.description }}</p>
-              <div class="flex items-center justify-between text-sm text-gray-500">
-                <span>{{ article.date }}</span>
-                <span v-if="article.author" class="text-grhiit-red">{{ article.author }}</span>
-              </div>
-              <div v-if="article.tags" class="mt-4 flex flex-wrap gap-2">
-                <span v-for="tag in article.tags" :key="tag" class="px-2 py-1 border border-grhiit-light-gray text-xs uppercase">
+              <!-- Tags -->
+              <div v-if="article.tags && article.tags.length > 0" class="flex flex-wrap gap-2 mb-4">
+                <span
+                  v-for="tag in article.tags"
+                  :key="tag"
+                  class="font-mono text-xs uppercase tracking-widest text-grhiit-red"
+                >
                   {{ tag }}
                 </span>
               </div>
-              <!-- Debug info -->
-              <div class="mt-2 text-xs text-gray-600 border-t border-gray-700 pt-2">
-                <div>Path: {{ article._path || 'No _path' }}</div>
-                <div>Slug: {{ article.slug || 'No slug' }}</div>
-                <div>Stem: {{ article.stem || 'No stem' }}</div>
-                <div>ID: {{ article.id || 'No id' }}</div>
+
+              <!-- Title -->
+              <h2 class="font-display font-bold text-xl md:text-2xl uppercase tracking-tight text-grhiit-white group-hover:text-grhiit-red transition-colors mb-4">
+                {{ article.title }}
+              </h2>
+
+              <!-- Description -->
+              <p class="font-body text-grhiit-white/60 leading-relaxed mb-6 line-clamp-3">
+                {{ article.description }}
+              </p>
+
+              <!-- Meta -->
+              <div class="flex items-center justify-between text-sm mt-auto pt-4 border-t border-grhiit-gray-800">
+                <span class="font-mono text-grhiit-white/40">{{ article.date }}</span>
+                <span v-if="article.author" class="font-body text-grhiit-white/50">{{ article.author }}</span>
+              </div>
+
+              <!-- Read more indicator -->
+              <div class="mt-4 flex items-center gap-2 font-display text-sm uppercase tracking-widest text-grhiit-red opacity-0 group-hover:opacity-100 transition-opacity">
+                Read Article
+                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </div>
             </NuxtLink>
           </article>
@@ -43,7 +88,6 @@
 </template>
 
 <script setup lang="ts">
-// Clean implementation using the working query.all() method
 const { data: articles } = await useAsyncData('articles-list', async () => {
   try {
     const query = queryCollection('articles')
@@ -55,28 +99,20 @@ const { data: articles } = await useAsyncData('articles-list', async () => {
   }
 })
 
-// Debug click handler
-const handleArticleClick = (article: any) => {
-  console.log('=== ARTICLE CLICK DEBUG ===')
-  console.log('Clicked article:', article.title)
-  console.log('Article _path:', article._path)
-  console.log('Article slug:', article.slug)
-  console.log('Article stem:', article.stem)
-  console.log('Article id:', article.id)
-  console.log('Article path:', article.path)
-  console.log('Full article object:', article)
-  
-  const targetPath = article._path || `/articles/${article.slug}` || `/articles/${article.stem}`
-  console.log('Target navigation path:', targetPath)
-  console.log('=== END ARTICLE CLICK DEBUG ===')
-}
-
-// Also log the articles structure when loaded
-if (articles.value?.length > 0) {
-  console.log('=== ARTICLES STRUCTURE ===')
-  console.log('First article keys:', Object.keys(articles.value[0]))
-  console.log('First article _path:', articles.value[0]._path)
-  console.log('First article stem:', articles.value[0].stem)
-  console.log('=== END ARTICLES STRUCTURE ===')
-}
+// SEO
+useHead({
+  title: 'Articles | GRHIIT',
+  meta: [
+    { name: 'description', content: 'Evidence-based training insights. The science and mindset behind building real capacity through high-intensity interval training.' }
+  ]
+})
 </script>
+
+<style scoped>
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+</style>

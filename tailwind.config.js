@@ -64,7 +64,96 @@ export default {
           "100%": { width: "100%" },
         },
       },
+      // Typography plugin customization for dark brutalist theme
+      typography: {
+        DEFAULT: {
+          css: {
+            '--tw-prose-body': '#FAFAFA',
+            '--tw-prose-headings': '#FAFAFA',
+            '--tw-prose-lead': 'rgba(250, 250, 250, 0.8)',
+            '--tw-prose-links': '#E8110F',
+            '--tw-prose-bold': '#FAFAFA',
+            '--tw-prose-counters': 'rgba(250, 250, 250, 0.6)',
+            '--tw-prose-bullets': '#E8110F',
+            '--tw-prose-hr': 'rgba(250, 250, 250, 0.1)',
+            '--tw-prose-quotes': '#FAFAFA',
+            '--tw-prose-quote-borders': '#E8110F',
+            '--tw-prose-captions': 'rgba(250, 250, 250, 0.6)',
+            '--tw-prose-code': '#FAFAFA',
+            '--tw-prose-pre-code': '#FAFAFA',
+            '--tw-prose-pre-bg': '#0F0F0F',
+            '--tw-prose-th-borders': 'rgba(250, 250, 250, 0.2)',
+            '--tw-prose-td-borders': 'rgba(250, 250, 250, 0.1)',
+            // Custom styling
+            color: 'rgba(250, 250, 250, 0.8)',
+            maxWidth: 'none',
+            a: {
+              color: '#E8110F',
+              textDecoration: 'none',
+              fontWeight: '500',
+              '&:hover': {
+                textDecoration: 'underline',
+              },
+            },
+            h1: {
+              fontFamily: '"Barlow Condensed", Arial Narrow, sans-serif',
+              fontWeight: '800',
+              textTransform: 'uppercase',
+              letterSpacing: '-0.02em',
+            },
+            h2: {
+              fontFamily: '"Barlow Condensed", Arial Narrow, sans-serif',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              letterSpacing: '-0.02em',
+              borderBottom: '1px solid rgba(250, 250, 250, 0.1)',
+              paddingBottom: '0.5em',
+            },
+            h3: {
+              fontFamily: '"Barlow Condensed", Arial Narrow, sans-serif',
+              fontWeight: '600',
+              textTransform: 'uppercase',
+            },
+            blockquote: {
+              fontStyle: 'normal',
+              borderLeftWidth: '3px',
+              borderLeftColor: '#E8110F',
+              backgroundColor: 'rgba(232, 17, 15, 0.05)',
+              paddingLeft: '1.5em',
+              paddingRight: '1.5em',
+              paddingTop: '1em',
+              paddingBottom: '1em',
+            },
+            code: {
+              fontFamily: '"JetBrains Mono", Consolas, monospace',
+              backgroundColor: '#0F0F0F',
+              padding: '0.25em 0.5em',
+              borderRadius: '0',
+              fontWeight: '400',
+            },
+            'code::before': {
+              content: '""',
+            },
+            'code::after': {
+              content: '""',
+            },
+            pre: {
+              backgroundColor: '#0F0F0F',
+              borderRadius: '0',
+              border: '1px solid rgba(250, 250, 250, 0.1)',
+            },
+            strong: {
+              color: '#FAFAFA',
+            },
+            hr: {
+              borderColor: 'rgba(250, 250, 250, 0.1)',
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
