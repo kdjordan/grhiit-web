@@ -14,14 +14,16 @@ export default {
         // Core brutalist palette
         "grhiit-white": "#FAFAFA",
         "grhiit-black": "#0A0A0A",
+        "grhiit-black-warm": "#141210",  // Warm black for alternate sections
         "grhiit-red": "#E8110F",
         "grhiit-red-dark": "#B80D0B",
-        // Gray scale
+        // Gray scale - cool and warm variants
         "grhiit-gray": {
           100: "#F5F5F5",
           200: "#E5E5E5",
           600: "#525252",
           800: "#1A1A1A",
+          "800-warm": "#1F1C1A",  // Warm dark for alternate sections
           900: "#0F0F0F",
         },
       },

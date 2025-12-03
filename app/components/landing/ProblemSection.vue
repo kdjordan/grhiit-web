@@ -1,12 +1,24 @@
 <template>
-  <section ref="problemSection" class="py-24 md:py-40 bg-grhiit-black relative overflow-hidden">
+  <section ref="problemSection" class="py-24 md:py-40 bg-grhiit-black-warm relative overflow-hidden">
+    <!-- Background image container (ready for future imagery) -->
+    <div class="absolute inset-0 opacity-20">
+      <!-- Placeholder: Add background-image here when imagery is ready -->
+      <!-- <div class="absolute inset-0 bg-cover bg-center img-grayscale" style="background-image: url('/images/training-bg.webp')"></div> -->
+    </div>
+
+    <!-- Warm vignette overlay -->
+    <div class="absolute inset-0 vignette-warm pointer-events-none"></div>
+
+    <!-- Subtle noise texture -->
+    <div class="absolute inset-0 opacity-[0.02] pointer-events-none noise-overlay"></div>
+
     <!-- Vertical red accent bar -->
     <div
       ref="accentBar"
-      class="absolute left-0 top-1/2 -translate-y-1/2 w-1 md:w-2 h-0 bg-grhiit-red"
+      class="absolute left-0 top-1/2 -translate-y-1/2 w-1 md:w-2 h-0 bg-grhiit-red z-10"
     ></div>
 
-    <div class="container mx-auto px-4 md:px-8">
+    <div class="container mx-auto px-4 md:px-8 relative z-10">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto">
         <!-- Pull quote - left side -->
         <div ref="pullQuote" class="opacity-0">

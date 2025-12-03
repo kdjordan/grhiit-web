@@ -67,6 +67,34 @@
     -webkit-text-stroke-width: 3px;
     text-stroke-width: 3px;
   }
+
+  /* Image treatment utilities */
+  .img-grayscale {
+    filter: grayscale(100%) contrast(1.1);
+  }
+
+  .img-desaturated {
+    filter: saturate(0.3) contrast(1.15);
+  }
+
+  .img-duotone-red {
+    filter: grayscale(100%) contrast(1.2);
+  }
+
+  /* Vignette overlay for sections with background images */
+  .vignette-overlay {
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(10, 10, 10, 0.4) 70%, rgba(10, 10, 10, 0.8) 100%);
+  }
+
+  /* Warm vignette for warm sections */
+  .vignette-warm {
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(20, 18, 16, 0.4) 70%, rgba(20, 18, 16, 0.9) 100%);
+  }
+
+  /* Red accent border left (mobile app pattern) */
+  .border-accent-left {
+    border-left: 3px solid #E8110F;
+  }
 }
 
 @layer utilities {

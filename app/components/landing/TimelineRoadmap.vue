@@ -1,5 +1,10 @@
 <template>
-  <section ref="timelineSection" class="py-20 md:py-32 bg-grhiit-gray-900">
+  <section ref="timelineSection" class="py-20 md:py-32 bg-[#1F1C1A] relative overflow-hidden">
+    <!-- Subtle noise texture -->
+    <div class="absolute inset-0 opacity-[0.015] pointer-events-none noise-overlay"></div>
+
+    <!-- Content wrapper -->
+    <div class="relative z-10">
     <div class="container mx-auto px-4">
       <!-- Section header -->
       <div ref="header" class="text-center mb-16 md:mb-24 opacity-0">
@@ -112,6 +117,7 @@
           "You get capable of more."
         </p>
       </div>
+    </div>
     </div>
   </section>
 </template>

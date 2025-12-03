@@ -2,13 +2,15 @@
   <section ref="statsSection" class="py-20 md:py-32 bg-grhiit-black">
     <div class="container mx-auto px-4">
       <!-- Stats grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-0 max-w-5xl mx-auto">
         <div
           v-for="(stat, index) in stats"
           :key="stat.label"
           ref="statBlocks"
-          class="text-center opacity-0"
+          class="relative py-8 md:py-0 opacity-0 border-l-[3px] border-grhiit-red md:border-l-0 md:border-r md:border-grhiit-gray-800 md:last:border-r-0 pl-6 md:pl-0 md:text-center"
         >
+          <!-- Mobile: red left border accent (mobile app pattern) -->
+          <!-- Desktop: subtle vertical dividers between stats -->
           <div class="font-mono text-5xl md:text-6xl lg:text-7xl font-semibold text-grhiit-red tracking-tight">
             <span ref="statNumbers" :data-target="stat.value" :data-suffix="stat.suffix">
               {{ stat.isText ? stat.displayValue : '0' }}{{ stat.isText ? '' : stat.suffix }}

@@ -1,31 +1,43 @@
 <template>
-  <section ref="transformSection" class="py-20 md:py-32 bg-grhiit-black overflow-hidden">
-    <div class="container mx-auto px-4">
+  <section ref="transformSection" class="py-20 md:py-32 overflow-hidden relative">
+    <!-- Split background: cool left, warm right -->
+    <div class="absolute inset-0 flex">
+      <div class="w-full md:w-1/2 bg-grhiit-black"></div>
+      <div class="hidden md:block w-1/2 bg-[#0D0A09]"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
       <!-- Two-column split -->
       <div class="grid md:grid-cols-2 gap-0 max-w-5xl mx-auto">
-        <!-- Week 1 - Left (muted) -->
+        <!-- Week 1 - Left (muted, cool) -->
         <div
           ref="week1Block"
-          class="relative p-8 md:p-12 lg:p-16 border-b md:border-b-0 md:border-r border-grhiit-gray-800 opacity-0"
+          class="relative p-8 md:p-12 lg:p-16 border-b md:border-b-0 md:border-r border-grhiit-gray-800 opacity-0 bg-grhiit-black md:bg-transparent"
         >
-          <div class="font-mono text-sm uppercase tracking-widest text-grhiit-white/40 mb-4">
-            Week 1
+          <!-- Subtle cool overlay -->
+          <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-grhiit-black/50 pointer-events-none md:hidden"></div>
+
+          <div class="relative">
+            <div class="font-mono text-sm uppercase tracking-widest text-grhiit-white/40 mb-4">
+              Week 1
+            </div>
+            <div class="font-display font-extrabold text-6xl md:text-7xl lg:text-8xl text-grhiit-white/30 tracking-tighter-brutal leading-none">
+              01
+            </div>
+            <p class="mt-6 text-xl md:text-2xl font-body text-grhiit-white/50">
+              You survive 16 minutes.
+            </p>
           </div>
-          <div class="font-display font-extrabold text-6xl md:text-7xl lg:text-8xl text-grhiit-white/30 tracking-tighter-brutal leading-none">
-            01
-          </div>
-          <p class="mt-6 text-xl md:text-2xl font-body text-grhiit-white/50">
-            You survive 16 minutes.
-          </p>
         </div>
 
-        <!-- Week 8 - Right (emphasized) -->
+        <!-- Week 8 - Right (emphasized, warm with red tint) -->
         <div
           ref="week8Block"
-          class="relative p-8 md:p-12 lg:p-16 opacity-0"
+          class="relative p-8 md:p-12 lg:p-16 opacity-0 bg-[#0D0A09] md:bg-transparent"
         >
-          <!-- Red glow effect -->
-          <div class="absolute inset-0 bg-gradient-to-br from-grhiit-red/5 via-transparent to-transparent pointer-events-none"></div>
+          <!-- Warm red glow effect - enhanced -->
+          <div class="absolute inset-0 bg-gradient-to-br from-grhiit-red/10 via-grhiit-red/5 to-transparent pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-grhiit-red/5 pointer-events-none"></div>
 
           <div class="relative">
             <div class="font-mono text-sm uppercase tracking-widest text-grhiit-red mb-4">
