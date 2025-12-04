@@ -1,123 +1,160 @@
 <template>
-  <section ref="timelineSection" class="py-20 md:py-32 bg-[#1F1C1A] relative overflow-hidden">
+  <section ref="timelineSection" class="py-24 md:py-40 bg-[#1F1C1A] relative overflow-hidden">
     <!-- Subtle noise texture -->
     <div class="absolute inset-0 opacity-[0.015] pointer-events-none noise-overlay"></div>
 
     <!-- Content wrapper -->
     <div class="relative z-10">
-    <div class="container mx-auto px-4">
-      <!-- Section header -->
-      <div ref="header" class="text-center mb-16 md:mb-24 opacity-0">
-        <h2 class="font-display font-extrabold text-4xl md:text-5xl lg:text-6xl uppercase text-grhiit-white tracking-tight-brutal">
-          The <span class="text-grhiit-red">8-Week</span> Cycle
-        </h2>
-        <p class="mt-4 text-lg font-body text-grhiit-white/60 max-w-xl mx-auto">
-          Same movements. Less rest. More time under tension. The sessions don't get easier — they get longer.
-        </p>
-      </div>
-
-      <!-- Timeline - Desktop horizontal -->
-      <div class="hidden lg:block relative max-w-5xl mx-auto">
-        <!-- Timeline line -->
-        <div class="absolute top-[60px] left-0 right-0 h-[2px] bg-grhiit-gray-800">
-          <div
-            ref="progressLine"
-            class="h-full bg-grhiit-red origin-left"
-            style="transform: scaleX(0);"
-          ></div>
+      <div class="container mx-auto px-4 md:px-8">
+        <!-- Section header -->
+        <div ref="header" class="max-w-4xl mx-auto mb-16 md:mb-24 opacity-0">
+          <h2 class="font-display font-extrabold italic text-4xl md:text-5xl lg:text-6xl uppercase text-grhiit-white tracking-tight-brutal leading-brutal">
+            The <span class="text-grhiit-red">8-Week</span> Cycle
+          </h2>
+          <div class="mt-8 space-y-4">
+            <p class="text-lg md:text-xl font-body text-grhiit-white/70">
+              Same simple movements. Smarter structure. Higher demand on your focus, lungs, and resolve.
+            </p>
+            <p class="text-lg font-body text-grhiit-white/50">
+              Over eight weeks:
+            </p>
+          </div>
         </div>
 
-        <!-- Phase markers -->
-        <div class="grid grid-cols-4 gap-4">
-          <div
-            v-for="(phase, index) in phases"
-            :key="phase.weeks"
-            ref="phaseBlocks"
-            class="relative text-center opacity-0"
-          >
-            <!-- Marker dot -->
-            <div
-              class="relative z-10 w-8 h-8 mx-auto rounded-full border-2 transition-all duration-500"
-              :class="[
-                activePhase >= index
-                  ? 'bg-grhiit-red border-grhiit-red shadow-glow-red'
-                  : 'bg-grhiit-gray-900 border-grhiit-gray-600'
-              ]"
+        <!-- Progression bullets -->
+        <div ref="progressionList" class="max-w-3xl mx-auto mb-16 md:mb-20 opacity-0">
+          <ul class="space-y-4 border-l-[3px] border-grhiit-red/30 pl-6 md:pl-8">
+            <li
+              v-for="(item, index) in progressionItems"
+              :key="index"
+              ref="progressionRefs"
+              class="text-lg md:text-xl font-body text-grhiit-white/60 opacity-0"
             >
-              <div
-                v-if="activePhase >= index"
-                class="absolute inset-0 rounded-full bg-grhiit-red animate-ping opacity-30"
-              ></div>
-            </div>
-
-            <!-- Content below marker -->
-            <div class="mt-8">
-              <div class="font-display font-bold text-xl uppercase tracking-tight text-grhiit-white">
-                {{ phase.weeks }}
-              </div>
-              <div class="mt-2 font-mono text-2xl md:text-3xl font-semibold text-grhiit-red">
-                {{ phase.ratio }}
-              </div>
-              <div class="mt-3 font-display text-sm uppercase tracking-widest text-grhiit-white/50">
-                {{ phase.name }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Timeline - Mobile vertical -->
-      <div class="lg:hidden relative max-w-sm mx-auto">
-        <!-- Vertical line -->
-        <div class="absolute top-0 bottom-0 left-4 w-[2px] bg-grhiit-gray-800">
-          <div
-            ref="progressLineMobile"
-            class="w-full bg-grhiit-red origin-top"
-            style="transform: scaleY(0); height: 100%;"
-          ></div>
+              {{ item }}
+            </li>
+          </ul>
         </div>
 
-        <!-- Phase items -->
-        <div class="space-y-12">
-          <div
-            v-for="(phase, index) in phases"
-            :key="phase.weeks"
-            ref="phaseBlocksMobile"
-            class="relative flex items-start gap-6 opacity-0"
-          >
-            <!-- Marker dot -->
+        <!-- Timeline - Desktop horizontal -->
+        <div class="hidden lg:block relative max-w-5xl mx-auto">
+          <!-- Timeline line -->
+          <div class="absolute top-[60px] left-0 right-0 h-[2px] bg-grhiit-gray-800">
             <div
-              class="relative z-10 flex-shrink-0 w-8 h-8 rounded-full border-2 transition-all duration-500"
-              :class="[
-                activePhase >= index
-                  ? 'bg-grhiit-red border-grhiit-red shadow-glow-red'
-                  : 'bg-grhiit-gray-900 border-grhiit-gray-600'
-              ]"
+              ref="progressLine"
+              class="h-full bg-grhiit-red origin-left"
+              style="transform: scaleX(0);"
             ></div>
+          </div>
 
-            <!-- Content -->
-            <div class="pt-1">
-              <div class="font-display font-bold text-lg uppercase tracking-tight text-grhiit-white">
-                {{ phase.weeks }}
+          <!-- Phase markers -->
+          <div class="grid grid-cols-4 gap-4">
+            <div
+              v-for="(phase, index) in phases"
+              :key="phase.weeks"
+              ref="phaseBlocks"
+              class="relative text-center opacity-0"
+            >
+              <!-- Marker dot -->
+              <div
+                class="relative z-10 w-10 h-10 mx-auto rounded-full border-2 transition-all duration-500 flex items-center justify-center"
+                :class="[
+                  activePhase >= index
+                    ? 'bg-grhiit-red border-grhiit-red shadow-glow-red'
+                    : 'bg-grhiit-gray-900 border-grhiit-gray-600'
+                ]"
+              >
+                <span class="font-mono text-xs font-bold text-grhiit-white">{{ phase.weekNum }}</span>
+                <div
+                  v-if="activePhase >= index"
+                  class="absolute inset-0 rounded-full bg-grhiit-red animate-ping opacity-30"
+                ></div>
               </div>
-              <div class="mt-1 font-mono text-2xl font-semibold text-grhiit-red">
-                {{ phase.ratio }}
-              </div>
-              <div class="mt-2 font-display text-xs uppercase tracking-widest text-grhiit-white/50">
-                {{ phase.name }}
+
+              <!-- Content below marker -->
+              <div class="mt-8">
+                <div class="font-display font-bold text-lg uppercase tracking-tight text-grhiit-white">
+                  {{ phase.weeks }}
+                </div>
+                <div class="mt-2 font-mono text-2xl md:text-3xl font-bold text-grhiit-red">
+                  {{ phase.ratio }}
+                </div>
+                <div class="mt-3 font-body text-sm text-grhiit-white/50">
+                  {{ phase.description }}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Bottom statement -->
-      <div ref="bottomStatement" class="mt-16 md:mt-24 text-center opacity-0">
-        <p class="text-xl md:text-2xl font-body text-grhiit-white/80 italic max-w-2xl mx-auto">
-          "You get capable of more."
-        </p>
+        <!-- Timeline - Mobile vertical -->
+        <div class="lg:hidden relative max-w-sm mx-auto">
+          <!-- Vertical line -->
+          <div class="absolute top-0 bottom-0 left-5 w-[2px] bg-grhiit-gray-800">
+            <div
+              ref="progressLineMobile"
+              class="w-full bg-grhiit-red origin-top"
+              style="transform: scaleY(0); height: 100%;"
+            ></div>
+          </div>
+
+          <!-- Phase items -->
+          <div class="space-y-10">
+            <div
+              v-for="(phase, index) in phases"
+              :key="phase.weeks"
+              ref="phaseBlocksMobile"
+              class="relative flex items-start gap-6 opacity-0"
+            >
+              <!-- Marker dot -->
+              <div
+                class="relative z-10 flex-shrink-0 w-10 h-10 rounded-full border-2 transition-all duration-500 flex items-center justify-center"
+                :class="[
+                  activePhase >= index
+                    ? 'bg-grhiit-red border-grhiit-red shadow-glow-red'
+                    : 'bg-grhiit-gray-900 border-grhiit-gray-600'
+                ]"
+              >
+                <span class="font-mono text-xs font-bold text-grhiit-white">{{ phase.weekNum }}</span>
+              </div>
+
+              <!-- Content -->
+              <div class="pt-1 flex-1">
+                <div class="font-display font-bold text-lg uppercase tracking-tight text-grhiit-white">
+                  {{ phase.weeks }}
+                </div>
+                <div class="mt-1 font-mono text-2xl font-bold text-grhiit-red">
+                  {{ phase.ratio }}
+                </div>
+                <div class="mt-2 font-body text-sm text-grhiit-white/50">
+                  {{ phase.description }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom statements -->
+        <div ref="bottomBlock" class="mt-16 md:mt-24 max-w-3xl mx-auto opacity-0">
+          <p class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-grhiit-white mb-4">
+            The sessions don't get easier.
+          </p>
+          <p class="text-2xl md:text-3xl font-display font-extrabold uppercase tracking-tight text-grhiit-red">
+            You get harder to break.
+          </p>
+
+          <div class="mt-10 pt-8 border-t border-grhiit-white/10 space-y-3">
+            <p class="text-lg font-body text-grhiit-white/60">
+              You'll feel it in your legs.
+            </p>
+            <p class="text-lg font-body text-grhiit-white/60">
+              You'll hear it in your breathing.
+            </p>
+            <p class="text-xl font-body text-grhiit-white">
+              You'll notice it most in the way you start to handle everything else in your life.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 </template>
@@ -127,25 +164,34 @@ const { $gsap } = useNuxtApp()
 
 const timelineSection = ref<HTMLElement | null>(null)
 const header = ref<HTMLElement | null>(null)
+const progressionList = ref<HTMLElement | null>(null)
+const progressionRefs = ref<HTMLElement[]>([])
 const progressLine = ref<HTMLElement | null>(null)
 const progressLineMobile = ref<HTMLElement | null>(null)
 const phaseBlocks = ref<HTMLElement[]>([])
 const phaseBlocksMobile = ref<HTMLElement[]>([])
-const bottomStatement = ref<HTMLElement | null>(null)
+const bottomBlock = ref<HTMLElement | null>(null)
 
 const activePhase = ref(-1)
 
+const progressionItems = [
+  'Your rest windows tighten.',
+  'Your work blocks feel longer.',
+  'Your time "in the hurt" increases — slowly enough to be doable, ruthlessly enough to change you.',
+]
+
 interface Phase {
   weeks: string
+  weekNum: string
   ratio: string
-  name: string
+  description: string
 }
 
 const phases: Phase[] = [
-  { weeks: 'Week 1-2', ratio: '6s:3s', name: 'Foundation' },
-  { weeks: 'Week 3-4', ratio: '8s:3s', name: 'Build' },
-  { weeks: 'Week 5-6', ratio: '10s:2s', name: 'Intensify' },
-  { weeks: 'Week 7-8', ratio: '12s:2s', name: 'Peak' },
+  { weeks: 'Week 1-2', weekNum: '01', ratio: '6s:3s', description: 'Learning the movements, fighting the urge to stop' },
+  { weeks: 'Week 3-4', weekNum: '02', ratio: '8s:3s', description: 'Recovering faster, building trust in yourself' },
+  { weeks: 'Week 5-6', weekNum: '03', ratio: '10s:2s', description: 'Intensity rises, mental calluses form' },
+  { weeks: 'Week 7-8', weekNum: '04', ratio: '12s:2s', description: 'Peak capacity, new identity locked in' },
 ]
 
 onMounted(() => {
@@ -165,6 +211,36 @@ onMounted(() => {
     ease: 'power3.out',
   })
 
+  // Progression list
+  $gsap.set(progressionList.value, { y: 20, opacity: 0 })
+  $gsap.to(progressionList.value, {
+    scrollTrigger: {
+      trigger: progressionList.value,
+      start: 'top 75%',
+      toggleActions: 'play none none reverse',
+    },
+    y: 0,
+    opacity: 1,
+    duration: 0.5,
+    ease: 'power2.out',
+  })
+
+  // Progression items stagger
+  $gsap.set(progressionRefs.value, { x: -20, opacity: 0 })
+  $gsap.to(progressionRefs.value, {
+    scrollTrigger: {
+      trigger: progressionList.value,
+      start: 'top 70%',
+      toggleActions: 'play none none reverse',
+    },
+    x: 0,
+    opacity: 1,
+    duration: 0.5,
+    stagger: 0.15,
+    ease: 'power2.out',
+    delay: 0.2,
+  })
+
   // Desktop timeline
   if (progressLine.value && phaseBlocks.value.length) {
     $gsap.set(phaseBlocks.value, { y: 30, opacity: 0 })
@@ -181,7 +257,6 @@ onMounted(() => {
       stagger: 0.2,
       ease: 'power3.out',
       onStart: () => {
-        // Animate phases sequentially
         phases.forEach((_, index) => {
           setTimeout(() => {
             activePhase.value = index
@@ -190,7 +265,6 @@ onMounted(() => {
       },
     })
 
-    // Draw progress line
     $gsap.to(progressLine.value, {
       scrollTrigger: {
         trigger: progressLine.value,
@@ -220,7 +294,6 @@ onMounted(() => {
       ease: 'power3.out',
     })
 
-    // Draw vertical progress line
     $gsap.to(progressLineMobile.value, {
       scrollTrigger: {
         trigger: progressLineMobile.value,
@@ -233,17 +306,17 @@ onMounted(() => {
     })
   }
 
-  // Bottom statement
-  $gsap.set(bottomStatement.value, { y: 20, opacity: 0 })
-  $gsap.to(bottomStatement.value, {
+  // Bottom block
+  $gsap.set(bottomBlock.value, { y: 30, opacity: 0 })
+  $gsap.to(bottomBlock.value, {
     scrollTrigger: {
-      trigger: bottomStatement.value,
+      trigger: bottomBlock.value,
       start: 'top 85%',
       toggleActions: 'play none none reverse',
     },
     y: 0,
     opacity: 1,
-    duration: 0.6,
+    duration: 0.7,
     ease: 'power2.out',
   })
 })

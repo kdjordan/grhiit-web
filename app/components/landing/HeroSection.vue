@@ -1,66 +1,114 @@
 <template>
   <section
     ref="heroSection"
-    class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-grhiit-black"
+    class="relative min-h-[600px] h-screen max-h-[900px] flex items-center justify-center overflow-hidden bg-grhiit-black"
   >
+    <!-- Animated background pulse -->
+    <div class="absolute inset-0 bg-gradient-radial from-grhiit-red/5 via-transparent to-transparent opacity-0" ref="bgPulse"></div>
+
     <!-- Noise texture overlay -->
     <div class="absolute inset-0 opacity-[0.03] pointer-events-none noise-overlay"></div>
+
+    <!-- Vertical accent line -->
+    <div ref="accentLine" class="absolute left-8 md:left-16 top-0 w-[2px] h-0 bg-grhiit-red"></div>
 
     <!-- Content -->
     <div class="relative z-10 container mx-auto px-4 md:px-8">
       <div class="max-w-6xl mx-auto">
-        <!-- Main headline - Italic display with outline accent -->
-        <h1 ref="headline" class="font-display font-extrabold italic uppercase text-grhiit-white leading-brutal tracking-tight-brutal">
-          <span
-            v-for="(word, index) in headlineWords"
-            :key="index"
-            ref="words"
-            class="inline-block mr-[0.2em] last:mr-0"
-            :class="{
-              'text-outline-red text-outline-thick': word === 'TRAINING.'
-            }"
-          >
-            {{ word }}
-          </span>
-        </h1>
+        <!-- Main headline - Two lines stacked -->
+        <div ref="headline" class="perspective-1000">
+          <h1 class="font-display font-extrabold italic uppercase text-grhiit-white leading-brutal tracking-tight-brutal">
+            <!-- Line 1: YOU'RE NOT TRAINING. -->
+            <span class="block overflow-hidden">
+              <span
+                v-for="(word, index) in line1Words"
+                :key="'l1-' + index"
+                ref="line1Refs"
+                class="inline-block mr-[0.2em] last:mr-0 opacity-0"
+                :class="{
+                  'text-outline-red text-outline-thick': word === 'TRAINING.'
+                }"
+              >
+                {{ word }}
+              </span>
+            </span>
+            <!-- Line 2: YOU'RE JUST WORKING OUT. -->
+            <span class="block overflow-hidden mt-2 md:mt-4">
+              <span
+                v-for="(word, index) in line2Words"
+                :key="'l2-' + index"
+                ref="line2Refs"
+                class="inline-block mr-[0.2em] last:mr-0 opacity-0 text-grhiit-white/60"
+              >
+                {{ word }}
+              </span>
+            </span>
+          </h1>
+        </div>
 
-        <!-- Subheadline -->
+        <!-- Separator line -->
+        <div ref="separator" class="mt-10 md:mt-14 w-0 h-[1px] bg-gradient-to-r from-grhiit-red via-grhiit-red/50 to-transparent"></div>
+
+        <!-- Follow-through problem statement -->
         <p
-          ref="subhead"
-          class="mt-8 md:mt-12 text-lg md:text-xl lg:text-2xl font-body text-grhiit-white/70 max-w-2xl opacity-0"
+          ref="problemStatement"
+          class="mt-8 md:mt-10 text-xl md:text-2xl font-body text-grhiit-white/80 max-w-2xl opacity-0"
         >
-          Progressive bodyweight intervals. Mental discipline through sustained intensity.
+          Most people don't have a fitness problem.<br class="hidden md:block" />
+          They have a <span class="text-grhiit-red font-semibold">follow-through</span> problem.
+        </p>
+
+        <!-- Value prop bullets -->
+        <div ref="bullets" class="mt-8 flex flex-wrap gap-x-8 gap-y-2 opacity-0">
+          <span class="font-mono text-sm text-grhiit-white/50 uppercase tracking-widest">Short, brutal intervals</span>
+          <span class="font-mono text-sm text-grhiit-white/50 uppercase tracking-widest">No equipment</span>
+          <span class="font-mono text-sm text-grhiit-white/50 uppercase tracking-widest">No hiding</span>
+        </div>
+
+        <!-- Transformation statement -->
+        <p
+          ref="transformation"
+          class="mt-8 text-lg md:text-xl font-body text-grhiit-white/60 max-w-xl opacity-0"
+        >
+          When you commit to this, you're not just changing your body.<br />
+          <span class="text-grhiit-white font-medium">You're rewriting who you are.</span>
         </p>
 
         <!-- CTA Buttons -->
-        <div ref="ctas" class="mt-10 md:mt-14 flex flex-col sm:flex-row gap-4 opacity-0">
+        <div ref="ctas" class="mt-12 md:mt-16 flex flex-col sm:flex-row gap-4 opacity-0">
           <button
             @click="$emit('openWaitlist')"
-            class="px-8 py-4 bg-grhiit-red text-grhiit-white font-display font-bold italic uppercase tracking-wide text-lg hover:bg-grhiit-red-dark hover:shadow-glow-red transition-all duration-300"
+            class="group relative px-10 py-5 bg-grhiit-red text-grhiit-white font-display font-bold italic uppercase tracking-wide text-lg overflow-hidden hover:shadow-glow-red-lg transition-all duration-300"
           >
-            Join the First 1,000
+            <span class="relative z-10">Join the First 1,000</span>
+            <div class="absolute inset-0 bg-grhiit-red-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
           </button>
-          <NuxtLink
-            to="/program"
-            class="px-8 py-4 border-2 border-grhiit-white/30 text-grhiit-white font-display font-bold italic uppercase tracking-wide text-lg hover:border-grhiit-white hover:bg-grhiit-white/5 transition-all duration-300 text-center"
+          <a
+            href="#what-is-grhiit"
+            class="px-10 py-5 border-2 border-grhiit-white/20 text-grhiit-white font-display font-bold italic uppercase tracking-wide text-lg hover:border-grhiit-red hover:text-grhiit-red transition-all duration-300 text-center"
           >
-            What Is This
-          </NuxtLink>
+            What Is This?
+          </a>
         </div>
+
+        <!-- Founding member note -->
+        <p ref="founderNote" class="mt-6 text-sm font-body text-grhiit-white/40 max-w-md opacity-0">
+          Become a founding member and get early access, launch-day discounts, and the GRHIIT starter pack.
+        </p>
       </div>
     </div>
 
     <!-- Scroll indicator -->
     <div ref="scrollIndicator" class="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0">
-      <div class="flex flex-col items-center gap-2 text-grhiit-white/40">
-        <span class="text-xs font-mono uppercase tracking-widest">Scroll</span>
+      <div class="flex flex-col items-center gap-2 text-grhiit-white/30">
+        <div class="w-[1px] h-8 bg-gradient-to-b from-transparent via-grhiit-white/30 to-grhiit-white/30"></div>
         <svg
-          class="w-5 h-5 animate-bounce"
+          class="w-4 h-4 animate-bounce"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
         >
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7"></path>
         </svg>
       </div>
     </div>
@@ -75,96 +123,168 @@ defineEmits<{
 const { $gsap } = useNuxtApp()
 
 const heroSection = ref<HTMLElement | null>(null)
-const headline = ref<HTMLElement | null>(null)
-const words = ref<HTMLElement[]>([])
-const subhead = ref<HTMLElement | null>(null)
+const bgPulse = ref<HTMLElement | null>(null)
+const accentLine = ref<HTMLElement | null>(null)
+const line1Refs = ref<HTMLElement[]>([])
+const line2Refs = ref<HTMLElement[]>([])
+const separator = ref<HTMLElement | null>(null)
+const problemStatement = ref<HTMLElement | null>(null)
+const bullets = ref<HTMLElement | null>(null)
+const transformation = ref<HTMLElement | null>(null)
 const ctas = ref<HTMLElement | null>(null)
+const founderNote = ref<HTMLElement | null>(null)
 const scrollIndicator = ref<HTMLElement | null>(null)
 
-const headlineWords = ["YOU'RE", "NOT", "TRAINING.", "YOU'RE", "JUST", "WORKING", "OUT."]
+const line1Words = ["YOU'RE", "NOT", "TRAINING."]
+const line2Words = ["YOU'RE", "JUST", "WORKING", "OUT."]
 
 onMounted(() => {
-  if (!$gsap || !headline.value) return
+  if (!$gsap) return
 
-  const tl = $gsap.timeline({ delay: 0.3 })
+  // Set initial states immediately before timeline starts
+  // Using autoAlpha (opacity + visibility) for reliable hiding
+  $gsap.set(line1Refs.value, { y: 100, autoAlpha: 0, rotateX: -30 })
+  $gsap.set(line2Refs.value, { x: -40, autoAlpha: 0 })
+  $gsap.set(problemStatement.value, { y: 20, autoAlpha: 0 })
+  $gsap.set(bullets.value, { y: 15, autoAlpha: 0 })
+  $gsap.set(transformation.value, { y: 15, autoAlpha: 0 })
+  $gsap.set(ctas.value, { y: 20, autoAlpha: 0, scale: 0.98 })
+  $gsap.set(founderNote.value, { autoAlpha: 0 })
+  $gsap.set(scrollIndicator.value, { autoAlpha: 0 })
 
-  // Animate each word from bottom with stagger
-  tl.fromTo(
-    words.value,
-    {
-      y: 80,
-      opacity: 0,
-      rotateX: -20,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      rotateX: 0,
-      duration: 0.7,
-      stagger: 0.08,
-      ease: "power3.out",
-    }
-  )
+  const tl = $gsap.timeline({ delay: 0.2 })
 
-  // Fade in subhead
+  // Accent line draws down
+  tl.to(accentLine.value, {
+    height: '40%',
+    duration: 0.8,
+    ease: 'power2.out',
+  })
+
+  // Line 1 words slam in
   tl.to(
-    subhead.value,
+    line1Refs.value,
     {
-      opacity: 1,
       y: 0,
+      autoAlpha: 1,
+      rotateX: 0,
       duration: 0.6,
-      ease: "power2.out",
+      stagger: 0.1,
+      ease: 'power4.out',
     },
-    "-=0.2"
+    '-=0.4'
   )
 
-  // Fade in CTAs
+  // Background pulse on "TRAINING."
+  tl.to(bgPulse.value, {
+    opacity: 1,
+    duration: 0.3,
+    ease: 'power2.out',
+  }, '-=0.2')
+
+  tl.to(bgPulse.value, {
+    opacity: 0,
+    duration: 0.8,
+    ease: 'power2.out',
+  })
+
+  // Line 2 words slide in (slightly delayed, subdued)
+  tl.to(
+    line2Refs.value,
+    {
+      x: 0,
+      autoAlpha: 1,
+      duration: 0.5,
+      stagger: 0.06,
+      ease: 'power3.out',
+    },
+    '-=0.6'
+  )
+
+  // Separator line draws
+  tl.to(separator.value, {
+    width: '200px',
+    duration: 0.6,
+    ease: 'power2.inOut',
+  }, '-=0.2')
+
+  // Problem statement fades in
+  tl.to(
+    problemStatement.value,
+    { y: 0, autoAlpha: 1, duration: 0.5, ease: 'power2.out' },
+    '-=0.2'
+  )
+
+  // Bullets stagger in
+  tl.to(
+    bullets.value,
+    { y: 0, autoAlpha: 1, duration: 0.4, ease: 'power2.out' },
+    '-=0.1'
+  )
+
+  // Transformation statement
+  tl.to(
+    transformation.value,
+    { y: 0, autoAlpha: 1, duration: 0.5, ease: 'power2.out' },
+    '-=0.1'
+  )
+
+  // CTAs pop in
   tl.to(
     ctas.value,
+    { y: 0, autoAlpha: 1, scale: 1, duration: 0.5, ease: 'back.out(1.2)' },
+    '-=0.2'
+  )
+
+  // Founder note
+  tl.to(founderNote.value, {
+    autoAlpha: 1,
+    duration: 0.4,
+    ease: 'power2.out',
+  }, '-=0.2')
+
+  // Scroll indicator
+  tl.to(scrollIndicator.value, {
+    autoAlpha: 1,
+    duration: 0.4,
+    ease: 'power2.out',
+  }, '-=0.1')
+
+  // Parallax effect on scroll - use fromTo to ensure proper reversal
+  $gsap.fromTo(
+    [line1Refs.value, line2Refs.value],
     {
-      opacity: 1,
       y: 0,
-      duration: 0.6,
-      ease: "power2.out",
-    },
-    "-=0.3"
-  )
-
-  // Fade in scroll indicator
-  tl.to(
-    scrollIndicator.value,
-    {
       opacity: 1,
-      duration: 0.4,
-      ease: "power2.out",
     },
-    "-=0.2"
+    {
+      scrollTrigger: {
+        trigger: heroSection.value,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1,
+      },
+      y: 80,
+      opacity: 0.2,
+      ease: 'none',
+    }
   )
-
-  // Parallax effect on scroll
-  $gsap.to(headline.value, {
-    scrollTrigger: {
-      trigger: heroSection.value,
-      start: "top top",
-      end: "bottom top",
-      scrub: 1,
-    },
-    y: 100,
-    opacity: 0.3,
-    ease: "none",
-  })
 })
 </script>
 
 <style scoped>
 h1 {
-  font-size: clamp(2.5rem, 10vw, 8rem);
+  font-size: clamp(2.2rem, 9vw, 7rem);
   line-height: 0.9;
 }
 
 @media (min-width: 768px) {
   h1 {
-    font-size: clamp(4rem, 12vw, 10rem);
+    font-size: clamp(3.5rem, 11vw, 9rem);
   }
+}
+
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at center, var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to));
 }
 </style>

@@ -3,11 +3,11 @@
     <!-- Hero Section -->
     <LandingHeroSection @open-waitlist="openWaitlistModal" />
 
-    <!-- Problem-Agitate Section -->
+    <!-- Problem/Commitment Section -->
     <LandingProblemSection />
 
-    <!-- Stats Row -->
-    <LandingStatsRow />
+    <!-- What is GRHIIT / System Explainer -->
+    <LandingSystemExplainer />
 
     <!-- 8-Week Timeline -->
     <LandingTimelineRoadmap />
@@ -15,7 +15,7 @@
     <!-- Transformation Section -->
     <LandingTransformSection />
 
-    <!-- CTA Section -->
+    <!-- Final CTA Section -->
     <LandingCtaSection @open-waitlist="openWaitlistModal" />
 
     <!-- Waitlist Modal -->
@@ -51,9 +51,9 @@ const handleWaitlistSubmit = (data: { email: string; name: string; success: bool
 useSeoMeta({
   title: "GRHIIT - You're Not Training. You're Just Working Out.",
   description:
-    "Progressive bodyweight intervals. Mental discipline through sustained intensity. 220+ reps. 16 minutes. Zero equipment. Join the first 1,000.",
+    "GRHIIT is a bodyweight-only training system built to turn you into the kind of person who does hard things on purpose. Short, brutal intervals. No equipment. No hiding. Join the first 1,000.",
   ogTitle: "GRHIIT - You're Not Training. You're Just Working Out.",
   ogDescription:
-    "Progressive bodyweight intervals. Mental discipline through sustained intensity. Join the first 1,000.",
+    "A bodyweight-only training system. Short, brutal intervals. No equipment. No hiding. Join the first 1,000 founding members.",
 })
 </script>
