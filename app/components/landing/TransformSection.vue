@@ -6,7 +6,7 @@
     <div class="container mx-auto px-4 md:px-8 relative z-10">
       <!-- Section header -->
       <div ref="headerBlock" class="max-w-4xl mx-auto mb-16 md:mb-24 opacity-0">
-        <h2 class="font-display font-extrabold italic text-3xl md:text-4xl lg:text-5xl uppercase text-grhiit-white tracking-tight-brutal leading-brutal">
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward">
           The Transformation
         </h2>
       </div>
@@ -79,7 +79,7 @@
           <p class="text-lg md:text-xl font-body text-grhiit-white/50 mb-4">
             That's not "getting in shape."
           </p>
-          <p class="font-display font-extrabold italic text-2xl md:text-3xl lg:text-4xl uppercase tracking-tight text-grhiit-white leading-tight">
+          <p class="font-display text-2xl md:text-3xl lg:text-4xl uppercase tracking-wide text-grhiit-white leading-tight skew-forward">
             That's building a new
             <span class="text-grhiit-red">default identity.</span>
           </p>

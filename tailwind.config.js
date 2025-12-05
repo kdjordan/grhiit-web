@@ -28,14 +28,14 @@ export default {
         },
       },
       fontFamily: {
-        // Display: Barlow Condensed - aggressive, forward-leaning (use italic for kinetic energy)
-        display: ['"Barlow Condensed"', "Arial Narrow", "sans-serif"],
+        // Display: Bebas Neue - razor-sharp athletic headlines (use skew for forward momentum)
+        display: ['"Bebas Neue"', "Impact", "Arial Narrow", "sans-serif"],
         // Body: DM Sans - clean, modern readability
         body: ['"DM Sans"', "Arial", "sans-serif"],
         // Mono: JetBrains Mono - for stats/timers/ratios
         mono: ['"JetBrains Mono"', "Consolas", "monospace"],
         // Legacy aliases
-        primary: ['"Barlow Condensed"', "Arial Narrow", "sans-serif"],
+        primary: ['"Bebas Neue"', "Impact", "Arial Narrow", "sans-serif"],
         secondary: ['"DM Sans"', "Arial", "sans-serif"],
       },
       letterSpacing: {
@@ -96,22 +96,22 @@ export default {
               },
             },
             h1: {
-              fontFamily: '"Barlow Condensed", Arial Narrow, sans-serif',
-              fontWeight: '800',
+              fontFamily: '"Bebas Neue", Impact, Arial Narrow, sans-serif',
+              fontWeight: '400',
               textTransform: 'uppercase',
-              letterSpacing: '-0.02em',
+              letterSpacing: '0.02em',
             },
             h2: {
-              fontFamily: '"Barlow Condensed", Arial Narrow, sans-serif',
-              fontWeight: '700',
+              fontFamily: '"Bebas Neue", Impact, Arial Narrow, sans-serif',
+              fontWeight: '400',
               textTransform: 'uppercase',
-              letterSpacing: '-0.02em',
+              letterSpacing: '0.02em',
               borderBottom: '1px solid rgba(250, 250, 250, 0.1)',
               paddingBottom: '0.5em',
             },
             h3: {
-              fontFamily: '"Barlow Condensed", Arial Narrow, sans-serif',
-              fontWeight: '600',
+              fontFamily: '"Bebas Neue", Impact, Arial Narrow, sans-serif',
+              fontWeight: '400',
               textTransform: 'uppercase',
             },
             blockquote: {

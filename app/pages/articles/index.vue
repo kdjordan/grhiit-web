@@ -10,7 +10,7 @@
 
       <div class="container mx-auto px-4 md:px-8 relative z-10">
         <div class="max-w-4xl">
-          <h1 class="font-display font-extrabold italic text-5xl md:text-6xl lg:text-7xl uppercase text-grhiit-white tracking-tight-brutal leading-brutal">
+          <h1 class="font-display text-5xl md:text-6xl lg:text-7xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward">
             Articles
           </h1>
           <p class="mt-6 text-xl md:text-2xl font-body text-grhiit-white/70 max-w-2xl leading-relaxed">

@@ -10,7 +10,7 @@
 
       <div class="container mx-auto px-4 md:px-8 relative z-10">
         <div class="max-w-4xl">
-          <h1 class="font-display font-extrabold italic text-5xl md:text-6xl lg:text-7xl uppercase text-grhiit-white tracking-tight-brutal leading-brutal">
+          <h1 class="font-display text-5xl md:text-6xl lg:text-7xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward">
             About <span class="text-outline-red text-outline-thick">GRHIIT</span>
           </h1>
           <p class="mt-6 text-xl md:text-2xl font-body text-grhiit-white/70 max-w-2xl leading-relaxed">
@@ -105,7 +105,7 @@
       <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-grhiit-red/50 to-transparent"></div>
 
       <div class="container mx-auto px-4 md:px-8 text-center">
-        <h2 class="font-display font-extrabold italic text-3xl md:text-4xl lg:text-5xl uppercase text-grhiit-white tracking-tight-brutal mb-6">
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl uppercase text-grhiit-white tracking-wide mb-6 skew-forward">
           All it takes is all you've got.
         </h2>
         <p class="font-body text-lg text-grhiit-white/60 mb-10 max-w-xl mx-auto">
@@ -113,7 +113,7 @@
         </p>
         <button
           @click="$emit('openWaitlist')"
-          class="px-10 py-4 bg-grhiit-red text-grhiit-white font-display font-bold italic uppercase tracking-widest text-lg hover:bg-grhiit-red-dark transition-all duration-300 hover:shadow-glow-red hover:scale-[1.02]"
+          class="px-10 py-4 bg-grhiit-red text-grhiit-white font-display uppercase tracking-widest text-lg hover:bg-grhiit-red-dark transition-all duration-300 hover:shadow-glow-red hover:scale-[1.02]"
         >
           Join the Movement
         </button>

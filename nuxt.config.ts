@@ -85,10 +85,10 @@ export default defineNuxtConfig({
         // Google Fonts preconnect for performance
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
-        // Load Barlow Condensed (display - italic for kinetic energy), DM Sans (body), JetBrains Mono (stats)
+        // Load Bebas Neue (display - sharp athletic headlines), DM Sans (body), JetBrains Mono (stats)
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+          href: "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
         }
       ],
     }

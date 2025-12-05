@@ -15,7 +15,7 @@
         </div>
 
         <!-- Title -->
-        <h1 class="font-display font-extrabold text-4xl md:text-5xl lg:text-6xl uppercase text-grhiit-white tracking-tight-brutal leading-brutal">
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward">
           {{ article?.title }}
         </h1>
 

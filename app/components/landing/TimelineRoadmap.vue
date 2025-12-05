@@ -8,7 +8,7 @@
       <div class="container mx-auto px-4 md:px-8">
         <!-- Section header -->
         <div ref="header" class="max-w-4xl mx-auto mb-16 md:mb-24 opacity-0">
-          <h2 class="font-display font-extrabold italic text-4xl md:text-5xl lg:text-6xl uppercase text-grhiit-white tracking-tight-brutal leading-brutal">
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward">
             The <span class="text-grhiit-red">8-Week</span> Cycle
           </h2>
           <div class="mt-8 space-y-4">

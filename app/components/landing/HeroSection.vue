@@ -1,7 +1,7 @@
 <template>
   <section
     ref="heroSection"
-    class="relative min-h-[600px] h-screen max-h-[900px] flex items-center justify-center overflow-hidden bg-grhiit-black"
+    class="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden bg-grhiit-black pt-24 pb-16 md:pt-32 md:pb-24"
   >
     <!-- Animated background pulse -->
     <div class="absolute inset-0 bg-gradient-radial from-grhiit-red/5 via-transparent to-transparent opacity-0" ref="bgPulse"></div>
@@ -17,7 +17,7 @@
       <div class="max-w-6xl mx-auto">
         <!-- Main headline - Two lines stacked -->
         <div ref="headline" class="perspective-1000">
-          <h1 class="font-display font-extrabold italic uppercase text-grhiit-white leading-brutal tracking-tight-brutal">
+          <h1 class="font-display uppercase text-grhiit-white leading-brutal tracking-wide skew-forward">
             <!-- Line 1: YOU'RE NOT TRAINING. -->
             <span class="block overflow-hidden">
               <span
@@ -78,14 +78,14 @@
         <div ref="ctas" class="mt-12 md:mt-16 flex flex-col sm:flex-row gap-4 opacity-0">
           <button
             @click="$emit('openWaitlist')"
-            class="group relative px-10 py-5 bg-grhiit-red text-grhiit-white font-display font-bold italic uppercase tracking-wide text-lg overflow-hidden hover:shadow-glow-red-lg transition-all duration-300"
+            class="group relative px-10 py-5 bg-grhiit-red text-grhiit-white font-display uppercase tracking-wider text-lg overflow-hidden hover:shadow-glow-red-lg transition-all duration-300"
           >
             <span class="relative z-10">Join the First 1,000</span>
             <div class="absolute inset-0 bg-grhiit-red-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
           </button>
           <a
             href="#what-is-grhiit"
-            class="px-10 py-5 border-2 border-grhiit-white/20 text-grhiit-white font-display font-bold italic uppercase tracking-wide text-lg hover:border-grhiit-red hover:text-grhiit-red transition-all duration-300 text-center"
+            class="px-10 py-5 border-2 border-grhiit-white/20 text-grhiit-white font-display uppercase tracking-wider text-lg hover:border-grhiit-red hover:text-grhiit-red transition-all duration-300 text-center"
           >
             What Is This?
           </a>

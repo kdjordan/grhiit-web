@@ -22,7 +22,7 @@
         class="max-w-4xl mx-auto text-center mb-16 md:mb-24 opacity-0"
       >
         <h2
-          class="font-display font-extrabold italic text-3xl md:text-4xl lg:text-5xl uppercase text-grhiit-white tracking-tight-brutal leading-brutal"
+          class="font-display text-3xl md:text-4xl lg:text-5xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward"
         >
           GRHIIT is a discipline protocol
           <span class="block mt-2 text-grhiit-white/50"

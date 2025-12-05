@@ -20,7 +20,7 @@
         <!-- Main headline -->
         <h2
           ref="headline"
-          class="font-display font-extrabold italic text-4xl md:text-5xl lg:text-6xl uppercase text-grhiit-white tracking-tight-brutal leading-brutal opacity-0"
+          class="font-display text-4xl md:text-5xl lg:text-6xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward opacity-0"
         >
           Join the First
           <span class="block mt-2 md:mt-4 text-outline-red text-outline-thick">1,000</span>
@@ -54,7 +54,7 @@
         <div ref="ctaButton" class="mt-12 md:mt-14 opacity-0">
           <button
             @click="$emit('openWaitlist')"
-            class="group relative px-12 py-5 bg-grhiit-red text-grhiit-white font-display font-bold italic uppercase tracking-widest text-lg md:text-xl overflow-hidden hover:shadow-glow-red-lg transition-all duration-300 hover:scale-[1.02]"
+            class="group relative px-12 py-5 bg-grhiit-red text-grhiit-white font-display uppercase tracking-widest text-lg md:text-xl overflow-hidden hover:shadow-glow-red-lg transition-all duration-300 hover:scale-[1.02]"
           >
             <span class="relative z-10">Join the Waitlist</span>
             <div class="absolute inset-0 bg-grhiit-red-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>

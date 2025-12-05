@@ -68,6 +68,24 @@
     text-stroke-width: 3px;
   }
 
+  /* Giant typography for dramatic visual anchors */
+  .text-giant {
+    font-size: clamp(6rem, 18vw, 16rem);
+    line-height: 0.85;
+    color: transparent;
+    -webkit-text-stroke: 2px #E8110F;
+    text-stroke: 2px #E8110F;
+  }
+
+  /* Even larger variant for desktop */
+  .text-giant-xl {
+    font-size: clamp(8rem, 22vw, 22rem);
+    line-height: 0.8;
+    color: transparent;
+    -webkit-text-stroke: 3px #E8110F;
+    text-stroke: 3px #E8110F;
+  }
+
   /* Image treatment utilities */
   .img-grayscale {
     filter: grayscale(100%) contrast(1.1);
@@ -110,6 +128,22 @@
   /* Perspective for 3D transforms */
   .perspective-1000 {
     perspective: 1000px;
+  }
+
+  /* Forward-leaning skew for athletic display text */
+  .skew-forward {
+    transform: skewX(-8deg);
+    display: inline-block;
+  }
+
+  /* Skew container - skews children but keeps text baseline aligned */
+  .skew-container {
+    transform: skewX(-8deg);
+  }
+
+  /* Counter-skew for nested elements that shouldn't be skewed */
+  .skew-reset {
+    transform: skewX(8deg);
   }
 
   /* Animation delays for staggered animations */
