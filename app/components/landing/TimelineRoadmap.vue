@@ -9,30 +9,12 @@
         <!-- Section header -->
         <div ref="header" class="max-w-4xl mx-auto mb-16 md:mb-24 opacity-0">
           <h2 class="font-display text-4xl md:text-5xl lg:text-6xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward">
-            The <span class="text-grhiit-red">8-Week</span> Cycle
+            8 WEEKS. ONE DIRECTION:
+            <span class="block mt-2 text-grhiit-red">FORWARD.</span>
           </h2>
-          <div class="mt-8 space-y-4">
-            <p class="text-lg md:text-xl font-body text-grhiit-white/70">
-              Same simple movements. Smarter structure. Higher demand on your focus, lungs, and resolve.
-            </p>
-            <p class="text-lg font-body text-grhiit-white/50">
-              Over eight weeks:
-            </p>
-          </div>
-        </div>
-
-        <!-- Progression bullets -->
-        <div ref="progressionList" class="max-w-3xl mx-auto mb-16 md:mb-20 opacity-0">
-          <ul class="space-y-4 border-l-[3px] border-grhiit-red/30 pl-6 md:pl-8">
-            <li
-              v-for="(item, index) in progressionItems"
-              :key="index"
-              ref="progressionRefs"
-              class="text-lg md:text-xl font-body text-grhiit-white/60 opacity-0"
-            >
-              {{ item }}
-            </li>
-          </ul>
+          <p class="mt-8 text-xl md:text-2xl font-body text-grhiit-white/70">
+            Every week, rest shrinks. Work expands. You adapt.
+          </p>
         </div>
 
         <!-- Timeline - Desktop horizontal -->
@@ -142,17 +124,9 @@
             You get harder to break.
           </p>
 
-          <div class="mt-10 pt-8 border-t border-grhiit-white/10 space-y-3">
-            <p class="text-lg font-body text-grhiit-white/60">
-              You'll feel it in your legs.
-            </p>
-            <p class="text-lg font-body text-grhiit-white/60">
-              You'll hear it in your breathing.
-            </p>
-            <p class="text-xl font-body text-grhiit-white">
-              You'll notice it most in the way you start to handle everything else in your life.
-            </p>
-          </div>
+          <p class="mt-8 text-xl font-body text-grhiit-white/70">
+            And that doesn't stay in the workout. It bleeds into everything.
+          </p>
         </div>
       </div>
     </div>
@@ -164,8 +138,6 @@ const { $gsap } = useNuxtApp()
 
 const timelineSection = ref<HTMLElement | null>(null)
 const header = ref<HTMLElement | null>(null)
-const progressionList = ref<HTMLElement | null>(null)
-const progressionRefs = ref<HTMLElement[]>([])
 const progressLine = ref<HTMLElement | null>(null)
 const progressLineMobile = ref<HTMLElement | null>(null)
 const phaseBlocks = ref<HTMLElement[]>([])
@@ -173,12 +145,6 @@ const phaseBlocksMobile = ref<HTMLElement[]>([])
 const bottomBlock = ref<HTMLElement | null>(null)
 
 const activePhase = ref(-1)
-
-const progressionItems = [
-  'Your rest windows tighten.',
-  'Your work blocks feel longer.',
-  'Your time "in the hurt" increases — slowly enough to be doable, ruthlessly enough to change you.',
-]
 
 interface Phase {
   weeks: string
@@ -188,10 +154,10 @@ interface Phase {
 }
 
 const phases: Phase[] = [
-  { weeks: 'Week 1-2', weekNum: '01', ratio: '6s:3s', description: 'Learning the movements, fighting the urge to stop' },
-  { weeks: 'Week 3-4', weekNum: '02', ratio: '8s:3s', description: 'Recovering faster, building trust in yourself' },
-  { weeks: 'Week 5-6', weekNum: '03', ratio: '10s:2s', description: 'Intensity rises, mental calluses form' },
-  { weeks: 'Week 7-8', weekNum: '04', ratio: '12s:2s', description: 'Peak capacity, new identity locked in' },
+  { weeks: 'Week 1-2', weekNum: '01', ratio: '6s:3s', description: 'Survival. Your excuses will scream. Keep moving.' },
+  { weeks: 'Week 3-4', weekNum: '02', ratio: '8s:3s', description: 'Adaptation. Your body begins to obey your will.' },
+  { weeks: 'Week 5-6', weekNum: '03', ratio: '10s:2s', description: 'Hardening. Discomfort becomes familiar.' },
+  { weeks: 'Week 7-8', weekNum: '04', ratio: '12s:2s', description: 'Forged. You are not the same person who started.' },
 ]
 
 onMounted(() => {
@@ -209,36 +175,6 @@ onMounted(() => {
     opacity: 1,
     duration: 0.7,
     ease: 'power3.out',
-  })
-
-  // Progression list
-  $gsap.set(progressionList.value, { y: 20, opacity: 0 })
-  $gsap.to(progressionList.value, {
-    scrollTrigger: {
-      trigger: progressionList.value,
-      start: 'top 75%',
-      toggleActions: 'play none none reverse',
-    },
-    y: 0,
-    opacity: 1,
-    duration: 0.5,
-    ease: 'power2.out',
-  })
-
-  // Progression items stagger
-  $gsap.set(progressionRefs.value, { x: -20, opacity: 0 })
-  $gsap.to(progressionRefs.value, {
-    scrollTrigger: {
-      trigger: progressionList.value,
-      start: 'top 70%',
-      toggleActions: 'play none none reverse',
-    },
-    x: 0,
-    opacity: 1,
-    duration: 0.5,
-    stagger: 0.15,
-    ease: 'power2.out',
-    delay: 0.2,
   })
 
   // Desktop timeline

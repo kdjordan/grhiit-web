@@ -7,7 +7,7 @@
       <!-- Section header -->
       <div ref="headerBlock" class="max-w-4xl mx-auto mb-16 md:mb-24 opacity-0">
         <h2 class="font-display text-3xl md:text-4xl lg:text-5xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward">
-          The Transformation
+          WHO YOU'LL <span class="text-grhiit-red">BECOME</span>
         </h2>
       </div>
 
@@ -25,12 +25,15 @@
             <div class="font-display font-extrabold text-5xl md:text-6xl text-grhiit-white/20 tracking-tighter-brutal leading-none mb-6">
               01
             </div>
-            <p class="text-lg font-body text-grhiit-white/60 leading-relaxed">
-              You're just trying to survive the timer. You're learning the movements, fighting the urge to stop, realizing how loud your excuses really are.
+            <p class="text-lg font-body text-grhiit-white/60 leading-relaxed mb-4">
+              You survive. Your body wants to stop. Your mind offers every excuse it knows.
+            </p>
+            <p class="text-lg font-body text-grhiit-white/80 leading-relaxed">
+              This is the real test — not the workout. The decision to continue anyway.
             </p>
           </div>
 
-          <!-- Weeks 3-5 -->
+          <!-- Week 4 -->
           <div
             ref="stage2"
             class="relative p-6 md:p-8 md:border-r border-grhiit-gray-800 opacity-0"
@@ -40,13 +43,16 @@
 
             <div class="relative">
               <div class="font-mono text-xs uppercase tracking-widest text-grhiit-white/50 mb-3">
-                Weeks 3-5
+                Week 4
               </div>
               <div class="font-display font-extrabold text-5xl md:text-6xl text-grhiit-white/40 tracking-tighter-brutal leading-none mb-6">
-                03
+                04
               </div>
-              <p class="text-lg font-body text-grhiit-white/70 leading-relaxed">
-                You recover faster. You hear the cue, and instead of bargaining, you move. You start trusting yourself again.
+              <p class="text-lg font-body text-grhiit-white/70 leading-relaxed mb-4">
+                Something shifts. The bargaining stops. The timer starts, and you move — not because you want to, but because that's what you do now.
+              </p>
+              <p class="text-lg font-body text-grhiit-white/90 leading-relaxed">
+                You start trusting yourself again. Maybe for the first time in years.
               </p>
             </div>
           </div>
@@ -67,8 +73,16 @@
               <div class="font-display font-extrabold text-5xl md:text-6xl text-grhiit-red tracking-tighter-brutal leading-none mb-6">
                 08
               </div>
-              <p class="text-lg font-body text-grhiit-white leading-relaxed">
-                You're sustaining intensity you couldn't have imagined on Day 1. You don't wait to feel motivated — you move because that's who you are now.
+              <p class="text-lg font-body text-grhiit-white leading-relaxed mb-4">
+                You don't recognize who you were eight weeks ago. Not because of how you look. Because of what you've proven.
+              </p>
+              <div class="space-y-2 text-grhiit-white/70 font-body">
+                <p>The difficult conversation? <span class="text-grhiit-white">Not that hard.</span></p>
+                <p>The early morning? <span class="text-grhiit-white">Not that hard.</span></p>
+                <p>The commitment you keep breaking? <span class="text-grhiit-white">Not that hard.</span></p>
+              </div>
+              <p class="mt-4 text-lg font-body text-grhiit-red font-semibold">
+                Because you know what hard actually is now.
               </p>
             </div>
           </div>
@@ -77,11 +91,11 @@
         <!-- Final statement -->
         <div ref="finalStatement" class="mt-16 md:mt-24 pt-12 border-t border-grhiit-white/10 text-center opacity-0">
           <p class="text-lg md:text-xl font-body text-grhiit-white/50 mb-4">
-            That's not "getting in shape."
+            Fitness is the side effect.
           </p>
           <p class="font-display text-2xl md:text-3xl lg:text-4xl uppercase tracking-wide text-grhiit-white leading-tight skew-forward">
-            That's building a new
-            <span class="text-grhiit-red">default identity.</span>
+            The real product is you —
+            <span class="text-grhiit-red">recalibrated.</span>
           </p>
         </div>
       </div>

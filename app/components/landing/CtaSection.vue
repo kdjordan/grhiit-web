@@ -27,27 +27,16 @@
         </h2>
 
         <!-- Context -->
-        <p
+        <div
           ref="contextCopy"
-          class="mt-8 text-lg md:text-xl font-body text-grhiit-white/60 opacity-0"
+          class="mt-8 max-w-xl mx-auto opacity-0"
         >
-          GRHIIT is in pre-launch. We're building Cycle 1 and bringing in the first 1,000 people who want to be there from the beginning.
-        </p>
-
-        <!-- Benefits list -->
-        <div ref="benefitsList" class="mt-10 space-y-4 text-left max-w-md mx-auto opacity-0">
-          <div
-            v-for="(benefit, index) in benefits"
-            :key="index"
-            class="flex items-start gap-4"
-          >
-            <div class="flex-shrink-0 w-6 h-6 mt-0.5 border border-grhiit-red flex items-center justify-center">
-              <svg class="w-3 h-3 text-grhiit-red" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-            </div>
-            <span class="font-body text-grhiit-white/80">{{ benefit }}</span>
-          </div>
+          <p class="text-lg md:text-xl font-body text-grhiit-white/60 mb-4">
+            We're building Cycle 1 and bringing in the first 1,000 people who want to be there from the beginning.
+          </p>
+          <p class="text-lg md:text-xl font-body text-grhiit-white/80">
+            Founding members get early access, launch-day pricing, and the GRHIIT Starter PDF to begin today.
+          </p>
         </div>
 
         <!-- CTA Button -->
@@ -56,7 +45,7 @@
             @click="$emit('openWaitlist')"
             class="group relative px-12 py-5 bg-grhiit-red text-grhiit-white font-display uppercase tracking-widest text-lg md:text-xl overflow-hidden hover:shadow-glow-red-lg transition-all duration-300 hover:scale-[1.02]"
           >
-            <span class="relative z-10">Join the Waitlist</span>
+            <span class="relative z-10">Claim Your Spot</span>
             <div class="absolute inset-0 bg-grhiit-red-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
           </button>
         </div>
@@ -87,16 +76,8 @@ const ctaSection = ref<HTMLElement | null>(null)
 const badge = ref<HTMLElement | null>(null)
 const headline = ref<HTMLElement | null>(null)
 const contextCopy = ref<HTMLElement | null>(null)
-const benefitsList = ref<HTMLElement | null>(null)
 const ctaButton = ref<HTMLElement | null>(null)
 const closingHook = ref<HTMLElement | null>(null)
-
-const benefits = [
-  'Claim founding member status',
-  'Get early access when Cycle 1 drops',
-  'Receive launch-day discounts',
-  'Get the GRHIIT Starter PDF so you can begin your transformation before the app launches',
-]
 
 onMounted(() => {
   if (!$gsap || !ctaSection.value) return
@@ -142,19 +123,6 @@ onMounted(() => {
       ease: 'power2.out',
     },
     '-=0.3'
-  )
-
-  // Benefits list
-  $gsap.set(benefitsList.value, { y: 30, opacity: 0 })
-  tl.to(
-    benefitsList.value,
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      ease: 'power2.out',
-    },
-    '-=0.2'
   )
 
   // CTA button

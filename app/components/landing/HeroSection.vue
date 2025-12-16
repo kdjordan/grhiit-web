@@ -15,30 +15,30 @@
     <!-- Content -->
     <div class="relative z-10 container mx-auto px-4 md:px-8">
       <div class="max-w-6xl mx-auto">
-        <!-- Main headline - Two lines stacked -->
+        <!-- Main headline -->
         <div ref="headline" class="perspective-1000">
           <h1 class="font-display uppercase text-grhiit-white leading-brutal tracking-wide skew-forward">
-            <!-- Line 1: YOU'RE NOT TRAINING. -->
+            <!-- Line 1: YOU ALREADY KNOW -->
             <span class="block overflow-hidden">
               <span
                 v-for="(word, index) in line1Words"
                 :key="'l1-' + index"
                 ref="line1Refs"
                 class="inline-block mr-[0.2em] last:mr-0 opacity-0"
-                :class="{
-                  'text-outline-red text-outline-thick': word === 'TRAINING.'
-                }"
               >
                 {{ word }}
               </span>
             </span>
-            <!-- Line 2: YOU'RE JUST WORKING OUT. -->
+            <!-- Line 2: YOU'RE CAPABLE OF MORE. -->
             <span class="block overflow-hidden mt-2 md:mt-4">
               <span
                 v-for="(word, index) in line2Words"
                 :key="'l2-' + index"
                 ref="line2Refs"
-                class="inline-block mr-[0.2em] last:mr-0 opacity-0 text-grhiit-white/60"
+                class="inline-block mr-[0.2em] last:mr-0 opacity-0"
+                :class="{
+                  'text-outline-red text-outline-thick': word === 'MORE.'
+                }"
               >
                 {{ word }}
               </span>
@@ -49,30 +49,25 @@
         <!-- Separator line -->
         <div ref="separator" class="mt-10 md:mt-14 w-0 h-[1px] bg-gradient-to-r from-grhiit-red via-grhiit-red/50 to-transparent"></div>
 
-        <!-- Follow-through problem statement -->
-        <p
+        <!-- Subheadline - the voice -->
+        <div
           ref="problemStatement"
-          class="mt-8 md:mt-10 text-xl md:text-2xl font-body text-grhiit-white/80 max-w-2xl opacity-0"
+          class="mt-8 md:mt-10 max-w-2xl opacity-0"
         >
-          Most people don't have a fitness problem.<br class="hidden md:block" />
-          They have a <span class="text-grhiit-red font-semibold">follow-through</span> problem.
-        </p>
-
-        <!-- Value prop bullets -->
-        <div ref="bullets" class="mt-8 flex flex-wrap gap-x-8 gap-y-2 opacity-0">
-          <span class="font-mono text-sm text-grhiit-white/50 uppercase tracking-widest">Short, brutal intervals</span>
-          <span class="font-mono text-sm text-grhiit-white/50 uppercase tracking-widest">No equipment</span>
-          <span class="font-mono text-sm text-grhiit-white/50 uppercase tracking-widest">No hiding</span>
+          <p class="text-xl md:text-2xl font-body text-grhiit-white/70">
+            That voice that won't shut up? The one that says "this isn't it"?
+          </p>
+          <p class="mt-3 text-2xl md:text-3xl font-display uppercase tracking-wide text-grhiit-red">
+            It's right.
+          </p>
         </div>
 
-        <!-- Transformation statement -->
-        <p
-          ref="transformation"
-          class="mt-8 text-lg md:text-xl font-body text-grhiit-white/60 max-w-xl opacity-0"
-        >
-          When you commit to this, you're not just changing your body.<br />
-          <span class="text-grhiit-white font-medium">You're rewriting who you are.</span>
-        </p>
+        <!-- Value prop bullets -->
+        <div ref="bullets" class="mt-10 flex flex-wrap gap-x-8 gap-y-2 opacity-0">
+          <span class="font-mono text-sm text-grhiit-white/50 uppercase tracking-widest">8 weeks</span>
+          <span class="font-mono text-sm text-grhiit-white/50 uppercase tracking-widest">Bodyweight only</span>
+          <span class="font-mono text-sm text-grhiit-white/50 uppercase tracking-widest">No hiding</span>
+        </div>
 
         <!-- CTA Buttons -->
         <div ref="ctas" class="mt-12 md:mt-16 flex flex-col sm:flex-row gap-4 opacity-0">
@@ -93,7 +88,7 @@
 
         <!-- Founding member note -->
         <p ref="founderNote" class="mt-6 text-sm font-body text-grhiit-white/40 max-w-md opacity-0">
-          Become a founding member and get early access, launch-day discounts, and the GRHIIT starter pack.
+          Founding members get early access, launch-day pricing, and the GRHIIT Starter PDF.
         </p>
       </div>
     </div>
@@ -130,13 +125,12 @@ const line2Refs = ref<HTMLElement[]>([])
 const separator = ref<HTMLElement | null>(null)
 const problemStatement = ref<HTMLElement | null>(null)
 const bullets = ref<HTMLElement | null>(null)
-const transformation = ref<HTMLElement | null>(null)
 const ctas = ref<HTMLElement | null>(null)
 const founderNote = ref<HTMLElement | null>(null)
 const scrollIndicator = ref<HTMLElement | null>(null)
 
-const line1Words = ["YOU'RE", "NOT", "TRAINING."]
-const line2Words = ["YOU'RE", "JUST", "WORKING", "OUT."]
+const line1Words = ["YOU", "ALREADY", "KNOW"]
+const line2Words = ["YOU'RE", "CAPABLE", "OF", "MORE."]
 
 onMounted(() => {
   if (!$gsap) return
@@ -147,7 +141,6 @@ onMounted(() => {
   $gsap.set(line2Refs.value, { x: -40, autoAlpha: 0 })
   $gsap.set(problemStatement.value, { y: 20, autoAlpha: 0 })
   $gsap.set(bullets.value, { y: 15, autoAlpha: 0 })
-  $gsap.set(transformation.value, { y: 15, autoAlpha: 0 })
   $gsap.set(ctas.value, { y: 20, autoAlpha: 0, scale: 0.98 })
   $gsap.set(founderNote.value, { autoAlpha: 0 })
   $gsap.set(scrollIndicator.value, { autoAlpha: 0 })
@@ -219,13 +212,6 @@ onMounted(() => {
   tl.to(
     bullets.value,
     { y: 0, autoAlpha: 1, duration: 0.4, ease: 'power2.out' },
-    '-=0.1'
-  )
-
-  // Transformation statement
-  tl.to(
-    transformation.value,
-    { y: 0, autoAlpha: 1, duration: 0.5, ease: 'power2.out' },
     '-=0.1'
   )
 
