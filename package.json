@@ -15,7 +15,6 @@
     "@headlessui/vue": "^1.7.23",
     "@hypernym/nuxt-gsap": "^2.4.3",
     "@nuxt/content": "^3.6.3",
-    "@nuxtjs/sitemap": "^6.1.5",
     "better-sqlite3": "^12.2.0",
     "gsap": "^3.13.0",
     "nuxt": "^3.19.0",

@@ -9,11 +9,7 @@ export default defineNuxtConfig({
     public: '../public'
   },
   devtools: { enabled: true },
-  modules: ["@nuxt/content", "@nuxtjs/tailwindcss", "@hypernym/nuxt-gsap", "@nuxtjs/sitemap"],
-
-  site: {
-    url: 'https://grhiit.com',
-  },
+  modules: ["@nuxt/content", "@nuxtjs/tailwindcss", "@hypernym/nuxt-gsap"],
 
   // GSAP Configuration
   gsap: {
