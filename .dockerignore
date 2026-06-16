@@ -1,0 +1,19 @@
+node_modules
+.output
+.nuxt
+.nitro
+.cache
+.data
+dist
+.git
+.DS_Store
+*.log
+.env
+.env.*
+.claude
+notes
+packages
+3001
+package-lock 2.json
+package-lock 3.json
+amplify.yml
