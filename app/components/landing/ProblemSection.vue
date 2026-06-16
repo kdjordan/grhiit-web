@@ -28,24 +28,21 @@
           <div ref="headlineBlock" class="mb-12 md:mb-16">
             <h2 class="font-display text-4xl md:text-5xl lg:text-6xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward">
               <span ref="line1" class="block opacity-0">
-                YOU'VE NEVER ACTUALLY
+                YOUR GAUGE IS
               </span>
               <span
                 ref="line2"
                 class="block mt-2 md:mt-4 text-outline-red text-outline-thick opacity-0"
               >
-                HIT YOUR LIMIT.
+                BROKEN.
               </span>
             </h2>
           </div>
 
           <!-- THE INSIGHT -->
           <div ref="insightBlock" class="mb-12 md:mb-16 opacity-0">
-            <p class="text-2xl md:text-3xl font-body text-grhiit-white/90 mb-6">
-              Not once.
-            </p>
-            <p class="text-xl md:text-2xl font-body text-grhiit-white/70 leading-relaxed">
-              So your gauge is broken. You think you know what hard feels like.
+            <p class="text-xl md:text-2xl font-body text-grhiit-white/80 leading-relaxed">
+              You think you know what hard feels like.
               <span class="text-grhiit-red font-semibold">You don't.</span>
             </p>
           </div>
@@ -60,7 +57,7 @@
                 Why you negotiate with yourself.
               </p>
               <p class="text-lg md:text-xl font-body text-grhiit-white/60">
-                Why you keep starting over.
+                Why you restart every Monday.
               </p>
             </div>
           </div>
@@ -68,10 +65,11 @@
           <!-- THE REFRAME -->
           <div ref="reframeBlock" class="opacity-0">
             <p class="text-lg md:text-xl font-body text-grhiit-white/50 mb-4">
-              That's not a discipline problem.
+              Not a discipline problem. A calibration problem.
             </p>
-            <p class="text-3xl md:text-4xl lg:text-5xl font-display uppercase tracking-wide text-grhiit-white skew-forward">
-              It's a <span class="text-grhiit-red">calibration</span> problem.
+            <p class="text-2xl md:text-3xl lg:text-4xl font-display uppercase tracking-wide text-grhiit-white skew-forward">
+              Fix the gauge.
+              <span class="text-grhiit-red">Everything else gets easier.</span>
             </p>
           </div>
         </div>

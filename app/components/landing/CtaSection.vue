@@ -14,7 +14,7 @@
         <!-- Pre-launch badge -->
         <div ref="badge" class="inline-flex items-center gap-2 px-4 py-2 bg-grhiit-red/10 border border-grhiit-red/30 mb-8 opacity-0">
           <span class="w-2 h-2 bg-grhiit-red rounded-full animate-pulse"></span>
-          <span class="font-mono text-xs uppercase tracking-widest text-grhiit-red">Pre-Launch</span>
+          <span class="font-mono text-xs uppercase tracking-widest text-grhiit-red">Cycle 1 Opening</span>
         </div>
 
         <!-- Main headline -->
@@ -22,8 +22,8 @@
           ref="headline"
           class="font-display text-4xl md:text-5xl lg:text-6xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward opacity-0"
         >
-          Join the First
-          <span class="block mt-2 md:mt-4 text-outline-red text-outline-thick">1,000</span>
+          First 1,000
+          <span class="block mt-2 md:mt-4 text-outline-red text-outline-thick">Lock Founding Price</span>
         </h2>
 
         <!-- Context -->
@@ -32,10 +32,10 @@
           class="mt-8 max-w-xl mx-auto opacity-0"
         >
           <p class="text-lg md:text-xl font-body text-grhiit-white/60 mb-4">
-            We're building Cycle 1 and bringing in the first 1,000 people who want to be there from the beginning.
+            Cycle 1 begins January 2026. We're bringing in founding members now.
           </p>
           <p class="text-lg md:text-xl font-body text-grhiit-white/80">
-            Founding members get early access, launch-day pricing, and the GRHIIT Starter PDF to begin today.
+            Lock launch-day pricing. Get the GRHIIT Starter PDF today. Begin before the app launches.
           </p>
         </div>
 
@@ -45,18 +45,15 @@
             @click="$emit('openWaitlist')"
             class="group relative px-12 py-5 bg-grhiit-red text-grhiit-white font-display uppercase tracking-widest text-lg md:text-xl overflow-hidden hover:shadow-glow-red-lg transition-all duration-300 hover:scale-[1.02]"
           >
-            <span class="relative z-10">Claim Your Spot</span>
+            <span class="relative z-10">Claim Founding Access</span>
             <div class="absolute inset-0 bg-grhiit-red-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
           </button>
         </div>
 
         <!-- Closing hook -->
         <div ref="closingHook" class="mt-14 md:mt-16 pt-10 border-t border-grhiit-white/10 opacity-0">
-          <p class="text-lg font-body text-grhiit-white/50 mb-4">
-            When you picture the toughest version of yourself 8 weeks from now…
-          </p>
           <p class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-grhiit-white">
-            Are they the kind of person who
+            In 8 weeks, will you be someone who
             <span class="text-grhiit-red">waited?</span>
           </p>
         </div>

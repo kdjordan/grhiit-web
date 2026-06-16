@@ -7,33 +7,33 @@
       <!-- Section header -->
       <div ref="headerBlock" class="max-w-4xl mx-auto mb-16 md:mb-24 opacity-0">
         <h2 class="font-display text-3xl md:text-4xl lg:text-5xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward">
-          WHO YOU'LL <span class="text-grhiit-red">BECOME</span>
+          WHO YOU <span class="text-grhiit-red">BECOME</span>
         </h2>
       </div>
 
       <!-- Three-stage progression -->
       <div class="max-w-5xl mx-auto">
         <div class="grid md:grid-cols-3 gap-8 md:gap-0">
-          <!-- Week 1 -->
+          <!-- Week 1: Survival -->
           <div
             ref="stage1"
             class="relative p-6 md:p-8 md:border-r border-grhiit-gray-800 opacity-0"
           >
-            <div class="font-mono text-xs uppercase tracking-widest text-grhiit-white/40 mb-3">
+            <div class="font-mono text-xs uppercase tracking-widest text-grhiit-white/40 mb-2">
               Week 1
             </div>
-            <div class="font-display font-extrabold text-5xl md:text-6xl text-grhiit-white/20 tracking-tighter-brutal leading-none mb-6">
-              01
+            <div class="font-display font-bold text-lg uppercase tracking-tight text-grhiit-white mb-4">
+              Survival
             </div>
             <p class="text-lg font-body text-grhiit-white/60 leading-relaxed mb-4">
-              You survive. Your body wants to stop. Your mind offers every excuse it knows.
+              Your body wants to stop. Your mind offers every excuse.
             </p>
             <p class="text-lg font-body text-grhiit-white/80 leading-relaxed">
-              This is the real test — not the workout. The decision to continue anyway.
+              The real test isn't the workout. It's deciding to continue anyway.
             </p>
           </div>
 
-          <!-- Week 4 -->
+          <!-- Week 4: Shift -->
           <div
             ref="stage2"
             class="relative p-6 md:p-8 md:border-r border-grhiit-gray-800 opacity-0"
@@ -42,22 +42,25 @@
             <div class="absolute inset-0 bg-gradient-to-b from-grhiit-red/5 via-transparent to-transparent pointer-events-none"></div>
 
             <div class="relative">
-              <div class="font-mono text-xs uppercase tracking-widest text-grhiit-white/50 mb-3">
+              <div class="font-mono text-xs uppercase tracking-widest text-grhiit-white/50 mb-2">
                 Week 4
               </div>
-              <div class="font-display font-extrabold text-5xl md:text-6xl text-grhiit-white/40 tracking-tighter-brutal leading-none mb-6">
-                04
+              <div class="font-display font-bold text-lg uppercase tracking-tight text-grhiit-white mb-4">
+                Shift
               </div>
               <p class="text-lg font-body text-grhiit-white/70 leading-relaxed mb-4">
-                Something shifts. The bargaining stops. The timer starts, and you move — not because you want to, but because that's what you do now.
+                The bargaining stops. Timer starts, you move.
+              </p>
+              <p class="text-lg font-body text-grhiit-white/80 leading-relaxed mb-4">
+                Not because you want to. Because that's who you are now.
               </p>
               <p class="text-lg font-body text-grhiit-white/90 leading-relaxed">
-                You start trusting yourself again. Maybe for the first time in years.
+                You trust yourself again. Maybe for the first time in years.
               </p>
             </div>
           </div>
 
-          <!-- Week 8 -->
+          <!-- Week 8: Forged -->
           <div
             ref="stage3"
             class="relative p-6 md:p-8 opacity-0"
@@ -67,14 +70,20 @@
             <div class="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-grhiit-red/10 pointer-events-none"></div>
 
             <div class="relative">
-              <div class="font-mono text-xs uppercase tracking-widest text-grhiit-red mb-3">
+              <div class="font-mono text-xs uppercase tracking-widest text-grhiit-red mb-2">
                 Week 8
               </div>
-              <div class="font-display font-extrabold text-5xl md:text-6xl text-grhiit-red tracking-tighter-brutal leading-none mb-6">
-                08
+              <div class="font-display font-bold text-lg uppercase tracking-tight text-grhiit-red mb-4">
+                Forged
               </div>
-              <p class="text-lg font-body text-grhiit-white leading-relaxed mb-4">
-                You don't recognize who you were eight weeks ago. Not because of how you look. Because of what you've proven.
+              <p class="text-lg font-body text-grhiit-white leading-relaxed mb-2">
+                You don't recognize who you were eight weeks ago.
+              </p>
+              <p class="text-lg font-body text-grhiit-white/70 leading-relaxed mb-2">
+                Not because of how you look.
+              </p>
+              <p class="text-lg font-body text-grhiit-white leading-relaxed mb-6">
+                Because of what you proved.
               </p>
               <div class="space-y-2 text-grhiit-white/70 font-body">
                 <p>The difficult conversation? <span class="text-grhiit-white">Not that hard.</span></p>
@@ -82,7 +91,7 @@
                 <p>The commitment you keep breaking? <span class="text-grhiit-white">Not that hard.</span></p>
               </div>
               <p class="mt-4 text-lg font-body text-grhiit-red font-semibold">
-                Because you know what hard actually is now.
+                You know what hard actually is now.
               </p>
             </div>
           </div>

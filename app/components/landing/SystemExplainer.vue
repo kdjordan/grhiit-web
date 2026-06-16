@@ -24,7 +24,7 @@
         <h2
           class="font-display text-3xl md:text-4xl lg:text-5xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward"
         >
-          GRHIIT RECALIBRATES
+          GRHIIT RESETS
           <span class="block mt-2 text-grhiit-red">WHAT HARD MEANS.</span>
         </h2>
       </div>
@@ -36,10 +36,10 @@
           class="mb-12 md:mb-16 opacity-0"
         >
           <p class="text-2xl md:text-3xl font-body text-grhiit-white/80 mb-4">
-            8 weeks. 24 sessions. 3 per week.
+            24 sessions. 3 per week. Four movements. Maximum effort.
           </p>
           <p class="text-lg md:text-xl font-body text-grhiit-white/60">
-            Four movements. Maximum effort. Short intervals. No negotiating with the timer.
+            Zero negotiation.
           </p>
         </div>
 
@@ -84,24 +84,24 @@ const featureCards = ref<HTMLElement[]>([]);
 
 const features = [
   {
-    title: "Bodyweight only",
+    title: "Bodyweight Only",
     description:
-      "No equipment. No excuses. Your body is the only weight you need to move.",
+      "8-Count Bodybuilders. Jump Squats. Burpees. Flutter Squats.<br><br>Your body is the weight. No equipment. No excuses.",
   },
   {
-    title: "Timed intervals",
+    title: "Tabata Blocks",
     description:
-      "The timer says go. You go. You count your reps. You fight to hold that number as the session tries to break you down.",
+      "The crucible where transformation happens. 20 seconds max effort, 10 seconds recovery.<br><br>Week 1: Shorter bursts, more recovery windows.<br>Week 8: Four uninterrupted minutes of maximum output.",
   },
   {
-    title: "Forward-only progression",
+    title: "Auxiliary Rotations",
     description:
-      "No do-overs. No repeats. Each session is unique. Once it's done, it's done. You move forward or you start the cycle over.",
+      "Before and after the Tabata blocks. Precise intervals. Smoker sets.<br><br>You finish each session proving you had more left than you thought.",
   },
   {
-    title: "Progressive intensity",
+    title: "Forward Progression",
     description:
-      "Week 1: 6 seconds work, 3 seconds rest.<br>Week 8: 12 seconds work, 2 seconds rest.<br><br>The sessions don't get easier. They get longer. <span class='text-grhiit-red font-semibold'>You become harder to break.</span>",
+      "No repeats. Each session unique. Once done, it's done.<br><br>Move forward or restart the cycle.",
   },
 ];
 

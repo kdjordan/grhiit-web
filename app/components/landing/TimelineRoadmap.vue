@@ -9,11 +9,11 @@
         <!-- Section header -->
         <div ref="header" class="max-w-4xl mx-auto mb-16 md:mb-24 opacity-0">
           <h2 class="font-display text-4xl md:text-5xl lg:text-6xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward">
-            8 WEEKS. ONE DIRECTION:
-            <span class="block mt-2 text-grhiit-red">FORWARD.</span>
+            8 WEEKS.
+            <span class="block mt-2 text-grhiit-red">ONE DIRECTION.</span>
           </h2>
           <p class="mt-8 text-xl md:text-2xl font-body text-grhiit-white/70">
-            Every week, rest shrinks. Work expands. You adapt.
+            The Tabata blocks grow. Recovery windows shrink. You learn to sustain max intensity when every instinct screams to quit.
           </p>
         </div>
 
@@ -118,14 +118,13 @@
         <!-- Bottom statements -->
         <div ref="bottomBlock" class="mt-16 md:mt-24 max-w-3xl mx-auto opacity-0">
           <p class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-grhiit-white mb-4">
-            The sessions don't get easier.
+            The sessions don't get easier. The mental escape routes disappear.
+          </p>
+          <p class="text-xl md:text-2xl font-body text-grhiit-white/70 mb-4">
+            You learn to sustain intensity when quitting feels like the only option.
           </p>
           <p class="text-2xl md:text-3xl font-display font-extrabold uppercase tracking-tight text-grhiit-red">
-            You get harder to break.
-          </p>
-
-          <p class="mt-8 text-xl font-body text-grhiit-white/70">
-            And that doesn't stay in the workout. It bleeds into everything.
+            That rewires everything.
           </p>
         </div>
       </div>
@@ -154,10 +153,10 @@ interface Phase {
 }
 
 const phases: Phase[] = [
-  { weeks: 'Week 1-2', weekNum: '01', ratio: '6s:3s', description: 'Survival. Your excuses will scream. Keep moving.' },
-  { weeks: 'Week 3-4', weekNum: '02', ratio: '8s:3s', description: 'Adaptation. Your body begins to obey your will.' },
-  { weeks: 'Week 5-6', weekNum: '03', ratio: '10s:2s', description: 'Hardening. Discomfort becomes familiar.' },
-  { weeks: 'Week 7-8', weekNum: '04', ratio: '12s:2s', description: 'Forged. You are not the same person who started.' },
+  { weeks: 'Week 1-2', weekNum: '01', ratio: '3×2', description: 'Shorter bursts. More mental escape routes. Learning to show up.' },
+  { weeks: 'Week 3-4', weekNum: '02', ratio: '3×4', description: 'Recovery windows shrink. Your body starts obeying your will.' },
+  { weeks: 'Week 5-6', weekNum: '03', ratio: '3×6', description: 'Sustained effort. Discomfort becomes familiar.' },
+  { weeks: 'Week 7-8', weekNum: '04', ratio: '3×8', description: 'Four uninterrupted minutes of maximum output. You\'re not the same person who started.' },
 ]
 
 onMounted(() => {

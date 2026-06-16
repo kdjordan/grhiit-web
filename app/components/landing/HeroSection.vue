@@ -18,7 +18,7 @@
         <!-- Main headline -->
         <div ref="headline" class="perspective-1000">
           <h1 class="font-display uppercase text-grhiit-white leading-brutal tracking-wide skew-forward">
-            <!-- Line 1: YOU ALREADY KNOW -->
+            <!-- Line 1: YOUR HARDEST WORKOUT -->
             <span class="block overflow-hidden">
               <span
                 v-for="(word, index) in line1Words"
@@ -29,7 +29,7 @@
                 {{ word }}
               </span>
             </span>
-            <!-- Line 2: YOU'RE CAPABLE OF MORE. -->
+            <!-- Line 2: WASN'T HARD. -->
             <span class="block overflow-hidden mt-2 md:mt-4">
               <span
                 v-for="(word, index) in line2Words"
@@ -37,7 +37,7 @@
                 ref="line2Refs"
                 class="inline-block mr-[0.2em] last:mr-0 opacity-0"
                 :class="{
-                  'text-outline-red text-outline-thick': word === 'MORE.'
+                  'text-outline-red text-outline-thick': word === 'HARD.'
                 }"
               >
                 {{ word }}
@@ -49,16 +49,16 @@
         <!-- Separator line -->
         <div ref="separator" class="mt-10 md:mt-14 w-0 h-[1px] bg-gradient-to-r from-grhiit-red via-grhiit-red/50 to-transparent"></div>
 
-        <!-- Subheadline - the voice -->
+        <!-- Subheadline -->
         <div
           ref="problemStatement"
           class="mt-8 md:mt-10 max-w-2xl opacity-0"
         >
-          <p class="text-xl md:text-2xl font-body text-grhiit-white/70">
-            That voice that won't shut up? The one that says "this isn't it"?
+          <p class="text-xl md:text-2xl font-body text-grhiit-white/70 mb-4">
+            You've never hit your limit. Not once.
           </p>
-          <p class="mt-3 text-2xl md:text-3xl font-display uppercase tracking-wide text-grhiit-red">
-            It's right.
+          <p class="text-xl md:text-2xl font-body text-grhiit-white/50">
+            So everything feels harder than it should.
           </p>
         </div>
 
@@ -66,7 +66,7 @@
         <div ref="bullets" class="mt-10 flex flex-wrap gap-x-8 gap-y-2 opacity-0">
           <span class="font-mono text-sm text-grhiit-white/50 uppercase tracking-widest">8 weeks</span>
           <span class="font-mono text-sm text-grhiit-white/50 uppercase tracking-widest">Bodyweight only</span>
-          <span class="font-mono text-sm text-grhiit-white/50 uppercase tracking-widest">No hiding</span>
+          <span class="font-mono text-sm text-grhiit-white/50 uppercase tracking-widest">Forward only</span>
         </div>
 
         <!-- CTA Buttons -->
@@ -75,20 +75,20 @@
             @click="$emit('openWaitlist')"
             class="group relative px-10 py-5 bg-grhiit-red text-grhiit-white font-display uppercase tracking-wider text-lg overflow-hidden hover:shadow-glow-red-lg transition-all duration-300"
           >
-            <span class="relative z-10">Join the First 1,000</span>
+            <span class="relative z-10">Start Cycle 1 — Lock Founding Price</span>
             <div class="absolute inset-0 bg-grhiit-red-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
           </button>
           <a
             href="#what-is-grhiit"
             class="px-10 py-5 border-2 border-grhiit-white/20 text-grhiit-white font-display uppercase tracking-wider text-lg hover:border-grhiit-red hover:text-grhiit-red transition-all duration-300 text-center"
           >
-            What Is This?
+            How It Works
           </a>
         </div>
 
         <!-- Founding member note -->
         <p ref="founderNote" class="mt-6 text-sm font-body text-grhiit-white/40 max-w-md opacity-0">
-          Founding members get early access, launch-day pricing, and the GRHIIT Starter PDF.
+          Cycle 1 begins January 2026. Lock founding price now.
         </p>
       </div>
     </div>
@@ -129,8 +129,8 @@ const ctas = ref<HTMLElement | null>(null)
 const founderNote = ref<HTMLElement | null>(null)
 const scrollIndicator = ref<HTMLElement | null>(null)
 
-const line1Words = ["YOU", "ALREADY", "KNOW"]
-const line2Words = ["YOU'RE", "CAPABLE", "OF", "MORE."]
+const line1Words = ["YOUR", "HARDEST", "WORKOUT"]
+const line2Words = ["WASN'T", "HARD."]
 
 onMounted(() => {
   if (!$gsap) return

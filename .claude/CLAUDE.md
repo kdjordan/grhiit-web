@@ -14,7 +14,8 @@
 - **Frontend**: Nuxt.js 3.19.0 with Tailwind CSS v3.4.17
 - **Content Management**: Nuxt Content v3.6.3 (stable version with collections support)
 - **Package Manager**: npm (converted from pnpm workspaces)
-- **Deployment**: AWS Amplify (successfully deployed with SSG)
+- **Deployment**: Hetzner VPS + Coolify, built from a Dockerfile (SSG output served by nginx)
+- **DNS / CDN / Email**: Cloudflare (proxied, Full-strict TLS) + Cloudflare Email Routing
 - **Future Backend**: Supabase + Stripe
 
 ### Project Structure
@@ -23,7 +24,9 @@ grhiit-web/ (standalone)
 ├── app/               # Nuxt application source
 ├── content/           # Content system for articles  
 ├── public/            # Static assets
-├── amplify.yml        # AWS deployment configuration
+├── Dockerfile         # Multi-stage build: Node 22 generate -> nginx serve
+├── nginx.conf         # Static serving (SSG routing, caching, relative redirects)
+├── .dockerignore      # Build context exclusions
 ├── package.json       # Simplified dependency management
 └── .claude/           # AI session management & docs
 ```
@@ -44,10 +47,11 @@ grhiit-web/ (standalone)
 - **No workspace filtering needed** - single package structure
 
 #### Deployment Strategy
-- **Platform**: AWS Amplify with static site generation
-- **Build Command**: `npm run generate` (creates static files)
-- **Auto Deploy**: Pushes to main branch trigger production deployment
-- **Root Directory**: `/` (project root - standalone structure)
+- **Platform**: Hetzner VPS + Coolify, **Dockerfile** build pack (port 80)
+- **Build**: Docker multi-stage — `npm run generate` produces `.output/public`, served by nginx
+- **Auto Deploy**: Pushes to `main` on GitHub (`kdjordan/grhiit-web`) trigger a Coolify rebuild/redeploy
+- **TLS / DNS**: Cloudflare proxied with SSL mode **Full (strict)**; origin cert via Let's Encrypt (Traefik)
+- **Note**: `amplify.yml` was removed — AWS Amplify is fully decommissioned
 
 ## Current Status & Known Issues
 
@@ -58,22 +62,27 @@ grhiit-web/ (standalone)
 - ✅ Upgraded to stable version combination (avoided Nuxt 4 compatibility issues)
 - ✅ Implemented correct Content v3 API: `queryCollection('articles')` with `.all()` method
 - ✅ Fixed article routing to use `article.path` property (not `_path`)
-- ✅ Configured pure SSG for AWS Amplify deployment
+- ✅ Configured pure SSG, served as static files via nginx in Docker
 - ✅ Articles list and individual article pages working correctly
 
 **Current Status**: 
-- ✅ AWS Amplify deployment working with Nuxt 3.19.0 + Content v3.6.3
+- ✅ Hetzner/Coolify deployment working with Nuxt 3.19.x + Content v3.6.3
 - ✅ Articles loading and displaying properly (both list and individual pages)
 - ✅ SEO-optimized static site generation functional
 - ✅ Content marketing strategy ready for implementation
 
 ### Deployment History
-**AWS Amplify Issues Resolved**: Previously blocked due to:
-- SQLite native binding compilation failures → Fixed with filesystem-only mode
-- Directory navigation errors → Fixed build command structure
-- Incorrect Nuxt Content API usage → Updated to v2 compatible syntax
+**Migrated off AWS Amplify (June 2026)** to Hetzner + Coolify:
+- Added a multi-stage `Dockerfile` (Node 22 build → nginx serve) + `nginx.conf`
+- DNS moved Namecheap BasicDNS → Cloudflare; site proxied with Full-strict TLS
+- Email moved to Cloudflare Email Routing (SPF/DKIM/DMARC configured)
+- AWS Amplify app, Route 53 zone, and `amplify.yml` decommissioned
 
-**Current Platform**: AWS Amplify successfully deployed and operational
+**Earlier AWS Amplify issues (historical)**: SQLite native binding compilation
+failures, build-command/directory errors, and Nuxt Content API mismatches —
+all resolved before the Coolify migration. Native deps now build fine in Docker.
+
+**Current Platform**: Hetzner VPS + Coolify, fronted by Cloudflare — live and operational
 
 ## AI Behavior Guidelines
 
@@ -84,9 +93,8 @@ grhiit-web/ (standalone)
 4. **Static-First Approach**: All solutions must work with static site generation
 
 ### Development Approach
-- **Focus on Deployment-Ready Solutions**: Prioritize what works in serverless environments
-- **Avoid Native Dependencies**: Especially SQLite, better-sqlite3, or other compiled modules
-- **Monorepo Awareness**: Account for workspace complexity in all solutions
+- **Native deps are OK now**: The Docker build installs build tools, so `better-sqlite3`/`sqlite3` compile fine (this was an AWS Amplify-era constraint, no longer applies)
+- **Standalone, not monorepo**: Single npm package — no pnpm workspace filtering
 - **Documentation First**: Update architecture.md for significant changes
 
 ### Communication Style
@@ -102,32 +110,29 @@ grhiit-web/ (standalone)
 2. **Establish Shared Packages**: Create @grhiit/types, @grhiit/supabase-client
 3. **Content Management**: Stable article/blog system for SEO
 
-### Long-term Migration (When Full-time)
-- **Platform**: Hetzner VPS + Coolify self-hosted
-- **Cost Savings**: €4-20/month vs $50+/month managed services  
-- **Full Control**: Custom configurations, background jobs, database hosting
+### ✅ Hetzner + Coolify Migration (DONE — June 2026)
+- **Platform**: Hetzner VPS + Coolify self-hosted (completed, off AWS Amplify)
+- **Cost Savings**: realized — self-hosted vs managed services
+- **Full Control**: custom Docker build, room for background jobs / database hosting
 
 ## Configuration References
 
-### AWS Amplify Configuration (amplify.yml)
-```yaml
-version: 1
-frontend:
-  phases:
-    preBuild:
-      commands:
-        - nvm install 22
-        - nvm use 22
-        - npm install
-    build:
-      commands:
-        - export NODE_OPTIONS="--max-old-space-size=4096"
-        - npm run generate
-  artifacts:
-    baseDirectory: .output/public
-    files:
-      - '**/*'
+### Coolify Deployment (Dockerfile)
+Coolify build pack = **Dockerfile**, exposed port **80**, branch **main**.
+The image is a multi-stage build:
+```dockerfile
+# Build stage: Node 22 + native build tools, then `npm run generate`
+FROM node:22-slim AS build
+# (installs python3/make/g++ for better-sqlite3/sqlite3, runs npm ci + npm run generate)
+
+# Serve stage: static .output/public via nginx
+FROM nginx:alpine AS serve
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/.output/public /usr/share/nginx/html
 ```
+`nginx.conf` handles SSG routing, immutable caching for `/_nuxt/`, gzip, and
+`absolute_redirect off` (relative redirects so trailing-slash redirects keep
+the real host + https behind Cloudflare/Traefik).
 
 ### Key Dependencies (package.json)
 ```json
@@ -164,7 +169,7 @@ const { data: article } = await useAsyncData(`article-${slug}`, async () => {
 
 ---
 
-**Last Updated**: September 5, 2025  
-**Status**: ✅ FULLY OPERATIONAL - Standalone project successfully deployed to AWS Amplify  
-**Architecture**: Converted from monorepo to standalone - SQLite dependencies resolved through architecture change  
+**Last Updated**: June 2026  
+**Status**: ✅ FULLY OPERATIONAL - Migrated off AWS Amplify to Hetzner + Coolify, fronted by Cloudflare  
+**Architecture**: Standalone Nuxt SSG, Docker/nginx on Coolify; DNS/CDN/email on Cloudflare  
 **Next Priority**: Content marketing strategy implementation
