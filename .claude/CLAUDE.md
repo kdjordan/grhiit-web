@@ -36,10 +36,9 @@ grhiit-web/ (standalone)
 ### 🚨 CRITICAL CONSTRAINTS
 
 #### Server Management
-- **USER RUNS ALL DEV SERVERS** in separate terminals
-- **NEVER** start, stop, or manage development servers in prompts
-- **NEVER** run `pnpm dev`, `nuxt dev`, or any development server commands
-- Assume servers are managed externally
+- Claude may start the dev server (`npm run dev`) when needed to verify or preview changes — run it in the background and stop it when done
+- Prefer reusing an already-running dev server if one is up; don't spawn duplicates
+- The user may also run dev servers themselves in separate terminals
 
 #### Package Management  
 - **USE NPM** for standalone project
