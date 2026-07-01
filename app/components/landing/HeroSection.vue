@@ -1,106 +1,106 @@
 <template>
-  <section class="relative min-h-screen overflow-hidden bg-grhiit-black pt-24 md:pt-28">
-    <div class="absolute inset-0">
+  <section class="relative min-h-screen overflow-hidden bg-[#020202] text-white">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_58%_45%,rgba(255,255,255,0.08),transparent_27%),linear-gradient(90deg,#020202_0%,#030303_35%,#050505_67%,#020202_100%)]"></div>
+
+    <div class="absolute inset-y-0 left-[39%] hidden w-[31%] md:block">
       <img
         src="/images/brand/threshold-hero.png"
-        alt="A lone figure at a threshold"
-        class="h-full w-full object-cover opacity-55 grayscale"
+        alt="A lone figure standing at a threshold of light"
+        class="h-full w-full object-cover object-center opacity-72 grayscale contrast-125"
       />
-      <div class="absolute inset-0 bg-gradient-to-r from-grhiit-black via-grhiit-black/70 to-grhiit-black/20"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-grhiit-black via-transparent to-grhiit-black/70"></div>
-      <div class="absolute inset-0 opacity-[0.035] noise-overlay pointer-events-none"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#020202] via-transparent to-[#020202]"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#020202] via-transparent to-[#020202]/75"></div>
     </div>
 
-    <div class="relative z-10 container mx-auto px-4 md:px-8 min-h-[calc(100vh-6rem)] flex items-center">
-      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full py-16 md:py-24">
-        <div class="lg:col-span-7 max-w-4xl">
-          <div class="inline-flex items-center gap-3 border border-grhiit-red/30 bg-grhiit-black/50 px-4 py-2 mb-8">
-            <span class="h-2 w-2 bg-grhiit-red rounded-full animate-pulse"></span>
-            <span class="font-mono text-xs uppercase tracking-[0.3em] text-grhiit-red">iOS early access</span>
-          </div>
+    <div class="absolute inset-0 opacity-[0.055] noise-overlay pointer-events-none"></div>
+    <div class="absolute inset-0 shadow-[inset_0_0_160px_rgba(0,0,0,0.95)]"></div>
 
-          <h1 class="font-display uppercase text-grhiit-white leading-brutal tracking-wide skew-forward text-6xl md:text-8xl lg:text-9xl">
-            Hard is
-            <span class="block text-outline-red text-outline-thick mt-2 md:mt-4">misunderstood.</span>
+    <div class="relative z-10 mx-auto flex min-h-screen max-w-[1180px] items-center px-5 pb-14 pt-24 md:px-8 md:pt-28">
+      <div class="grid w-full items-center gap-8 lg:grid-cols-[0.92fr_0.36fr_0.54fr]">
+        <div class="max-w-[620px] pt-8 md:pt-0">
+          <h1 class="font-display uppercase leading-[0.82] tracking-[0.02em] text-[#d9d1c7] text-shadow-brutal text-[clamp(5.4rem,14vw,12rem)] lg:text-[clamp(6.5rem,10vw,11.5rem)]">
+            <span class="block">Hard</span>
+            <span class="block">is</span>
+            <span class="block">Misunderstood.</span>
           </h1>
 
-          <div class="mt-8 max-w-2xl border-l-4 border-grhiit-red pl-6">
-            <p class="text-xl md:text-2xl font-body text-grhiit-white/80 leading-relaxed">
-              GRHIIT is an 8-week bodyweight practice that uses sustained intensity, incomplete recovery, and forward-only progression to recalibrate what hard feels like.
-            </p>
-            <p class="mt-5 text-lg md:text-xl font-body text-grhiit-white/55 leading-relaxed">
-              Fitness is the byproduct. Identity is the product.
-            </p>
-          </div>
+          <p class="mt-7 max-w-[470px] font-body text-base leading-relaxed text-[#e2ded8]/82 md:text-lg">
+            A bodyweight practice for expanding threshold through sustained intensity and continuity.
+          </p>
 
-          <div class="mt-10 grid sm:grid-cols-3 gap-3 max-w-2xl">
-            <div class="border border-grhiit-white/10 bg-grhiit-black/50 p-4">
-              <div class="font-mono text-grhiit-red text-sm uppercase tracking-widest">02 free</div>
-              <div class="mt-2 font-display text-2xl uppercase text-grhiit-white">sessions</div>
-            </div>
-            <div class="border border-grhiit-white/10 bg-grhiit-black/50 p-4">
-              <div class="font-mono text-grhiit-red text-sm uppercase tracking-widest">$24.99</div>
-              <div class="mt-2 font-display text-2xl uppercase text-grhiit-white">cycle 1</div>
-            </div>
-            <div class="border border-grhiit-white/10 bg-grhiit-black/50 p-4">
-              <div class="font-mono text-grhiit-red text-sm uppercase tracking-widest">24 total</div>
-              <div class="mt-2 font-display text-2xl uppercase text-grhiit-white">sessions</div>
-            </div>
-          </div>
-
-          <div class="mt-12 flex flex-col sm:flex-row gap-4">
+          <div class="mt-7 flex flex-col items-start gap-3">
             <button
               @click="$emit('openWaitlist')"
-              class="group relative px-10 py-5 bg-grhiit-red text-grhiit-white font-display uppercase tracking-widest text-lg overflow-hidden hover:shadow-glow-red-lg transition-all duration-300"
+              class="border border-white/20 bg-[#f0e8df] px-10 py-4 font-mono text-[12px] font-extrabold uppercase tracking-[0.13em] text-black transition-all duration-300 hover:bg-white hover:shadow-[0_0_36px_rgba(255,255,255,0.18)]"
             >
-              <span class="relative z-10">Get early iOS access</span>
-              <div class="absolute inset-0 bg-grhiit-red-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              Begin Free
             </button>
-            <a
-              href="#what-is-grhiit"
-              class="px-10 py-5 border-2 border-grhiit-white/20 text-grhiit-white font-display uppercase tracking-widest text-lg hover:border-grhiit-red hover:text-grhiit-red transition-all duration-300 text-center"
-            >
-              See the practice
-            </a>
+            <p class="font-mono text-[11px] tracking-[0.06em] text-white/38">
+              First 2 sessions included.
+            </p>
           </div>
-
-          <p class="mt-6 text-sm font-body text-grhiit-white/45 max-w-xl">
-            No PDF. No infinite workout library. No fake app screens. Just the timer, the cycle, and the first two sessions free.
-          </p>
         </div>
 
-        <div class="lg:col-span-5 flex justify-center lg:justify-end">
-          <div class="relative w-full max-w-sm">
-            <div class="absolute -inset-10 bg-grhiit-red/15 blur-[90px]"></div>
-            <div class="relative mx-auto h-[620px] w-[305px] rounded-[3rem] border border-grhiit-white/15 bg-[#050505] p-3 shadow-2xl">
-              <div class="h-full rounded-[2.35rem] border border-grhiit-white/10 bg-gradient-to-b from-[#181818] via-[#080808] to-black overflow-hidden relative">
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 h-7 w-32 rounded-b-3xl bg-[#050505]"></div>
-                <div class="absolute inset-0 opacity-[0.04] noise-overlay"></div>
-                <div class="p-8 pt-16 h-full flex flex-col">
-                  <div class="font-mono text-xs uppercase tracking-[0.28em] text-grhiit-red">Cycle 1</div>
-                  <div class="mt-4 h-2 w-full bg-grhiit-white/10">
-                    <div class="h-full w-[8%] bg-grhiit-red"></div>
+        <div class="hidden h-[58vh] min-h-[460px] md:block"></div>
+
+        <div id="app" class="relative flex justify-center lg:justify-end">
+          <div class="absolute -inset-14 rounded-full bg-white/[0.04] blur-[70px]"></div>
+          <div class="phone-shell relative h-[600px] w-[292px] rounded-[3rem] border border-white/22 bg-[#090909] p-3 shadow-[0_38px_120px_rgba(0,0,0,0.9)] md:h-[640px] md:w-[312px]">
+            <div class="absolute right-[-4px] top-28 h-20 w-[4px] rounded-r bg-white/18"></div>
+            <div class="absolute left-[-3px] top-32 h-12 w-[3px] rounded-l bg-white/15"></div>
+            <div class="h-full overflow-hidden rounded-[2.35rem] border border-white/10 bg-[linear-gradient(180deg,#171717_0%,#090909_47%,#030303_100%)]">
+              <div class="relative h-full px-7 pb-7 pt-12">
+                <div class="absolute left-1/2 top-0 h-7 w-32 -translate-x-1/2 rounded-b-3xl bg-black"></div>
+                <div class="absolute inset-0 opacity-[0.045] noise-overlay"></div>
+                <div class="relative flex h-full flex-col">
+                  <div class="flex items-center justify-center font-mono text-[11px] uppercase tracking-[0.42em] text-white/82">
+                    GRHIIT
                   </div>
-                  <div class="mt-12 flex-1 flex items-center justify-center">
-                    <div class="relative h-44 w-44 rounded-full border border-grhiit-white/10 flex items-center justify-center">
-                      <div class="absolute inset-3 rounded-full border border-grhiit-red/30"></div>
-                      <div class="absolute inset-8 rounded-full border border-grhiit-white/10"></div>
-                      <div class="h-2 w-2 bg-grhiit-red rounded-full shadow-glow-red"></div>
+
+                  <div class="mt-12 text-center font-mono text-[10px] uppercase tracking-[0.24em] text-white/48">
+                    Cycle 1
+                  </div>
+                  <div class="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.24em] text-white/45">
+                    Week 2 · Session 3
+                  </div>
+
+                  <div class="mt-7 text-center font-display text-[4.4rem] uppercase leading-none tracking-[0.03em] text-[#d9d1c7]">
+                    Exposure
+                  </div>
+
+                  <div class="mt-8 text-center font-mono text-2xl text-white/86">
+                    20:43
+                  </div>
+                  <div class="mt-1 text-center font-mono text-[9px] uppercase tracking-[0.24em] text-white/34">
+                    Remaining Time
+                  </div>
+
+                  <button class="mx-auto mt-7 w-36 border border-white/12 bg-white/[0.08] py-3 font-mono text-[9px] uppercase tracking-[0.16em] text-white/78">
+                    View Session
+                  </button>
+
+                  <div class="mt-auto">
+                    <div class="font-mono text-[9px] uppercase tracking-[0.2em] text-white/36">Week Progress</div>
+                    <div class="mt-4 grid grid-cols-6 gap-3">
+                      <div
+                        v-for="n in 6"
+                        :key="n"
+                        class="flex h-7 w-7 items-center justify-center rounded-full border text-[10px]"
+                        :class="n <= 3 ? 'border-[#d9d1c7]/55 bg-[#d9d1c7]/12 text-[#d9d1c7]' : 'border-white/12 text-white/20'"
+                      >
+                        <span v-if="n <= 3">✓</span>
+                      </div>
                     </div>
-                  </div>
-                  <div class="grid grid-cols-4 gap-2">
-                    <div v-for="n in 24" :key="n" class="h-2" :class="n <= 2 ? 'bg-grhiit-red' : 'bg-grhiit-white/10'"></div>
-                  </div>
-                  <div class="mt-8 border border-grhiit-white/10 bg-grhiit-black/70 p-4">
-                    <div class="h-3 w-24 bg-grhiit-white/15"></div>
-                    <div class="mt-3 h-2 w-36 bg-grhiit-white/10"></div>
-                    <div class="mt-2 h-2 w-28 bg-grhiit-white/10"></div>
+
+                    <div class="mt-8 grid grid-cols-4 gap-3 border-t border-white/8 pt-5 text-center font-mono text-[8px] uppercase tracking-[0.06em] text-white/28">
+                      <div class="text-grhiit-red/70">Train</div>
+                      <div>Explore</div>
+                      <div>Reflect</div>
+                      <div>Profile</div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="mt-5 text-center font-mono text-xs uppercase tracking-[0.25em] text-grhiit-white/35">
-              Abstract app preview. Final UI in progress.
             </div>
           </div>
         </div>
@@ -114,3 +114,19 @@ defineEmits<{
   (e: 'openWaitlist'): void
 }>()
 </script>
+
+<style scoped>
+.phone-shell::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 3rem;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255,255,255,0.22), transparent 28%, transparent 72%, rgba(255,255,255,0.11));
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  padding: 1px;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+</style>

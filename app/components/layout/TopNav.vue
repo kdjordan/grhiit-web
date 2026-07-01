@@ -1,78 +1,78 @@
 <template>
   <header class="fixed top-0 left-0 right-0 z-50">
-    <nav class="bg-grhiit-black/80 backdrop-blur-md border-b border-grhiit-gray-800">
-      <div class="container mx-auto px-4 md:px-8">
-        <div class="flex items-center justify-between h-16 md:h-20">
-          <!-- Logo -->
-          <NuxtLink
-            to="/"
-            class="font-display font-extrabold text-xl md:text-2xl uppercase tracking-tight text-grhiit-white hover:text-grhiit-red transition-colors"
-          >
+    <nav class="bg-black/55 backdrop-blur-[2px] border-b border-white/[0.06]">
+      <div class="mx-auto flex h-16 max-w-[1180px] items-center justify-between px-5 md:h-20 md:px-8">
+        <NuxtLink
+          to="/"
+          class="group flex items-center gap-3 text-grhiit-white transition-colors hover:text-white"
+          aria-label="GRHIIT home"
+        >
+          <img src="/favicon.svg" alt="" class="h-8 w-8 opacity-90 grayscale" />
+          <span class="font-mono text-sm uppercase tracking-[0.42em] text-white/72 group-hover:text-white md:text-base">
             GRHIIT
-          </NuxtLink>
+          </span>
+        </NuxtLink>
 
-          <!-- Desktop nav -->
-          <div class="hidden md:flex items-center gap-8">
+        <div class="hidden items-center gap-9 lg:flex">
+          <NuxtLink
+            v-for="link in navLinks"
+            :key="link.to"
+            :to="link.to"
+            class="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-white/72 transition-colors hover:text-white"
+          >
+            {{ link.label }}
+          </NuxtLink>
+        </div>
+
+        <button
+          @click="emit('openWaitlist')"
+          class="hidden border border-white/20 bg-[#f0e8df] px-8 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-black transition-all duration-300 hover:bg-white hover:shadow-[0_0_30px_rgba(255,255,255,0.18)] md:block"
+        >
+          Begin Free
+        </button>
+
+        <button
+          @click="mobileMenuOpen = !mobileMenuOpen"
+          class="p-2 text-white/75 transition-colors hover:text-white lg:hidden"
+          aria-label="Toggle menu"
+        >
+          <svg v-if="!mobileMenuOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+          <svg v-else class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <Transition
+        enter-active-class="transition duration-200 ease-out"
+        enter-from-class="opacity-0 -translate-y-2"
+        enter-to-class="opacity-100 translate-y-0"
+        leave-active-class="transition duration-150 ease-in"
+        leave-from-class="opacity-100 translate-y-0"
+        leave-to-class="opacity-0 -translate-y-2"
+      >
+        <div v-if="mobileMenuOpen" class="border-t border-white/[0.06] bg-black/95 px-5 py-5 lg:hidden">
+          <div class="mx-auto flex max-w-[1180px] flex-col gap-4">
             <NuxtLink
               v-for="link in navLinks"
               :key="link.to"
               :to="link.to"
-              class="font-display text-sm uppercase tracking-widest text-grhiit-white/70 hover:text-grhiit-red transition-colors"
+              class="font-mono text-xs uppercase tracking-[0.2em] text-white/70 transition-colors hover:text-white"
+              @click="mobileMenuOpen = false"
             >
               {{ link.label }}
             </NuxtLink>
             <button
-              @click="emit('openWaitlist')"
-              class="px-5 py-2.5 bg-grhiit-red text-grhiit-white font-display font-semibold text-sm uppercase tracking-widest hover:bg-grhiit-red-dark hover:shadow-glow-red transition-all duration-300"
+              @click="emit('openWaitlist'); mobileMenuOpen = false"
+              class="mt-3 border border-white/20 bg-[#f0e8df] px-6 py-3 font-mono text-xs font-bold uppercase tracking-[0.16em] text-black"
             >
-              Join
+              Begin Free
             </button>
           </div>
-
-          <!-- Mobile menu button -->
-          <button
-            @click="mobileMenuOpen = !mobileMenuOpen"
-            class="md:hidden p-2 text-grhiit-white hover:text-grhiit-red transition-colors"
-          >
-            <svg v-if="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-            <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
         </div>
-
-        <!-- Mobile menu -->
-        <Transition
-          enter-active-class="transition duration-200 ease-out"
-          enter-from-class="opacity-0 -translate-y-2"
-          enter-to-class="opacity-100 translate-y-0"
-          leave-active-class="transition duration-150 ease-in"
-          leave-from-class="opacity-100 translate-y-0"
-          leave-to-class="opacity-0 -translate-y-2"
-        >
-          <div v-if="mobileMenuOpen" class="md:hidden py-4 border-t border-grhiit-gray-800">
-            <div class="flex flex-col gap-4">
-              <NuxtLink
-                v-for="link in navLinks"
-                :key="link.to"
-                :to="link.to"
-                class="font-display text-sm uppercase tracking-widest text-grhiit-white/70 hover:text-grhiit-red transition-colors py-2"
-                @click="mobileMenuOpen = false"
-              >
-                {{ link.label }}
-              </NuxtLink>
-              <button
-                @click="emit('openWaitlist'); mobileMenuOpen = false"
-                class="mt-2 px-5 py-3 bg-grhiit-red text-grhiit-white font-display font-semibold text-sm uppercase tracking-widest hover:bg-grhiit-red-dark transition-all duration-300 w-full"
-              >
-                Join the First 1,000
-              </button>
-            </div>
-          </div>
-        </Transition>
-      </div>
+      </Transition>
     </nav>
   </header>
 </template>
@@ -85,9 +85,10 @@ const emit = defineEmits<{
 const mobileMenuOpen = ref(false)
 
 const navLinks = [
-  { to: '/', label: 'Home' },
-  { to: '/program', label: 'Program' },
-  { to: '/articles', label: 'Articles' },
+  { to: '/#what-is-grhiit', label: 'The Practice' },
+  { to: '/#app', label: 'The App' },
+  { to: '/#method', label: 'The Method' },
   { to: '/about', label: 'About' },
+  { to: '/articles', label: 'Blog' },
 ]
 </script>

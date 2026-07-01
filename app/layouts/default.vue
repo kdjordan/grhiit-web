@@ -3,8 +3,7 @@
     <!-- Navigation -->
     <LayoutTopNav @open-waitlist="openWaitlistModal" />
 
-    <!-- Main content with top padding for fixed nav -->
-    <main class="pt-16 md:pt-20">
+    <main>
       <slot />
     </main>
 

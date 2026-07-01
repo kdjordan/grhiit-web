@@ -1,5 +1,5 @@
 <template>
-  <section id="what-is-grhiit" class="py-24 md:py-40 bg-grhiit-black relative overflow-hidden">
+  <section id="method" class="py-24 md:py-40 bg-grhiit-black relative overflow-hidden">
     <div class="absolute inset-0 opacity-[0.025] pointer-events-none" style="background-image: linear-gradient(rgba(250,250,250,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(250,250,250,0.12) 1px, transparent 1px); background-size: 70px 70px;"></div>
     <div class="absolute -right-20 top-20 w-96 h-96 bg-grhiit-red/10 blur-[130px] pointer-events-none"></div>
 
