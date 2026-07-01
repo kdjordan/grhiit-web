@@ -29,15 +29,15 @@
               <div class="absolute top-0 left-0 right-0 h-1 bg-grhiit-red"></div>
 
               <DialogTitle as="h3" class="font-display font-extrabold text-2xl md:text-3xl uppercase tracking-tight text-grhiit-white mb-6">
-                Join the First <span class="text-grhiit-red">1,000</span>
+                Get early <span class="text-grhiit-red">iOS access</span>
               </DialogTitle>
 
               <div class="mb-8">
                 <p class="text-grhiit-white/70 font-body mb-4">
-                  Get early access to GRHIIT, live session invites, and the complete 8 Weeks starter program.
+                  Start the first two sessions free. Unlock the full 8-week Cycle 1 with a one-time $24.99 purchase when you're ready to continue.
                 </p>
                 <p class="text-grhiit-red font-display font-semibold text-sm uppercase tracking-widest">
-                  All it takes is all you've got.
+                  No PDF. No theory. Just the timer.
                 </p>
               </div>
 
@@ -88,7 +88,7 @@
                     :disabled="loading"
                     class="flex-1 px-6 py-4 bg-grhiit-red text-grhiit-white font-display font-semibold uppercase tracking-widest hover:bg-grhiit-red-dark hover:shadow-glow-red transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {{ loading ? 'Joining...' : 'Join Now' }}
+                    {{ loading ? 'Joining...' : 'Request Access' }}
                   </button>
                   <button
                     type="button"

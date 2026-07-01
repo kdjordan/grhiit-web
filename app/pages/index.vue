@@ -49,11 +49,11 @@ const handleWaitlistSubmit = (data: { email: string; name: string; success: bool
 
 // SEO
 useSeoMeta({
-  title: "GRHIIT - You're Not Training. You're Just Working Out.",
+  title: "GRHIIT - Hard Is Misunderstood.",
   description:
-    "GRHIIT is a bodyweight-only training system built to turn you into the kind of person who does hard things on purpose. Short, brutal intervals. No equipment. No hiding. Join the first 1,000.",
-  ogTitle: "GRHIIT - You're Not Training. You're Just Working Out.",
+    "GRHIIT is an 8-week bodyweight practice for iOS built around sustained intensity, incomplete recovery, and forward-only progression. Start two sessions free. Unlock Cycle 1 for $24.99.",
+  ogTitle: "GRHIIT - Hard Is Misunderstood.",
   ogDescription:
-    "A bodyweight-only training system. Short, brutal intervals. No equipment. No hiding. Join the first 1,000 founding members.",
+    "Not a workout app. An 8-week bodyweight practice that recalibrates what hard feels like. Fitness is the byproduct. Identity is the product.",
 })
 </script>

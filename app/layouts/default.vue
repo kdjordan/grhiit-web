@@ -18,7 +18,7 @@
               GRHIIT
             </h3>
             <p class="font-body text-grhiit-white/60 leading-relaxed">
-              High-intensity interval training built on real science. No equipment. No fluff. Mental discipline through physical intensity.
+              An 8-week bodyweight practice for recalibrating what hard feels like. Fitness is the byproduct. Identity is the product.
             </p>
           </div>
 
@@ -28,9 +28,9 @@
               Principles
             </h4>
             <ul class="space-y-2 font-body text-grhiit-white/60">
-              <li>Intensity over duration</li>
-              <li>Discipline over motivation</li>
-              <li>Consistency over perfection</li>
+              <li>Discomfort over comfort</li>
+              <li>Continuity over motivation</li>
+              <li>Forward-only progression</li>
               <li>Safety over ego</li>
             </ul>
           </div>

@@ -1,60 +1,53 @@
 <template>
-  <section ref="ctaSection" class="py-24 md:py-40 bg-grhiit-black-warm relative overflow-hidden">
-    <!-- Red glow from top -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-grhiit-red/10 blur-[120px] pointer-events-none"></div>
-
-    <!-- Subtle red border top -->
+  <section class="py-24 md:py-40 bg-grhiit-black-warm relative overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[340px] bg-grhiit-red/10 blur-[120px] pointer-events-none"></div>
     <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-grhiit-red to-transparent"></div>
-
-    <!-- Noise texture -->
     <div class="absolute inset-0 opacity-[0.02] pointer-events-none noise-overlay"></div>
 
     <div class="container mx-auto px-4 md:px-8 relative z-10">
-      <div class="max-w-3xl mx-auto text-center">
-        <!-- Pre-launch badge -->
-        <div ref="badge" class="inline-flex items-center gap-2 px-4 py-2 bg-grhiit-red/10 border border-grhiit-red/30 mb-8 opacity-0">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-grhiit-red/10 border border-grhiit-red/30 mb-8">
           <span class="w-2 h-2 bg-grhiit-red rounded-full animate-pulse"></span>
-          <span class="font-mono text-xs uppercase tracking-widest text-grhiit-red">Cycle 1 Opening</span>
+          <span class="font-mono text-xs uppercase tracking-widest text-grhiit-red">Founding iOS access</span>
         </div>
 
-        <!-- Main headline -->
-        <h2
-          ref="headline"
-          class="font-display text-4xl md:text-5xl lg:text-6xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward opacity-0"
-        >
-          First 1,000
-          <span class="block mt-2 md:mt-4 text-outline-red text-outline-thick">Lock Founding Price</span>
+        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward">
+          Begin free.
+          <span class="block mt-2 md:mt-4 text-outline-red text-outline-thick">Finish earned.</span>
         </h2>
 
-        <!-- Context -->
-        <div
-          ref="contextCopy"
-          class="mt-8 max-w-xl mx-auto opacity-0"
-        >
-          <p class="text-lg md:text-xl font-body text-grhiit-white/60 mb-4">
-            Cycle 1 begins January 2026. We're bringing in founding members now.
-          </p>
-          <p class="text-lg md:text-xl font-body text-grhiit-white/80">
-            Lock launch-day pricing. Get the GRHIIT Starter PDF today. Begin before the app launches.
-          </p>
+        <div class="mt-10 grid md:grid-cols-3 gap-4 text-left">
+          <div class="bg-grhiit-black/60 border border-grhiit-white/10 p-6">
+            <div class="font-mono text-grhiit-red text-sm uppercase tracking-widest">Step 01</div>
+            <h3 class="mt-5 font-display text-3xl uppercase text-grhiit-white">Start</h3>
+            <p class="mt-3 font-body text-grhiit-white/55">Get early iOS access and run the first two sessions free.</p>
+          </div>
+          <div class="bg-grhiit-black/60 border border-grhiit-white/10 p-6">
+            <div class="font-mono text-grhiit-red text-sm uppercase tracking-widest">Step 02</div>
+            <h3 class="mt-5 font-display text-3xl uppercase text-grhiit-white">Unlock</h3>
+            <p class="mt-3 font-body text-grhiit-white/55">Buy Cycle 1 once for $24.99. No subscription. No endless library.</p>
+          </div>
+          <div class="bg-grhiit-black/60 border border-grhiit-white/10 p-6">
+            <div class="font-mono text-grhiit-red text-sm uppercase tracking-widest">Step 03</div>
+            <h3 class="mt-5 font-display text-3xl uppercase text-grhiit-white">Earn</h3>
+            <p class="mt-3 font-body text-grhiit-white/55">Finish the 8-week cycle to unlock what comes next.</p>
+          </div>
         </div>
 
-        <!-- CTA Button -->
-        <div ref="ctaButton" class="mt-12 md:mt-14 opacity-0">
+        <div class="mt-12 md:mt-14">
           <button
             @click="$emit('openWaitlist')"
             class="group relative px-12 py-5 bg-grhiit-red text-grhiit-white font-display uppercase tracking-widest text-lg md:text-xl overflow-hidden hover:shadow-glow-red-lg transition-all duration-300 hover:scale-[1.02]"
           >
-            <span class="relative z-10">Claim Founding Access</span>
+            <span class="relative z-10">Get early iOS access</span>
             <div class="absolute inset-0 bg-grhiit-red-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
           </button>
         </div>
 
-        <!-- Closing hook -->
-        <div ref="closingHook" class="mt-14 md:mt-16 pt-10 border-t border-grhiit-white/10 opacity-0">
+        <div class="mt-14 md:mt-16 pt-10 border-t border-grhiit-white/10">
           <p class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-grhiit-white">
-            In 8 weeks, will you be someone who
-            <span class="text-grhiit-red">waited?</span>
+            No PDF. No theory.
+            <span class="text-grhiit-red">Just the timer.</span>
           </p>
         </div>
       </div>
@@ -66,87 +59,4 @@
 defineEmits<{
   (e: 'openWaitlist'): void
 }>()
-
-const { $gsap } = useNuxtApp()
-
-const ctaSection = ref<HTMLElement | null>(null)
-const badge = ref<HTMLElement | null>(null)
-const headline = ref<HTMLElement | null>(null)
-const contextCopy = ref<HTMLElement | null>(null)
-const ctaButton = ref<HTMLElement | null>(null)
-const closingHook = ref<HTMLElement | null>(null)
-
-onMounted(() => {
-  if (!$gsap || !ctaSection.value) return
-
-  const tl = $gsap.timeline({
-    scrollTrigger: {
-      trigger: ctaSection.value,
-      start: 'top 65%',
-      toggleActions: 'play none none reverse',
-    },
-  })
-
-  // Badge
-  $gsap.set(badge.value, { y: 20, opacity: 0 })
-  tl.to(badge.value, {
-    y: 0,
-    opacity: 1,
-    duration: 0.5,
-    ease: 'power2.out',
-  })
-
-  // Headline
-  $gsap.set(headline.value, { y: 40, opacity: 0 })
-  tl.to(
-    headline.value,
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.7,
-      ease: 'power3.out',
-    },
-    '-=0.2'
-  )
-
-  // Context copy
-  $gsap.set(contextCopy.value, { y: 30, opacity: 0 })
-  tl.to(
-    contextCopy.value,
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      ease: 'power2.out',
-    },
-    '-=0.3'
-  )
-
-  // CTA button
-  $gsap.set(ctaButton.value, { y: 20, opacity: 0, scale: 0.95 })
-  tl.to(
-    ctaButton.value,
-    {
-      y: 0,
-      opacity: 1,
-      scale: 1,
-      duration: 0.5,
-      ease: 'back.out(1.5)',
-    },
-    '-=0.2'
-  )
-
-  // Closing hook
-  $gsap.set(closingHook.value, { y: 20, opacity: 0 })
-  tl.to(
-    closingHook.value,
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      ease: 'power2.out',
-    },
-    '-=0.1'
-  )
-})
 </script>

@@ -1,110 +1,109 @@
 <template>
-  <section
-    ref="heroSection"
-    class="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden bg-grhiit-black pt-24 pb-16 md:pt-32 md:pb-24"
-  >
-    <!-- Animated background pulse -->
-    <div class="absolute inset-0 bg-gradient-radial from-grhiit-red/5 via-transparent to-transparent opacity-0" ref="bgPulse"></div>
-
-    <!-- Noise texture overlay -->
-    <div class="absolute inset-0 opacity-[0.03] pointer-events-none noise-overlay"></div>
-
-    <!-- Vertical accent line -->
-    <div ref="accentLine" class="absolute left-8 md:left-16 top-0 w-[2px] h-0 bg-grhiit-red"></div>
-
-    <!-- Content -->
-    <div class="relative z-10 container mx-auto px-4 md:px-8">
-      <div class="max-w-6xl mx-auto">
-        <!-- Main headline -->
-        <div ref="headline" class="perspective-1000">
-          <h1 class="font-display uppercase text-grhiit-white leading-brutal tracking-wide skew-forward">
-            <!-- Line 1: YOUR HARDEST WORKOUT -->
-            <span class="block overflow-hidden">
-              <span
-                v-for="(word, index) in line1Words"
-                :key="'l1-' + index"
-                ref="line1Refs"
-                class="inline-block mr-[0.2em] last:mr-0 opacity-0"
-              >
-                {{ word }}
-              </span>
-            </span>
-            <!-- Line 2: WASN'T HARD. -->
-            <span class="block overflow-hidden mt-2 md:mt-4">
-              <span
-                v-for="(word, index) in line2Words"
-                :key="'l2-' + index"
-                ref="line2Refs"
-                class="inline-block mr-[0.2em] last:mr-0 opacity-0"
-                :class="{
-                  'text-outline-red text-outline-thick': word === 'HARD.'
-                }"
-              >
-                {{ word }}
-              </span>
-            </span>
-          </h1>
-        </div>
-
-        <!-- Separator line -->
-        <div ref="separator" class="mt-10 md:mt-14 w-0 h-[1px] bg-gradient-to-r from-grhiit-red via-grhiit-red/50 to-transparent"></div>
-
-        <!-- Subheadline -->
-        <div
-          ref="problemStatement"
-          class="mt-8 md:mt-10 max-w-2xl opacity-0"
-        >
-          <p class="text-xl md:text-2xl font-body text-grhiit-white/70 mb-4">
-            You've never hit your limit. Not once.
-          </p>
-          <p class="text-xl md:text-2xl font-body text-grhiit-white/50">
-            So everything feels harder than it should.
-          </p>
-        </div>
-
-        <!-- Value prop bullets -->
-        <div ref="bullets" class="mt-10 flex flex-wrap gap-x-8 gap-y-2 opacity-0">
-          <span class="font-mono text-sm text-grhiit-white/50 uppercase tracking-widest">8 weeks</span>
-          <span class="font-mono text-sm text-grhiit-white/50 uppercase tracking-widest">Bodyweight only</span>
-          <span class="font-mono text-sm text-grhiit-white/50 uppercase tracking-widest">Forward only</span>
-        </div>
-
-        <!-- CTA Buttons -->
-        <div ref="ctas" class="mt-12 md:mt-16 flex flex-col sm:flex-row gap-4 opacity-0">
-          <button
-            @click="$emit('openWaitlist')"
-            class="group relative px-10 py-5 bg-grhiit-red text-grhiit-white font-display uppercase tracking-wider text-lg overflow-hidden hover:shadow-glow-red-lg transition-all duration-300"
-          >
-            <span class="relative z-10">Start Cycle 1 — Lock Founding Price</span>
-            <div class="absolute inset-0 bg-grhiit-red-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-          </button>
-          <a
-            href="#what-is-grhiit"
-            class="px-10 py-5 border-2 border-grhiit-white/20 text-grhiit-white font-display uppercase tracking-wider text-lg hover:border-grhiit-red hover:text-grhiit-red transition-all duration-300 text-center"
-          >
-            How It Works
-          </a>
-        </div>
-
-        <!-- Founding member note -->
-        <p ref="founderNote" class="mt-6 text-sm font-body text-grhiit-white/40 max-w-md opacity-0">
-          Cycle 1 begins January 2026. Lock founding price now.
-        </p>
-      </div>
+  <section class="relative min-h-screen overflow-hidden bg-grhiit-black pt-24 md:pt-28">
+    <div class="absolute inset-0">
+      <img
+        src="/images/brand/threshold-hero.png"
+        alt="A lone figure at a threshold"
+        class="h-full w-full object-cover opacity-55 grayscale"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-grhiit-black via-grhiit-black/70 to-grhiit-black/20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-grhiit-black via-transparent to-grhiit-black/70"></div>
+      <div class="absolute inset-0 opacity-[0.035] noise-overlay pointer-events-none"></div>
     </div>
 
-    <!-- Scroll indicator -->
-    <div ref="scrollIndicator" class="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0">
-      <div class="flex flex-col items-center gap-2 text-grhiit-white/30">
-        <div class="w-[1px] h-8 bg-gradient-to-b from-transparent via-grhiit-white/30 to-grhiit-white/30"></div>
-        <svg
-          class="w-4 h-4 animate-bounce"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7"></path>
-        </svg>
+    <div class="relative z-10 container mx-auto px-4 md:px-8 min-h-[calc(100vh-6rem)] flex items-center">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full py-16 md:py-24">
+        <div class="lg:col-span-7 max-w-4xl">
+          <div class="inline-flex items-center gap-3 border border-grhiit-red/30 bg-grhiit-black/50 px-4 py-2 mb-8">
+            <span class="h-2 w-2 bg-grhiit-red rounded-full animate-pulse"></span>
+            <span class="font-mono text-xs uppercase tracking-[0.3em] text-grhiit-red">iOS early access</span>
+          </div>
+
+          <h1 class="font-display uppercase text-grhiit-white leading-brutal tracking-wide skew-forward text-6xl md:text-8xl lg:text-9xl">
+            Hard is
+            <span class="block text-outline-red text-outline-thick mt-2 md:mt-4">misunderstood.</span>
+          </h1>
+
+          <div class="mt-8 max-w-2xl border-l-4 border-grhiit-red pl-6">
+            <p class="text-xl md:text-2xl font-body text-grhiit-white/80 leading-relaxed">
+              GRHIIT is an 8-week bodyweight practice that uses sustained intensity, incomplete recovery, and forward-only progression to recalibrate what hard feels like.
+            </p>
+            <p class="mt-5 text-lg md:text-xl font-body text-grhiit-white/55 leading-relaxed">
+              Fitness is the byproduct. Identity is the product.
+            </p>
+          </div>
+
+          <div class="mt-10 grid sm:grid-cols-3 gap-3 max-w-2xl">
+            <div class="border border-grhiit-white/10 bg-grhiit-black/50 p-4">
+              <div class="font-mono text-grhiit-red text-sm uppercase tracking-widest">02 free</div>
+              <div class="mt-2 font-display text-2xl uppercase text-grhiit-white">sessions</div>
+            </div>
+            <div class="border border-grhiit-white/10 bg-grhiit-black/50 p-4">
+              <div class="font-mono text-grhiit-red text-sm uppercase tracking-widest">$24.99</div>
+              <div class="mt-2 font-display text-2xl uppercase text-grhiit-white">cycle 1</div>
+            </div>
+            <div class="border border-grhiit-white/10 bg-grhiit-black/50 p-4">
+              <div class="font-mono text-grhiit-red text-sm uppercase tracking-widest">24 total</div>
+              <div class="mt-2 font-display text-2xl uppercase text-grhiit-white">sessions</div>
+            </div>
+          </div>
+
+          <div class="mt-12 flex flex-col sm:flex-row gap-4">
+            <button
+              @click="$emit('openWaitlist')"
+              class="group relative px-10 py-5 bg-grhiit-red text-grhiit-white font-display uppercase tracking-widest text-lg overflow-hidden hover:shadow-glow-red-lg transition-all duration-300"
+            >
+              <span class="relative z-10">Get early iOS access</span>
+              <div class="absolute inset-0 bg-grhiit-red-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            </button>
+            <a
+              href="#what-is-grhiit"
+              class="px-10 py-5 border-2 border-grhiit-white/20 text-grhiit-white font-display uppercase tracking-widest text-lg hover:border-grhiit-red hover:text-grhiit-red transition-all duration-300 text-center"
+            >
+              See the practice
+            </a>
+          </div>
+
+          <p class="mt-6 text-sm font-body text-grhiit-white/45 max-w-xl">
+            No PDF. No infinite workout library. No fake app screens. Just the timer, the cycle, and the first two sessions free.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <div class="relative w-full max-w-sm">
+            <div class="absolute -inset-10 bg-grhiit-red/15 blur-[90px]"></div>
+            <div class="relative mx-auto h-[620px] w-[305px] rounded-[3rem] border border-grhiit-white/15 bg-[#050505] p-3 shadow-2xl">
+              <div class="h-full rounded-[2.35rem] border border-grhiit-white/10 bg-gradient-to-b from-[#181818] via-[#080808] to-black overflow-hidden relative">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 h-7 w-32 rounded-b-3xl bg-[#050505]"></div>
+                <div class="absolute inset-0 opacity-[0.04] noise-overlay"></div>
+                <div class="p-8 pt-16 h-full flex flex-col">
+                  <div class="font-mono text-xs uppercase tracking-[0.28em] text-grhiit-red">Cycle 1</div>
+                  <div class="mt-4 h-2 w-full bg-grhiit-white/10">
+                    <div class="h-full w-[8%] bg-grhiit-red"></div>
+                  </div>
+                  <div class="mt-12 flex-1 flex items-center justify-center">
+                    <div class="relative h-44 w-44 rounded-full border border-grhiit-white/10 flex items-center justify-center">
+                      <div class="absolute inset-3 rounded-full border border-grhiit-red/30"></div>
+                      <div class="absolute inset-8 rounded-full border border-grhiit-white/10"></div>
+                      <div class="h-2 w-2 bg-grhiit-red rounded-full shadow-glow-red"></div>
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-4 gap-2">
+                    <div v-for="n in 24" :key="n" class="h-2" :class="n <= 2 ? 'bg-grhiit-red' : 'bg-grhiit-white/10'"></div>
+                  </div>
+                  <div class="mt-8 border border-grhiit-white/10 bg-grhiit-black/70 p-4">
+                    <div class="h-3 w-24 bg-grhiit-white/15"></div>
+                    <div class="mt-3 h-2 w-36 bg-grhiit-white/10"></div>
+                    <div class="mt-2 h-2 w-28 bg-grhiit-white/10"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-5 text-center font-mono text-xs uppercase tracking-[0.25em] text-grhiit-white/35">
+              Abstract app preview. Final UI in progress.
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -114,163 +113,4 @@
 defineEmits<{
   (e: 'openWaitlist'): void
 }>()
-
-const { $gsap } = useNuxtApp()
-
-const heroSection = ref<HTMLElement | null>(null)
-const bgPulse = ref<HTMLElement | null>(null)
-const accentLine = ref<HTMLElement | null>(null)
-const line1Refs = ref<HTMLElement[]>([])
-const line2Refs = ref<HTMLElement[]>([])
-const separator = ref<HTMLElement | null>(null)
-const problemStatement = ref<HTMLElement | null>(null)
-const bullets = ref<HTMLElement | null>(null)
-const ctas = ref<HTMLElement | null>(null)
-const founderNote = ref<HTMLElement | null>(null)
-const scrollIndicator = ref<HTMLElement | null>(null)
-
-const line1Words = ["YOUR", "HARDEST", "WORKOUT"]
-const line2Words = ["WASN'T", "HARD."]
-
-onMounted(() => {
-  if (!$gsap) return
-
-  // Set initial states immediately before timeline starts
-  // Using autoAlpha (opacity + visibility) for reliable hiding
-  $gsap.set(line1Refs.value, { y: 100, autoAlpha: 0, rotateX: -30 })
-  $gsap.set(line2Refs.value, { x: -40, autoAlpha: 0 })
-  $gsap.set(problemStatement.value, { y: 20, autoAlpha: 0 })
-  $gsap.set(bullets.value, { y: 15, autoAlpha: 0 })
-  $gsap.set(ctas.value, { y: 20, autoAlpha: 0, scale: 0.98 })
-  $gsap.set(founderNote.value, { autoAlpha: 0 })
-  $gsap.set(scrollIndicator.value, { autoAlpha: 0 })
-
-  const tl = $gsap.timeline({ delay: 0.2 })
-
-  // Accent line draws down
-  tl.to(accentLine.value, {
-    height: '40%',
-    duration: 0.8,
-    ease: 'power2.out',
-  })
-
-  // Line 1 words slam in
-  tl.to(
-    line1Refs.value,
-    {
-      y: 0,
-      autoAlpha: 1,
-      rotateX: 0,
-      duration: 0.6,
-      stagger: 0.1,
-      ease: 'power4.out',
-    },
-    '-=0.4'
-  )
-
-  // Background pulse on "TRAINING."
-  tl.to(bgPulse.value, {
-    opacity: 1,
-    duration: 0.3,
-    ease: 'power2.out',
-  }, '-=0.2')
-
-  tl.to(bgPulse.value, {
-    opacity: 0,
-    duration: 0.8,
-    ease: 'power2.out',
-  })
-
-  // Line 2 words slide in (slightly delayed, subdued)
-  tl.to(
-    line2Refs.value,
-    {
-      x: 0,
-      autoAlpha: 1,
-      duration: 0.5,
-      stagger: 0.06,
-      ease: 'power3.out',
-    },
-    '-=0.6'
-  )
-
-  // Separator line draws
-  tl.to(separator.value, {
-    width: '200px',
-    duration: 0.6,
-    ease: 'power2.inOut',
-  }, '-=0.2')
-
-  // Problem statement fades in
-  tl.to(
-    problemStatement.value,
-    { y: 0, autoAlpha: 1, duration: 0.5, ease: 'power2.out' },
-    '-=0.2'
-  )
-
-  // Bullets stagger in
-  tl.to(
-    bullets.value,
-    { y: 0, autoAlpha: 1, duration: 0.4, ease: 'power2.out' },
-    '-=0.1'
-  )
-
-  // CTAs pop in
-  tl.to(
-    ctas.value,
-    { y: 0, autoAlpha: 1, scale: 1, duration: 0.5, ease: 'back.out(1.2)' },
-    '-=0.2'
-  )
-
-  // Founder note
-  tl.to(founderNote.value, {
-    autoAlpha: 1,
-    duration: 0.4,
-    ease: 'power2.out',
-  }, '-=0.2')
-
-  // Scroll indicator
-  tl.to(scrollIndicator.value, {
-    autoAlpha: 1,
-    duration: 0.4,
-    ease: 'power2.out',
-  }, '-=0.1')
-
-  // Parallax effect on scroll - use fromTo to ensure proper reversal
-  $gsap.fromTo(
-    [line1Refs.value, line2Refs.value],
-    {
-      y: 0,
-      opacity: 1,
-    },
-    {
-      scrollTrigger: {
-        trigger: heroSection.value,
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1,
-      },
-      y: 80,
-      opacity: 0.2,
-      ease: 'none',
-    }
-  )
-})
 </script>
-
-<style scoped>
-h1 {
-  font-size: clamp(2.2rem, 9vw, 7rem);
-  line-height: 0.9;
-}
-
-@media (min-width: 768px) {
-  h1 {
-    font-size: clamp(3.5rem, 11vw, 9rem);
-  }
-}
-
-.bg-gradient-radial {
-  background: radial-gradient(ellipse at center, var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to));
-}
-</style>
