@@ -1,5 +1,5 @@
 <template>
-  <section class="relative min-h-[90svh] flex items-center overflow-hidden bg-obsidian">
+  <section id="begin" class="relative min-h-[90svh] flex items-center overflow-hidden bg-obsidian">
     <img src="/images/sections/canyon-begin.webp" alt="" class="absolute inset-0 w-full h-full object-cover object-[70%_85%]" loading="lazy" />
     <div class="absolute inset-0 bg-gradient-to-b from-obsidian via-obsidian/70 to-obsidian/40"></div>
 
