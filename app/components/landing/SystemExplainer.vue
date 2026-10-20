@@ -8,7 +8,7 @@
         Hard,<br />redefined.
       </h2>
       <p class="mt-8 font-body text-lg md:text-xl text-bone/80">
-        18 Sessions. 3 per week. Bodyweight. No negotiation.
+        Not more weight. Less rest.
       </p>
 
       <div class="ridge-spacer" aria-hidden="true"></div>
@@ -20,6 +20,8 @@
         </div>
       </div>
 
+      <p class="mt-14 font-display uppercase tracking-wide text-2xl md:text-3xl leading-tight"><span class="text-bone">Every rep is judged. By you.</span><br /><span class="text-bone/45">Not the mirror.</span></p>
+
       <NuxtLink to="/program" class="inline-block mt-12 font-display uppercase tracking-widest text-bone/70 hover:text-bone transition-colors">
         See the Cycle →
       </NuxtLink>
@@ -29,19 +31,19 @@
 
 <script setup lang="ts">
 const features = [
-  { title: 'Bodyweight', body: 'Burpees. Squat thrusts. Jump squats. Bodybuilders. Your body is the load.' },
-  { title: 'Tabata blocks', body: '20 on. 10 off. The blocks grow. Rest shrinks.' },
-  { title: 'Around the blocks', body: 'Short, exact intervals. You leave with more than you thought.' },
-  { title: 'Forward only', body: 'No Session repeats. Miss one, it is gone. The next awaits.' },
+  { title: 'Press play', body: 'It calls work. It calls rest. You go.' },
+  { title: 'Less rest', body: 'Overload is not only weight. Rest shrinks, Session by Session.' },
+  { title: 'The summit', body: 'Build. Summit: 20 on, 10 off. Descend. The reps after you want to quit are the point.' },
+  { title: 'Again', body: 'One heavy lift proves little. Twenty squats in twenty seconds. Again. And again.' },
 ]
 </script>
 
 <style scoped>
 /* Stone steps (focal right half) stay visible: image is a top band at its natural ratio, faded into Graphite; cards start below the trail's climb */
-.ridge-img { background: url(/images/sections/stone-steps.webp) center / cover no-repeat; position: absolute; top: 0; left: 0; width: 100%; height: 62svh; background-position: 65% 50%;
+.ridge-img { background: url(/images/sections/stone-steps.webp) center / cover no-repeat; position: absolute; top: 0; left: 0; width: 100%; height: 72svh; background-position: 80% 50%;
   -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); }
-.ridge-shade { position: absolute; inset: 0 0 auto 0; height: 62svh; background: linear-gradient(to bottom, rgba(20,20,20,.55), rgba(20,20,20,.1) 45%, transparent); }
-.ridge-spacer { height: 14svh; }
+.ridge-shade { position: absolute; inset: 0 0 auto 0; height: 72svh; background: linear-gradient(to bottom, rgba(20,20,20,.6), rgba(20,20,20,.1) 45%, transparent); }
+.ridge-spacer { height: 30svh; }
 @media (min-width: 768px) {
   .ridge-img { height: auto; aspect-ratio: 16 / 9; max-height: 100%; background-position: 50% 50%; }
   .ridge-shade { height: auto; aspect-ratio: 16 / 9; background: linear-gradient(to right, rgba(20,20,20,.7), rgba(20,20,20,.15) 45%, transparent 70%); }
