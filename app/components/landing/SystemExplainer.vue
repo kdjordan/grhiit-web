@@ -1,7 +1,7 @@
 <template>
   <section id="what-is-grhiit" class="relative overflow-hidden bg-graphite py-28 md:py-40">
-    <img src="/images/sections/ridge-path.webp" alt="" class="absolute inset-x-0 top-0 w-full h-[70%] object-cover object-[60%_45%] opacity-60" loading="lazy" />
-    <div class="absolute inset-0 bg-gradient-to-b from-graphite/40 via-graphite/80 to-graphite"></div>
+    <img src="/images/sections/ridge-path.webp" alt="" class="ridge-img" loading="lazy" />
+    <div class="ridge-shade"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12">
       <h2 class="font-display uppercase text-bone leading-brutal tracking-wide text-5xl md:text-7xl">
@@ -11,7 +11,8 @@
         18 Sessions. 3 per week. Bodyweight. No negotiation.
       </p>
 
-      <div class="mt-16 grid sm:grid-cols-2 gap-px bg-iron">
+      <div class="ridge-spacer" aria-hidden="true"></div>
+      <div class="grid sm:grid-cols-2 gap-px bg-iron">
         <div v-for="(f, i) in features" :key="f.title" class="bg-graphite/95 p-8">
           <span class="font-mono text-xs text-ember">0{{ i + 1 }}</span>
           <h3 class="mt-3 font-display uppercase tracking-wide text-2xl text-bone">{{ f.title }}</h3>
@@ -34,3 +35,16 @@ const features = [
   { title: 'Forward only', body: 'No Session repeats. Miss one, it is gone. The next awaits.' },
 ]
 </script>
+
+<style scoped>
+/* Lit trail stays visible: image is a top band at its natural ratio, faded into Graphite; cards start below the trail's climb */
+.ridge-img { position: absolute; top: 0; left: 0; width: 100%; height: 62svh; object-fit: cover; object-position: 58% 60%;
+  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); }
+.ridge-shade { position: absolute; inset: 0 0 auto 0; height: 62svh; background: linear-gradient(to bottom, rgba(20,20,20,.55), rgba(20,20,20,.1) 45%, transparent); }
+.ridge-spacer { height: 14svh; }
+@media (min-width: 768px) {
+  .ridge-img { height: auto; aspect-ratio: 16 / 9; max-height: 100%; object-position: 50% 50%; }
+  .ridge-shade { height: auto; aspect-ratio: 16 / 9; background: linear-gradient(to right, rgba(20,20,20,.7), rgba(20,20,20,.15) 45%, transparent 70%); }
+  .ridge-spacer { height: clamp(6rem, 18vw, 22rem); }
+}
+</style>
