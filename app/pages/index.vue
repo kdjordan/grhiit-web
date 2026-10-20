@@ -48,7 +48,7 @@ const handleWaitlistSubmit = (data: { email: string; name: string; success: bool
 }
 
 // SEO
-useHead({ titleTemplate: "%s" })
+useHead({ titleTemplate: null })
 useSeoMeta({
   title: "GRHIIT — Hard is misunderstood.",
   description: "Stop working out. Start training. Six weeks. Eighteen Sessions. Bodyweight only.",
