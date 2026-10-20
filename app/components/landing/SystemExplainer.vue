@@ -20,7 +20,7 @@
         </div>
       </div>
 
-      <p class="mt-14 font-display uppercase tracking-wide text-2xl md:text-3xl leading-tight"><span class="text-bone">Every rep is judged. By you.</span><br /><span class="text-bone/45">Not the mirror.</span></p>
+      <p class="mt-14 font-display uppercase tracking-wide text-2xl md:text-3xl leading-tight"><span class="text-bone">No one is watching.</span><br /><span class="text-bone/45">Prove it anyway.</span></p>
 
       <NuxtLink to="/program" class="inline-block mt-12 font-display uppercase tracking-widest text-bone/70 hover:text-bone transition-colors">
         See the Cycle →
@@ -31,10 +31,10 @@
 
 <script setup lang="ts">
 const features = [
-  { title: 'Press play', body: 'It calls work. It calls rest. You go.' },
-  { title: 'Less rest', body: 'Overload is not only weight. Rest shrinks, Session by Session.' },
-  { title: 'The summit', body: 'Build. Summit: 20 on, 10 off. Descend. The reps after you want to quit are the point.' },
-  { title: 'Again', body: 'One heavy lift proves little. Twenty squats in twenty seconds. Again. And again.' },
+  { title: 'Press play', body: 'It calls work. It calls rest. You go. You count.' },
+  { title: 'Less rest', body: 'Your body is the load you carry for life. Fail safe, no spotter. Rest shrinks, Session by Session.' },
+  { title: 'The summit', body: '20 on. 10 off. Four rounds: easy, harder, hard. Then a level you did not know.' },
+  { title: 'Hold the count', body: 'Hold your count. Every round. Your number, not the app\'s.' },
 ]
 </script>
 
