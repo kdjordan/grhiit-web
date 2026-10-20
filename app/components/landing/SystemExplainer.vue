@@ -1,6 +1,6 @@
 <template>
   <section id="what-is-grhiit" class="relative overflow-hidden bg-graphite py-28 md:py-40">
-    <img src="/images/sections/ridge-path.webp" alt="" class="absolute inset-x-0 top-0 w-full h-[70%] object-cover object-center opacity-60" loading="lazy" />
+    <img src="/images/sections/ridge-path.webp" alt="" class="absolute inset-x-0 top-0 w-full h-[70%] object-cover object-[60%_45%] opacity-60" loading="lazy" />
     <div class="absolute inset-0 bg-gradient-to-b from-graphite/40 via-graphite/80 to-graphite"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12">

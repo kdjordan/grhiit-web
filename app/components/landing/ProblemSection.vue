@@ -1,6 +1,6 @@
 <template>
   <section class="relative overflow-hidden bg-obsidian py-28 md:py-40">
-    <img src="/images/sections/hands-ground.webp" alt="Hands pressed on dark ground." class="absolute inset-0 w-full h-full object-cover object-center md:object-right" loading="lazy" />
+    <img src="/images/sections/hands-ground.webp" alt="Hands pressed on dark ground." class="absolute inset-0 w-full h-full object-cover object-[50%_50%]" loading="lazy" />
     <div class="absolute inset-0 bg-obsidian/75 md:bg-gradient-to-r md:from-obsidian md:via-obsidian/85 md:to-obsidian/30"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
