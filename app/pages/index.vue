@@ -3,6 +3,9 @@
     <!-- Hero Section -->
     <LandingHeroSection @open-waitlist="openWaitlistModal" />
 
+    <!-- The App -->
+    <LandingAppScreens />
+
     <!-- Problem/Commitment Section -->
     <LandingProblemSection />
 
@@ -50,12 +53,12 @@ const handleWaitlistSubmit = (data: { email: string; name: string; success: bool
 // SEO
 useHead({ titleTemplate: null })
 useSeoMeta({
-  title: "GRHIIT — Hard is misunderstood.",
+  title: "GRHIIT — Stop working out. Start training.",
   description: "Stop working out. Start training. Six weeks. Eighteen Sessions. Bodyweight only.",
-  ogTitle: "GRHIIT — Hard is misunderstood.",
+  ogTitle: "GRHIIT — Stop working out. Start training.",
   ogDescription: "A practice of voluntary discomfort. One Cycle. One price. No subscription.",
   ogImage: "/og/og-default.jpg",
-  twitterTitle: "GRHIIT — Hard is misunderstood.",
+  twitterTitle: "GRHIIT — Stop working out. Start training.",
   twitterDescription: "A practice of voluntary discomfort. One Cycle. One price. No subscription.",
   twitterImage: "/og/og-default.jpg",
 })

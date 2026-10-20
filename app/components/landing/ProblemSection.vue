@@ -15,11 +15,6 @@
           <p class="text-bone">Training has a target.</p>
         </div>
 
-        <div class="mt-10 font-body text-lg text-bone/80 space-y-1">
-          <p>Stop working out.</p>
-          <p class="text-bone">Start training.</p>
-        </div>
-
         <div class="mt-10 font-body text-lg text-bone/70 space-y-1">
           <p>You think you know hard.</p>
           <p class="text-bone">You don't.</p>

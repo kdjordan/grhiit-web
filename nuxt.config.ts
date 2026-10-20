@@ -60,7 +60,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: "en" },
-      title: 'GRHIIT — Hard is misunderstood.',
+      title: 'GRHIIT — Stop working out. Start training.',
       titleTemplate: '%s | GRHIIT',
       meta: [
         { charset: 'utf-8' },
@@ -71,7 +71,7 @@ export default defineNuxtConfig({
         
         // Open Graph / Facebook
         { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: 'GRHIIT — Hard is misunderstood.' },
+        { property: 'og:title', content: 'GRHIIT — Stop working out. Start training.' },
         { property: 'og:description', content: 'A practice of voluntary discomfort. One Cycle. One price. No subscription.' },
         { property: 'og:image', content: '/og/og-default.jpg' },
         { property: 'og:image:width', content: '1200' },
@@ -80,7 +80,7 @@ export default defineNuxtConfig({
         
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'GRHIIT — Hard is misunderstood.' },
+        { name: 'twitter:title', content: 'GRHIIT — Stop working out. Start training.' },
         { name: 'twitter:description', content: 'A practice of voluntary discomfort. One Cycle. One price. No subscription.' },
         { name: 'twitter:image', content: '/og/og-default.jpg' },
       ],
