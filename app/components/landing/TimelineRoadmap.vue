@@ -4,7 +4,7 @@
       <h2 class="font-display uppercase text-bone leading-brutal tracking-wide text-5xl md:text-7xl">
         6 weeks.<br />One path.
       </h2>
-      <p class="mt-8 font-body text-lg md:text-xl text-bone/70">The blocks grow. Rest shrinks. You stay.</p>
+      <p class="mt-8 font-body text-lg md:text-xl text-bone/70">Work grows. Rest shrinks. You stay.</p>
 
       <ol class="mt-16 grid md:grid-cols-3 gap-px bg-iron-ash/30">
         <li v-for="p in phases" :key="p.num" class="bg-iron p-8">
@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-// Ratios per phase are TBD until the 6-week Cycle content is final.
+// Work:rest intervals per phase are TBD until the 6-week Cycle content is final.
 const phases = [
   { num: 'I', weeks: '1–2', sessions: '1–6', ratio: '[TBD]', line: 'Learn to show up.' },
   { num: 'II', weeks: '3–4', sessions: '7–12', ratio: '[TBD]', line: 'The body obeys.' },

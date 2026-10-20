@@ -66,7 +66,7 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: 'Stop working out. Start training. Six weeks. Eighteen Sessions. Bodyweight only.' },
-        { name: 'keywords', content: 'HIIT, bodyweight training, interval training, discipline, burpees, tabata' },
+        { name: 'keywords', content: 'HIIT, bodyweight training, interval training, discipline, burpees, work to rest intervals, tabata' },
         { name: 'author', content: 'GRHIIT' },
         
         // Open Graph / Facebook

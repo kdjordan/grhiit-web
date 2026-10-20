@@ -33,7 +33,7 @@
 const features = [
   { title: 'Press play', body: 'It calls work. It calls rest. You go. You count.' },
   { title: 'Less rest', body: 'Your body is the load you carry for life. Fail safe, no spotter. Rest shrinks, Session by Session.' },
-  { title: 'The summit', body: '20 on. 10 off. Four rounds: easy, harder, hard. Then a level you did not know.' },
+  { title: 'The math', body: 'Longer work. Harder movement. Less rest. 6 on, 3 off becomes 6 on, 2 off. It adds up.' },
   { title: 'Hold the count', body: 'Hold your count. Every round. Your number, not the app\'s.' },
 ]
 </script>
