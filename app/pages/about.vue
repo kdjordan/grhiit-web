@@ -72,7 +72,7 @@
     </section>
 
     <!-- Principles Section -->
-    <section class="py-20 md:py-28 bg-[#1F1C1A] relative overflow-hidden">
+    <section class="py-20 md:py-28 bg-iron relative overflow-hidden">
       <!-- Noise texture -->
       <div class="absolute inset-0 opacity-[0.015] pointer-events-none noise-overlay"></div>
 

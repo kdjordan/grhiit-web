@@ -1,152 +1,27 @@
 <template>
-  <section ref="ctaSection" class="py-24 md:py-40 bg-grhiit-black-warm relative overflow-hidden">
-    <!-- Red glow from top -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-grhiit-red/10 blur-[120px] pointer-events-none"></div>
+  <section class="relative min-h-[90svh] flex items-center overflow-hidden bg-obsidian">
+    <img src="/images/sections/canyon-begin.webp" alt="" class="absolute inset-0 w-full h-full object-cover object-bottom" loading="lazy" />
+    <div class="absolute inset-0 bg-gradient-to-b from-obsidian via-obsidian/70 to-obsidian/40"></div>
 
-    <!-- Subtle red border top -->
-    <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-grhiit-red to-transparent"></div>
+    <div class="relative z-10 w-full max-w-3xl mx-auto px-6 text-center py-28">
+      <p class="font-mono text-xs uppercase tracking-widest text-ember">Cycle I</p>
+      <h2 class="mt-4 font-display uppercase text-bone leading-brutal tracking-wide text-7xl md:text-9xl">Begin.</h2>
 
-    <!-- Noise texture -->
-    <div class="absolute inset-0 opacity-[0.02] pointer-events-none noise-overlay"></div>
-
-    <div class="container mx-auto px-4 md:px-8 relative z-10">
-      <div class="max-w-3xl mx-auto text-center">
-        <!-- Pre-launch badge -->
-        <div ref="badge" class="inline-flex items-center gap-2 px-4 py-2 bg-grhiit-red/10 border border-grhiit-red/30 mb-8 opacity-0">
-          <span class="w-2 h-2 bg-grhiit-red rounded-full animate-pulse"></span>
-          <span class="font-mono text-xs uppercase tracking-widest text-grhiit-red">Cycle 1 Opening</span>
-        </div>
-
-        <!-- Main headline -->
-        <h2
-          ref="headline"
-          class="font-display text-4xl md:text-5xl lg:text-6xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward opacity-0"
-        >
-          First 1,000
-          <span class="block mt-2 md:mt-4 text-outline-red text-outline-thick">Lock Founding Price</span>
-        </h2>
-
-        <!-- Context -->
-        <div
-          ref="contextCopy"
-          class="mt-8 max-w-xl mx-auto opacity-0"
-        >
-          <p class="text-lg md:text-xl font-body text-grhiit-white/60 mb-4">
-            Cycle 1 begins January 2026. We're bringing in founding members now.
-          </p>
-          <p class="text-lg md:text-xl font-body text-grhiit-white/80">
-            Lock launch-day pricing. Get the GRHIIT Starter PDF today. Begin before the app launches.
-          </p>
-        </div>
-
-        <!-- CTA Button -->
-        <div ref="ctaButton" class="mt-12 md:mt-14 opacity-0">
-          <button
-            @click="$emit('openWaitlist')"
-            class="group relative px-12 py-5 bg-grhiit-red text-grhiit-white font-display uppercase tracking-widest text-lg md:text-xl overflow-hidden hover:shadow-glow-red-lg transition-all duration-300 hover:scale-[1.02]"
-          >
-            <span class="relative z-10">Claim Founding Access</span>
-            <div class="absolute inset-0 bg-grhiit-red-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-          </button>
-        </div>
-
-        <!-- Closing hook -->
-        <div ref="closingHook" class="mt-14 md:mt-16 pt-10 border-t border-grhiit-white/10 opacity-0">
-          <p class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-grhiit-white">
-            In 8 weeks, will you be someone who
-            <span class="text-grhiit-red">waited?</span>
-          </p>
-        </div>
+      <div class="mt-10 font-body text-lg text-bone/80 space-y-1">
+        <p>One Cycle. One price. Once.</p>
+        <p>No subscription.</p>
+        <p class="text-bone/60">The first 1,000 hear first.</p>
       </div>
+
+      <button @click="$emit('openWaitlist')" class="mt-12 px-12 py-5 bg-ember text-bone font-display uppercase tracking-widest text-lg md:text-xl hover:bg-ember-dark transition-colors">
+        Join the First 1,000
+      </button>
+
+      <p class="mt-12 font-body text-sm text-bone/40">Six weeks from now arrives either way.</p>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-defineEmits<{
-  (e: 'openWaitlist'): void
-}>()
-
-const { $gsap } = useNuxtApp()
-
-const ctaSection = ref<HTMLElement | null>(null)
-const badge = ref<HTMLElement | null>(null)
-const headline = ref<HTMLElement | null>(null)
-const contextCopy = ref<HTMLElement | null>(null)
-const ctaButton = ref<HTMLElement | null>(null)
-const closingHook = ref<HTMLElement | null>(null)
-
-onMounted(() => {
-  if (!$gsap || !ctaSection.value) return
-
-  const tl = $gsap.timeline({
-    scrollTrigger: {
-      trigger: ctaSection.value,
-      start: 'top 65%',
-      toggleActions: 'play none none reverse',
-    },
-  })
-
-  // Badge
-  $gsap.set(badge.value, { y: 20, opacity: 0 })
-  tl.to(badge.value, {
-    y: 0,
-    opacity: 1,
-    duration: 0.5,
-    ease: 'power2.out',
-  })
-
-  // Headline
-  $gsap.set(headline.value, { y: 40, opacity: 0 })
-  tl.to(
-    headline.value,
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.7,
-      ease: 'power3.out',
-    },
-    '-=0.2'
-  )
-
-  // Context copy
-  $gsap.set(contextCopy.value, { y: 30, opacity: 0 })
-  tl.to(
-    contextCopy.value,
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      ease: 'power2.out',
-    },
-    '-=0.3'
-  )
-
-  // CTA button
-  $gsap.set(ctaButton.value, { y: 20, opacity: 0, scale: 0.95 })
-  tl.to(
-    ctaButton.value,
-    {
-      y: 0,
-      opacity: 1,
-      scale: 1,
-      duration: 0.5,
-      ease: 'back.out(1.5)',
-    },
-    '-=0.2'
-  )
-
-  // Closing hook
-  $gsap.set(closingHook.value, { y: 20, opacity: 0 })
-  tl.to(
-    closingHook.value,
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      ease: 'power2.out',
-    },
-    '-=0.1'
-  )
-})
+defineEmits<{ (e: 'openWaitlist'): void }>()
 </script>

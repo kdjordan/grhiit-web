@@ -37,7 +37,7 @@
 
   /* Red glow text */
   .text-glow-red {
-    text-shadow: 0 0 30px rgba(232, 17, 15, 0.5);
+    text-shadow: 0 0 30px rgba(179, 58, 27, 0.5);
   }
 
   /* Outline typography - stroke only, no fill */
@@ -58,8 +58,8 @@
   /* Outline typography - red stroke */
   .text-outline-red {
     color: transparent;
-    -webkit-text-stroke: 2px #E8110F;
-    text-stroke: 2px #E8110F;
+    -webkit-text-stroke: 2px #B33A1B;
+    text-stroke: 2px #B33A1B;
   }
 
   /* Thicker outline for larger text */
@@ -73,8 +73,8 @@
     font-size: clamp(6rem, 18vw, 16rem);
     line-height: 0.85;
     color: transparent;
-    -webkit-text-stroke: 2px #E8110F;
-    text-stroke: 2px #E8110F;
+    -webkit-text-stroke: 2px #B33A1B;
+    text-stroke: 2px #B33A1B;
   }
 
   /* Even larger variant for desktop */
@@ -82,8 +82,8 @@
     font-size: clamp(8rem, 22vw, 22rem);
     line-height: 0.8;
     color: transparent;
-    -webkit-text-stroke: 3px #E8110F;
-    text-stroke: 3px #E8110F;
+    -webkit-text-stroke: 3px #B33A1B;
+    text-stroke: 3px #B33A1B;
   }
 
   /* Image treatment utilities */
@@ -111,7 +111,7 @@
 
   /* Red accent border left (mobile app pattern) */
   .border-accent-left {
-    border-left: 3px solid #E8110F;
+    border-left: 3px solid #B33A1B;
   }
 }
 

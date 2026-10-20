@@ -1,200 +1,36 @@
 <template>
-  <section ref="transformSection" class="py-24 md:py-40 overflow-hidden relative bg-grhiit-black">
-    <!-- Subtle grid pattern -->
-    <div class="absolute inset-0 opacity-[0.02] pointer-events-none" style="background-image: linear-gradient(rgba(232,17,15,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(232,17,15,0.1) 1px, transparent 1px); background-size: 80px 80px;"></div>
+  <section class="relative bg-obsidian py-28 md:py-40">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <h2 class="font-display uppercase text-bone leading-brutal tracking-wide text-5xl md:text-7xl">
+        Identity is<br />the outcome.
+      </h2>
 
-    <div class="container mx-auto px-4 md:px-8 relative z-10">
-      <!-- Section header -->
-      <div ref="headerBlock" class="max-w-4xl mx-auto mb-16 md:mb-24 opacity-0">
-        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward">
-          WHO YOU <span class="text-grhiit-red">BECOME</span>
-        </h2>
+      <div class="mt-16 grid md:grid-cols-3 gap-px bg-iron">
+        <div v-for="s in stages" :key="s.week" class="bg-obsidian p-8">
+          <p class="font-mono text-xs uppercase tracking-widest text-bone/40">{{ s.week }}</p>
+          <h3 class="mt-2 font-display uppercase tracking-wide text-3xl text-bone">{{ s.name }}</h3>
+          <p class="mt-4 font-body text-bone/60 leading-relaxed">{{ s.body }}</p>
+        </div>
       </div>
 
-      <!-- Three-stage progression -->
-      <div class="max-w-5xl mx-auto">
-        <div class="grid md:grid-cols-3 gap-8 md:gap-0">
-          <!-- Week 1: Survival -->
-          <div
-            ref="stage1"
-            class="relative p-6 md:p-8 md:border-r border-grhiit-gray-800 opacity-0"
-          >
-            <div class="font-mono text-xs uppercase tracking-widest text-grhiit-white/40 mb-2">
-              Week 1
-            </div>
-            <div class="font-display font-bold text-lg uppercase tracking-tight text-grhiit-white mb-4">
-              Survival
-            </div>
-            <p class="text-lg font-body text-grhiit-white/60 leading-relaxed mb-4">
-              Your body wants to stop. Your mind offers every excuse.
-            </p>
-            <p class="text-lg font-body text-grhiit-white/80 leading-relaxed">
-              The real test isn't the workout. It's deciding to continue anyway.
-            </p>
-          </div>
+      <div class="mt-16 font-body text-lg text-bone/70 space-y-1">
+        <p>The hard talk. <span class="text-bone">Not that hard.</span></p>
+        <p>The early alarm. <span class="text-bone">Not that hard.</span></p>
+      </div>
 
-          <!-- Week 4: Shift -->
-          <div
-            ref="stage2"
-            class="relative p-6 md:p-8 md:border-r border-grhiit-gray-800 opacity-0"
-          >
-            <!-- Subtle transition glow -->
-            <div class="absolute inset-0 bg-gradient-to-b from-grhiit-red/5 via-transparent to-transparent pointer-events-none"></div>
-
-            <div class="relative">
-              <div class="font-mono text-xs uppercase tracking-widest text-grhiit-white/50 mb-2">
-                Week 4
-              </div>
-              <div class="font-display font-bold text-lg uppercase tracking-tight text-grhiit-white mb-4">
-                Shift
-              </div>
-              <p class="text-lg font-body text-grhiit-white/70 leading-relaxed mb-4">
-                The bargaining stops. Timer starts, you move.
-              </p>
-              <p class="text-lg font-body text-grhiit-white/80 leading-relaxed mb-4">
-                Not because you want to. Because that's who you are now.
-              </p>
-              <p class="text-lg font-body text-grhiit-white/90 leading-relaxed">
-                You trust yourself again. Maybe for the first time in years.
-              </p>
-            </div>
-          </div>
-
-          <!-- Week 8: Forged -->
-          <div
-            ref="stage3"
-            class="relative p-6 md:p-8 opacity-0"
-          >
-            <!-- Red glow effect -->
-            <div class="absolute inset-0 bg-gradient-to-br from-grhiit-red/15 via-grhiit-red/5 to-transparent pointer-events-none"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-grhiit-red/10 pointer-events-none"></div>
-
-            <div class="relative">
-              <div class="font-mono text-xs uppercase tracking-widest text-grhiit-red mb-2">
-                Week 8
-              </div>
-              <div class="font-display font-bold text-lg uppercase tracking-tight text-grhiit-red mb-4">
-                Forged
-              </div>
-              <p class="text-lg font-body text-grhiit-white leading-relaxed mb-2">
-                You don't recognize who you were eight weeks ago.
-              </p>
-              <p class="text-lg font-body text-grhiit-white/70 leading-relaxed mb-2">
-                Not because of how you look.
-              </p>
-              <p class="text-lg font-body text-grhiit-white leading-relaxed mb-6">
-                Because of what you proved.
-              </p>
-              <div class="space-y-2 text-grhiit-white/70 font-body">
-                <p>The difficult conversation? <span class="text-grhiit-white">Not that hard.</span></p>
-                <p>The early morning? <span class="text-grhiit-white">Not that hard.</span></p>
-                <p>The commitment you keep breaking? <span class="text-grhiit-white">Not that hard.</span></p>
-              </div>
-              <p class="mt-4 text-lg font-body text-grhiit-red font-semibold">
-                You know what hard actually is now.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Final statement -->
-        <div ref="finalStatement" class="mt-16 md:mt-24 pt-12 border-t border-grhiit-white/10 text-center opacity-0">
-          <p class="text-lg md:text-xl font-body text-grhiit-white/50 mb-4">
-            Fitness is the side effect.
-          </p>
-          <p class="font-display text-2xl md:text-3xl lg:text-4xl uppercase tracking-wide text-grhiit-white leading-tight skew-forward">
-            The real product is you —
-            <span class="text-grhiit-red">recalibrated.</span>
-          </p>
-        </div>
+      <div class="mt-16 h-px w-16 bg-ember"></div>
+      <div class="mt-8 font-display uppercase tracking-wide text-3xl md:text-4xl leading-tight">
+        <p class="text-bone/50">Fitness is the side effect.</p>
+        <p class="text-bone">Identity is the outcome.</p>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-const { $gsap } = useNuxtApp()
-
-const transformSection = ref<HTMLElement | null>(null)
-const headerBlock = ref<HTMLElement | null>(null)
-const stage1 = ref<HTMLElement | null>(null)
-const stage2 = ref<HTMLElement | null>(null)
-const stage3 = ref<HTMLElement | null>(null)
-const finalStatement = ref<HTMLElement | null>(null)
-
-onMounted(() => {
-  if (!$gsap || !transformSection.value) return
-
-  // Header
-  $gsap.set(headerBlock.value, { y: 30, opacity: 0 })
-  $gsap.to(headerBlock.value, {
-    scrollTrigger: {
-      trigger: transformSection.value,
-      start: 'top 70%',
-      toggleActions: 'play none none reverse',
-    },
-    y: 0,
-    opacity: 1,
-    duration: 0.7,
-    ease: 'power3.out',
-  })
-
-  // Stage 1 - Week 1
-  $gsap.set(stage1.value, { y: 40, opacity: 0 })
-  $gsap.to(stage1.value, {
-    scrollTrigger: {
-      trigger: stage1.value,
-      start: 'top 75%',
-      toggleActions: 'play none none reverse',
-    },
-    y: 0,
-    opacity: 1,
-    duration: 0.6,
-    ease: 'power3.out',
-  })
-
-  // Stage 2 - Weeks 3-5
-  $gsap.set(stage2.value, { y: 40, opacity: 0 })
-  $gsap.to(stage2.value, {
-    scrollTrigger: {
-      trigger: stage2.value,
-      start: 'top 75%',
-      toggleActions: 'play none none reverse',
-    },
-    y: 0,
-    opacity: 1,
-    duration: 0.6,
-    delay: 0.15,
-    ease: 'power3.out',
-  })
-
-  // Stage 3 - Week 8
-  $gsap.set(stage3.value, { y: 40, opacity: 0 })
-  $gsap.to(stage3.value, {
-    scrollTrigger: {
-      trigger: stage3.value,
-      start: 'top 75%',
-      toggleActions: 'play none none reverse',
-    },
-    y: 0,
-    opacity: 1,
-    duration: 0.6,
-    delay: 0.3,
-    ease: 'power3.out',
-  })
-
-  // Final statement fades up
-  $gsap.set(finalStatement.value, { y: 40, opacity: 0 })
-  $gsap.to(finalStatement.value, {
-    scrollTrigger: {
-      trigger: finalStatement.value,
-      start: 'top 85%',
-      toggleActions: 'play none none reverse',
-    },
-    y: 0,
-    opacity: 1,
-    duration: 0.7,
-    ease: 'power2.out',
-  })
-})
+const stages = [
+  { week: 'Week 1', name: 'Resist', body: 'The body wants out. The mind makes excuses. You continue.' },
+  { week: 'Week 3', name: 'Quiet', body: 'The bargaining stops. Timer starts. You move.' },
+  { week: 'Week 6', name: 'Known', body: 'You know what hard is now.' },
+]
 </script>

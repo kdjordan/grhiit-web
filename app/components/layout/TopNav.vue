@@ -25,7 +25,7 @@
               @click="emit('openWaitlist')"
               class="px-5 py-2.5 bg-grhiit-red text-grhiit-white font-display font-semibold text-sm uppercase tracking-widest hover:bg-grhiit-red-dark hover:shadow-glow-red transition-all duration-300"
             >
-              Join
+              Begin
             </button>
           </div>
 
@@ -67,7 +67,7 @@
                 @click="emit('openWaitlist'); mobileMenuOpen = false"
                 class="mt-2 px-5 py-3 bg-grhiit-red text-grhiit-white font-display font-semibold text-sm uppercase tracking-widest hover:bg-grhiit-red-dark transition-all duration-300 w-full"
               >
-                Join the First 1,000
+                Begin
               </button>
             </div>
           </div>
@@ -86,7 +86,7 @@ const mobileMenuOpen = ref(false)
 
 const navLinks = [
   { to: '/', label: 'Home' },
-  { to: '/program', label: 'Program' },
+  { to: '/program', label: 'Cycle' },
   { to: '/articles', label: 'Articles' },
   { to: '/about', label: 'About' },
 ]

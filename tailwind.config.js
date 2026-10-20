@@ -12,31 +12,39 @@ export default {
     extend: {
       colors: {
         // Core brutalist palette
-        "grhiit-white": "#FAFAFA",
-        "grhiit-black": "#0A0A0A",
-        "grhiit-black-warm": "#141210",  // Warm black for alternate sections
-        "grhiit-red": "#E8110F",
-        "grhiit-red-dark": "#B80D0B",
+        "grhiit-white": "#F3F1EA",
+        "grhiit-black": "#0B0B0B",
+        "grhiit-black-warm": "#141414",  // Warm black for alternate sections
+        "grhiit-red": "#B33A1B",
+        "grhiit-red-dark": "#8E2D15",
+        // Brand palette (mockups)
+        obsidian: "#0B0B0B",
+        graphite: "#141414",
+        iron: "#1D1D1D",
+        bone: "#F3F1EA",
+        ember: { DEFAULT: "#B33A1B", dark: "#8E2D15" },
+        oxygen: "#5C8FA3",
+        "iron-ash": "#5C5C5C",
         // Gray scale - cool and warm variants
         "grhiit-gray": {
           100: "#F5F5F5",
           200: "#E5E5E5",
-          600: "#525252",
-          800: "#1A1A1A",
-          "800-warm": "#1F1C1A",  // Warm dark for alternate sections
-          900: "#0F0F0F",
+          600: "#5C5C5C",
+          800: "#1D1D1D",
+          "800-warm": "#1D1D1D",  // Warm dark for alternate sections
+          900: "#141414",
         },
       },
       fontFamily: {
         // Display: Bebas Neue - razor-sharp athletic headlines (use skew for forward momentum)
         display: ['"Bebas Neue"', "Impact", "Arial Narrow", "sans-serif"],
         // Body: DM Sans - clean, modern readability
-        body: ['"DM Sans"', "Arial", "sans-serif"],
+        body: ['"Inter"', "Arial", "sans-serif"],
         // Mono: JetBrains Mono - for stats/timers/ratios
         mono: ['"JetBrains Mono"', "Consolas", "monospace"],
         // Legacy aliases
         primary: ['"Bebas Neue"', "Impact", "Arial Narrow", "sans-serif"],
-        secondary: ['"DM Sans"', "Arial", "sans-serif"],
+        secondary: ['"Inter"', "Arial", "sans-serif"],
       },
       letterSpacing: {
         "tighter-brutal": "-0.04em",
@@ -47,8 +55,8 @@ export default {
         "brutal-tight": "0.9",
       },
       boxShadow: {
-        "glow-red": "0 0 30px rgba(232, 17, 15, 0.3)",
-        "glow-red-lg": "0 0 60px rgba(232, 17, 15, 0.4)",
+        "glow-red": "0 0 30px rgba(179, 58, 27, 0.3)",
+        "glow-red-lg": "0 0 60px rgba(179, 58, 27, 0.4)",
       },
       animation: {
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
@@ -56,8 +64,8 @@ export default {
       },
       keyframes: {
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(232, 17, 15, 0.3)" },
-          "50%": { boxShadow: "0 0 40px rgba(232, 17, 15, 0.5)" },
+          "0%, 100%": { boxShadow: "0 0 20px rgba(179, 58, 27, 0.3)" },
+          "50%": { boxShadow: "0 0 40px rgba(179, 58, 27, 0.5)" },
         },
         "draw-line": {
           "0%": { width: "0%" },
@@ -71,13 +79,13 @@ export default {
             '--tw-prose-body': '#FAFAFA',
             '--tw-prose-headings': '#FAFAFA',
             '--tw-prose-lead': 'rgba(250, 250, 250, 0.8)',
-            '--tw-prose-links': '#E8110F',
+            '--tw-prose-links': '#B33A1B',
             '--tw-prose-bold': '#FAFAFA',
             '--tw-prose-counters': 'rgba(250, 250, 250, 0.6)',
-            '--tw-prose-bullets': '#E8110F',
+            '--tw-prose-bullets': '#B33A1B',
             '--tw-prose-hr': 'rgba(250, 250, 250, 0.1)',
             '--tw-prose-quotes': '#FAFAFA',
-            '--tw-prose-quote-borders': '#E8110F',
+            '--tw-prose-quote-borders': '#B33A1B',
             '--tw-prose-captions': 'rgba(250, 250, 250, 0.6)',
             '--tw-prose-code': '#FAFAFA',
             '--tw-prose-pre-code': '#FAFAFA',
@@ -88,7 +96,7 @@ export default {
             color: 'rgba(250, 250, 250, 0.8)',
             maxWidth: 'none',
             a: {
-              color: '#E8110F',
+              color: '#B33A1B',
               textDecoration: 'none',
               fontWeight: '500',
               '&:hover': {
@@ -117,8 +125,8 @@ export default {
             blockquote: {
               fontStyle: 'normal',
               borderLeftWidth: '3px',
-              borderLeftColor: '#E8110F',
-              backgroundColor: 'rgba(232, 17, 15, 0.05)',
+              borderLeftColor: '#B33A1B',
+              backgroundColor: 'rgba(179, 58, 27, 0.05)',
               paddingLeft: '1.5em',
               paddingRight: '1.5em',
               paddingTop: '1em',

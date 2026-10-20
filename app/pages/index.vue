@@ -49,11 +49,14 @@ const handleWaitlistSubmit = (data: { email: string; name: string; success: bool
 
 // SEO
 useSeoMeta({
-  title: "GRHIIT - You're Not Training. You're Just Working Out.",
-  description:
-    "GRHIIT is a bodyweight-only training system built to turn you into the kind of person who does hard things on purpose. Short, brutal intervals. No equipment. No hiding. Join the first 1,000.",
-  ogTitle: "GRHIIT - You're Not Training. You're Just Working Out.",
-  ogDescription:
-    "A bodyweight-only training system. Short, brutal intervals. No equipment. No hiding. Join the first 1,000 founding members.",
+  titleTemplate: "%s",
+  title: "GRHIIT — Hard is misunderstood.",
+  description: "Stop working out. Start training. Six weeks. Eighteen Sessions. Bodyweight only.",
+  ogTitle: "GRHIIT — Hard is misunderstood.",
+  ogDescription: "A practice of voluntary discomfort. One Cycle. One price. No subscription.",
+  ogImage: "/og/og-default.jpg",
+  twitterTitle: "GRHIIT — Hard is misunderstood.",
+  twitterDescription: "A practice of voluntary discomfort. One Cycle. One price. No subscription.",
+  twitterImage: "/og/og-default.jpg",
 })
 </script>

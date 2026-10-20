@@ -60,25 +60,29 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: "en" },
-      title: 'GRHIIT - Be The Decision',
+      title: 'GRHIIT — Hard is misunderstood.',
       titleTemplate: '%s | GRHIIT',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Transform your fitness with GRHIIT - the ultimate high-intensity training program designed for all fitness levels. Get stronger, fitter, and healthier with our proven system.' },
-        { name: 'keywords', content: 'HIIT, high-intensity training, fitness, workout, exercise, health, strength training, cardio' },
+        { name: 'description', content: 'Stop working out. Start training. Six weeks. Eighteen Sessions. Bodyweight only.' },
+        { name: 'keywords', content: 'HIIT, bodyweight training, interval training, discipline, burpees, tabata' },
         { name: 'author', content: 'GRHIIT' },
         
         // Open Graph / Facebook
         { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: 'GRHIIT - Be The Decision' },
-        { property: 'og:description', content: 'Transform your fitness with GRHIIT - Be The Decision. Mental toughness training that builds physical strength.' },
+        { property: 'og:title', content: 'GRHIIT — Hard is misunderstood.' },
+        { property: 'og:description', content: 'A practice of voluntary discomfort. One Cycle. One price. No subscription.' },
+        { property: 'og:image', content: '/og/og-default.jpg' },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
         { property: 'og:site_name', content: 'GRHIIT' },
         
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'GRHIIT - Be The Decision' },
-        { name: 'twitter:description', content: 'Transform your fitness with GRHIIT - Be The Decision. Mental toughness training that builds physical strength.' },
+        { name: 'twitter:title', content: 'GRHIIT — Hard is misunderstood.' },
+        { name: 'twitter:description', content: 'A practice of voluntary discomfort. One Cycle. One price. No subscription.' },
+        { name: 'twitter:image', content: '/og/og-default.jpg' },
       ],
       link: [
         { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
@@ -88,7 +92,7 @@ export default defineNuxtConfig({
         // Load Bebas Neue (display - sharp athletic headlines), DM Sans (body), JetBrains Mono (stats)
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+          href: "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
         }
       ],
     }

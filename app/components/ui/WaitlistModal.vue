@@ -34,16 +34,16 @@
 
               <div class="mb-8">
                 <p class="text-grhiit-white/70 font-body mb-4">
-                  Get early access to GRHIIT, live session invites, and the complete 8 Weeks starter program.
+                  Early access. First word when Cycle I opens.
                 </p>
                 <p class="text-grhiit-red font-display font-semibold text-sm uppercase tracking-widest">
-                  All it takes is all you've got.
+                  Nothing to buy yet.
                 </p>
               </div>
 
               <form @submit.prevent="submitForm" class="space-y-5">
                 <!-- Success Message -->
-                <div v-if="successMessage" class="p-4 bg-green-500/10 border border-green-500/50 text-green-400 text-sm font-body">
+                <div v-if="successMessage" class="p-4 bg-iron border border-bone/20 text-bone text-sm font-body">
                   {{ successMessage }}
                 </div>
 
@@ -69,7 +69,7 @@
 
                 <div>
                   <label for="name" class="block text-sm font-display font-semibold text-grhiit-white mb-2 uppercase tracking-widest">
-                    First Name
+                    First name
                   </label>
                   <input
                     id="name"
@@ -88,7 +88,7 @@
                     :disabled="loading"
                     class="flex-1 px-6 py-4 bg-grhiit-red text-grhiit-white font-display font-semibold uppercase tracking-widest hover:bg-grhiit-red-dark hover:shadow-glow-red transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {{ loading ? 'Joining...' : 'Join Now' }}
+                    {{ loading ? '…' : 'Enter' }}
                   </button>
                   <button
                     type="button"
@@ -102,7 +102,7 @@
               </form>
 
               <p class="text-xs font-body text-grhiit-white/30 mt-6 text-center italic">
-                One day. One second. One rep at a time.
+                One Session. One second. One rep.
               </p>
             </DialogPanel>
           </TransitionChild>
@@ -159,7 +159,7 @@ const submitForm = async () => {
       mode: 'no-cors',
     })
 
-    successMessage.value = 'Success! Check your email to confirm your subscription.'
+    successMessage.value = 'Received. Confirm by email.'
 
     emit('submit', {
       email: email.value,
@@ -172,7 +172,7 @@ const submitForm = async () => {
     }, 2000)
   } catch (error) {
     console.error('ConvertKit submission error:', error)
-    errorMessage.value = 'Something went wrong. Please try again.'
+    errorMessage.value = 'That failed. Try again.'
 
     emit('submit', {
       email: email.value,
