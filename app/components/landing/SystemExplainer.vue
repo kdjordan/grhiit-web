@@ -1,6 +1,6 @@
 <template>
   <section id="what-is-grhiit" class="relative overflow-hidden bg-graphite py-28 md:py-40">
-    <img src="/images/sections/ridge-path.webp" alt="" class="ridge-img" loading="lazy" />
+    <div class="ridge-img" role="presentation"></div>
     <div class="ridge-shade"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12">
@@ -37,13 +37,13 @@ const features = [
 </script>
 
 <style scoped>
-/* Lit trail stays visible: image is a top band at its natural ratio, faded into Graphite; cards start below the trail's climb */
-.ridge-img { position: absolute; top: 0; left: 0; width: 100%; height: 62svh; object-fit: cover; object-position: 58% 60%;
+/* Stone steps (focal right half) stay visible: image is a top band at its natural ratio, faded into Graphite; cards start below the trail's climb */
+.ridge-img { background: url(/images/sections/stone-steps.webp) center / cover no-repeat; position: absolute; top: 0; left: 0; width: 100%; height: 62svh; background-position: 65% 50%;
   -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); }
 .ridge-shade { position: absolute; inset: 0 0 auto 0; height: 62svh; background: linear-gradient(to bottom, rgba(20,20,20,.55), rgba(20,20,20,.1) 45%, transparent); }
 .ridge-spacer { height: 14svh; }
 @media (min-width: 768px) {
-  .ridge-img { height: auto; aspect-ratio: 16 / 9; max-height: 100%; object-position: 50% 50%; }
+  .ridge-img { height: auto; aspect-ratio: 16 / 9; max-height: 100%; background-position: 50% 50%; }
   .ridge-shade { height: auto; aspect-ratio: 16 / 9; background: linear-gradient(to right, rgba(20,20,20,.7), rgba(20,20,20,.15) 45%, transparent 70%); }
   .ridge-spacer { height: clamp(6rem, 18vw, 22rem); }
 }
