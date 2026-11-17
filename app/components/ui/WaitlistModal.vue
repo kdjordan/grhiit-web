@@ -29,7 +29,7 @@
               <div class="absolute top-0 left-0 right-0 h-1 bg-grhiit-red"></div>
 
               <DialogTitle as="h3" class="font-display font-extrabold text-2xl md:text-3xl uppercase tracking-tight text-grhiit-white mb-6">
-                Get early <span class="text-grhiit-red">iOS access</span>
+                Join the First <span class="text-grhiit-red">1,000</span>
               </DialogTitle>
 
               <div class="mb-8">
