@@ -1,27 +1,15 @@
 <template>
-  <div class="bg-grhiit-black min-h-screen">
-    <!-- Hero Section -->
+  <div class="bg-obsidian min-h-screen">
     <LandingHeroSection @open-waitlist="openWaitlistModal" />
-
-    <!-- The App -->
+    <LandingCreedSection />
+    <LandingDiffSection />
     <LandingAppScreens />
-
-    <!-- Problem/Commitment Section -->
-    <LandingProblemSection />
-
-    <!-- What is GRHIIT / System Explainer -->
-    <LandingSystemExplainer />
-
-    <!-- 8-Week Timeline -->
-    <LandingTimelineRoadmap />
-
-    <!-- Transformation Section -->
-    <LandingTransformSection />
-
-    <!-- Final CTA Section -->
+    <LandingMathSection />
+    <LandingSummitSection />
+    <LandingCountSection />
+    <LandingLoadSection />
+    <LandingIdentitySection />
     <LandingCtaSection @open-waitlist="openWaitlistModal" />
-
-    <!-- Waitlist Modal -->
     <UiWaitlistModal
       :is-open="isWaitlistModalOpen"
       @close="closeWaitlistModal"
@@ -32,15 +20,8 @@
 
 <script setup lang="ts">
 const isWaitlistModalOpen = ref(false)
-
-const openWaitlistModal = () => {
-  isWaitlistModalOpen.value = true
-}
-
-const closeWaitlistModal = () => {
-  isWaitlistModalOpen.value = false
-}
-
+const openWaitlistModal = () => { isWaitlistModalOpen.value = true }
+const closeWaitlistModal = () => { isWaitlistModalOpen.value = false }
 const handleWaitlistSubmit = (data: { email: string; name: string; success: boolean }) => {
   console.log('ConvertKit waitlist signup:', {
     email: data.email,
@@ -50,16 +31,15 @@ const handleWaitlistSubmit = (data: { email: string; name: string; success: bool
   })
 }
 
-// SEO
 useHead({ titleTemplate: null })
 useSeoMeta({
-  title: "GRHIIT — Stop working out. Start training.",
-  description: "Stop working out. Start training. Six weeks. Eighteen Sessions. Bodyweight only.",
-  ogTitle: "GRHIIT — Stop working out. Start training.",
-  ogDescription: "A practice of voluntary discomfort. One Cycle. One price. No subscription.",
+  title: "GRHIIT — The path of most resistance.",
+  description: "A scripted bodyweight program for iPhone. Six weeks. Eighteen Sessions. Paid once. Nothing to cancel.",
+  ogTitle: "GRHIIT — The path of most resistance.",
+  ogDescription: "A scripted bodyweight program for iPhone. Six weeks. Eighteen Sessions. Paid once. Nothing to cancel.",
   ogImage: "/og/og-default.jpg",
-  twitterTitle: "GRHIIT — Stop working out. Start training.",
-  twitterDescription: "A practice of voluntary discomfort. One Cycle. One price. No subscription.",
+  twitterTitle: "GRHIIT — The path of most resistance.",
+  twitterDescription: "A scripted bodyweight program for iPhone. Six weeks. Eighteen Sessions. Paid once. Nothing to cancel.",
   twitterImage: "/og/og-default.jpg",
 })
 </script>

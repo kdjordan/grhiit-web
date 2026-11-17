@@ -85,7 +85,7 @@
     <!-- CTA -->
     <section class="py-24 md:py-32 text-center border-t border-iron">
       <h2 class="font-display uppercase leading-brutal tracking-wide text-6xl md:text-8xl">Begin.</h2>
-      <p class="mt-6 font-body text-lg text-bone/70">One Cycle. One price. No subscription.</p>
+      <p class="mt-6 font-body text-lg text-bone/70">One Cycle. One price. Once.<br />Paid once. Nothing to cancel.</p>
       <NuxtLink to="/#begin" class="inline-block mt-10 px-10 py-5 bg-ember text-bone font-display uppercase tracking-widest text-lg hover:bg-ember-dark transition-colors">Begin Cycle I</NuxtLink>
     </section>
   </div>

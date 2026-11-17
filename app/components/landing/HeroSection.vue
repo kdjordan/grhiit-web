@@ -10,16 +10,19 @@
       <div class="hero-copy">
         <p class="mb-5 font-mono text-xs uppercase tracking-[0.3em] text-ember">iPhone app</p>
         <h1 class="hero-title font-display uppercase text-bone tracking-wide">
-          Stop working out.<br />Start training.
+          The path<br />of most<br />resistance.
         </h1>
-        <p class="mt-6 font-body text-base md:text-lg text-bone/80">Most never find their threshold.</p>
-        <p class="mt-1 font-body text-base md:text-lg text-bone">You can.</p>
-
+        <p class="mt-6 font-display uppercase tracking-wide text-xl md:text-2xl text-bone/80 leading-tight">
+          Stop working out.<br class="sm:hidden" /> Start training.
+        </p>
+        <p class="mt-5 font-body text-base md:text-lg text-bone/75 max-w-md">
+          A scripted bodyweight program for iPhone.<br />Six weeks. Eighteen Sessions.
+        </p>
         <p class="mt-6 font-mono text-xs uppercase tracking-widest text-bone/50">
           6 weeks <span class="text-ember">·</span> 18 Sessions <span class="text-ember">·</span> Forward only
         </p>
 
-        <div class="mt-8 flex flex-wrap gap-3">
+        <div class="mt-8 flex flex-wrap gap-3 items-stretch">
           <button @click="$emit('openWaitlist')" class="px-8 py-4 bg-ember text-bone font-display uppercase tracking-widest text-base md:text-lg hover:bg-ember-dark transition-colors">
             Begin Cycle I
           </button>
@@ -42,27 +45,33 @@ const { appStore } = useAppConfig()
 </script>
 
 <style scoped>
-/* Nav is fixed: 4rem (<768px) / 5rem (md+). Hero fills the viewport below it,
-   but grows with its content when the viewport is short. */
 .hero { --nav: 4rem; min-height: 100svh; display: flex; padding-top: var(--nav); }
 @media (min-width: 768px) { .hero { --nav: 5rem; } }
 
 .hero-inner { display: flex; align-items: center; padding-block: clamp(2rem, 6svh, 5rem); }
-.hero-title { line-height: 0.9; font-size: clamp(2.75rem, min(6.2vw, 11svh), 7.5rem); }
-.hero-title { white-space: nowrap; }
+.hero-title { line-height: 0.88; font-size: clamp(2.6rem, min(7.2vw, 10svh), 7.25rem); }
 
-/* Landscape: figure + V slit sit ~70% x / 85% y; copy on the dark left wall */
 .hero-img { object-position: 70% 85%; }
-.hero-copy { max-width: min(46rem, 52%); }
+.hero-copy { max-width: min(40rem, 54%); }
 .hero-shade { background: linear-gradient(to right, rgba(11,11,11,.92) 0%, rgba(11,11,11,.75) 35%, rgba(11,11,11,.15) 60%, transparent 75%); }
 
-/* Portrait: vertical image anchored to the bottom so the figure stays low and clear.
-   Copy sits in the band between the V tip and the figure; shade stops above the figure. */
 @media (orientation: portrait), (max-aspect-ratio: 1/1) {
   .hero-img { object-position: 50% 100%; }
-  .hero-inner { align-items: flex-start; padding-top: clamp(1.5rem, 30svh, 22rem); padding-bottom: 32svh; }
+  .hero-inner { align-items: flex-start; padding-top: clamp(1.25rem, 18svh, 14rem); padding-bottom: 34svh; }
   .hero-copy { max-width: 36rem; }
-  .hero-title { font-size: clamp(2.5rem, min(11vw, 7.5svh), 6rem); }
-  .hero-shade { background: linear-gradient(to bottom, rgba(11,11,11,.15) 0%, rgba(11,11,11,.7) 32%, rgba(11,11,11,.7) 62%, rgba(11,11,11,0) 72%); }
+  .hero-title { font-size: clamp(2.4rem, min(13vw, 7svh), 5.5rem); }
+  .hero-shade { background: linear-gradient(to bottom, rgba(11,11,11,.15) 0%, rgba(11,11,11,.72) 28%, rgba(11,11,11,.72) 58%, rgba(11,11,11,0) 70%); }
+}
+
+@media (max-height: 720px) and (orientation: landscape) {
+  .hero-inner { align-items: flex-start; padding-block: 0.4rem 0.85rem; }
+  .hero-title { font-size: clamp(2.15rem, 7.2svh, 4.1rem); }
+  .hero-copy > p.mb-5 { margin-bottom: 0.4rem; }
+  .hero-copy > .mt-6 { margin-top: 0.55rem; }
+  .hero-copy > .mt-5 { margin-top: 0.4rem; }
+  .hero-copy > .mt-8 { margin-top: 0.7rem; }
+  .hero-copy .px-8 { padding-top: 0.7rem; padding-bottom: 0.7rem; }
+  .hero-copy .text-xl { font-size: 1.15rem; }
+  .hero-copy .md\:text-2xl { font-size: 1.25rem; }
 }
 </style>

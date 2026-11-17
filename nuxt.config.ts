@@ -60,19 +60,19 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: "en" },
-      title: 'GRHIIT — Stop working out. Start training.',
+      title: 'GRHIIT — The path of most resistance.',
       titleTemplate: '%s | GRHIIT',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Stop working out. Start training. Six weeks. Eighteen Sessions. Bodyweight only.' },
+        { name: 'description', content: 'A scripted bodyweight program for iPhone. Six weeks. Eighteen Sessions. Paid once. Nothing to cancel.' },
         { name: 'keywords', content: 'HIIT, bodyweight training, interval training, discipline, burpees, work to rest intervals, tabata' },
         { name: 'author', content: 'GRHIIT' },
         
         // Open Graph / Facebook
         { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: 'GRHIIT — Stop working out. Start training.' },
-        { property: 'og:description', content: 'A practice of voluntary discomfort. One Cycle. One price. No subscription.' },
+        { property: 'og:title', content: 'GRHIIT — The path of most resistance.' },
+        { property: 'og:description', content: 'A scripted bodyweight program for iPhone. Six weeks. Eighteen Sessions. Paid once. Nothing to cancel.' },
         { property: 'og:image', content: '/og/og-default.jpg' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
@@ -80,8 +80,8 @@ export default defineNuxtConfig({
         
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'GRHIIT — Stop working out. Start training.' },
-        { name: 'twitter:description', content: 'A practice of voluntary discomfort. One Cycle. One price. No subscription.' },
+        { name: 'twitter:title', content: 'GRHIIT — The path of most resistance.' },
+        { name: 'twitter:description', content: 'A scripted bodyweight program for iPhone. Six weeks. Eighteen Sessions. Paid once. Nothing to cancel.' },
         { name: 'twitter:image', content: '/og/og-default.jpg' },
       ],
       link: [
