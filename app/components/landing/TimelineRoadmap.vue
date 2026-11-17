@@ -1,258 +1,32 @@
 <template>
-  <section ref="timelineSection" class="py-24 md:py-40 bg-[#1F1C1A] relative overflow-hidden">
-    <!-- Subtle noise texture -->
-    <div class="absolute inset-0 opacity-[0.015] pointer-events-none noise-overlay"></div>
+  <section class="relative bg-iron py-28 md:py-40">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <h2 class="font-display uppercase text-bone leading-brutal tracking-wide text-5xl md:text-7xl">
+        6 weeks.<br />One path.
+      </h2>
+      <p class="mt-8 font-body text-lg md:text-xl text-bone/70">Work grows. Rest shrinks. You stay.</p>
 
-    <!-- Content wrapper -->
-    <div class="relative z-10">
-      <div class="container mx-auto px-4 md:px-8">
-        <!-- Section header -->
-        <div ref="header" class="max-w-4xl mx-auto mb-16 md:mb-24 opacity-0">
-          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward">
-            8 WEEKS.
-            <span class="block mt-2 text-grhiit-red">ONE DIRECTION.</span>
-          </h2>
-          <p class="mt-8 text-xl md:text-2xl font-body text-grhiit-white/70">
-            The Tabata blocks grow. Recovery windows shrink. You learn to sustain max intensity when every instinct screams to quit.
-          </p>
-        </div>
-
-        <!-- Timeline - Desktop horizontal -->
-        <div class="hidden lg:block relative max-w-5xl mx-auto">
-          <!-- Timeline line -->
-          <div class="absolute top-[60px] left-0 right-0 h-[2px] bg-grhiit-gray-800">
-            <div
-              ref="progressLine"
-              class="h-full bg-grhiit-red origin-left"
-              style="transform: scaleX(0);"
-            ></div>
+      <ol class="mt-16 grid md:grid-cols-3 gap-px bg-iron-ash/30">
+        <li v-for="p in phases" :key="p.num" class="bg-iron p-8">
+          <div class="flex items-baseline justify-between">
+            <span class="font-display text-4xl text-bone">{{ p.num }}</span>
+            <span class="font-mono text-xs uppercase tracking-widest text-bone/40">{{ p.ratio }}</span>
           </div>
+          <p class="mt-4 font-mono text-xs uppercase tracking-widest text-ember">Weeks {{ p.weeks }} · Sessions {{ p.sessions }}</p>
+          <p class="mt-4 font-body text-lg text-bone/80">{{ p.line }}</p>
+        </li>
+      </ol>
 
-          <!-- Phase markers -->
-          <div class="grid grid-cols-4 gap-4">
-            <div
-              v-for="(phase, index) in phases"
-              :key="phase.weeks"
-              ref="phaseBlocks"
-              class="relative text-center opacity-0"
-            >
-              <!-- Marker dot -->
-              <div
-                class="relative z-10 w-10 h-10 mx-auto rounded-full border-2 transition-all duration-500 flex items-center justify-center"
-                :class="[
-                  activePhase >= index
-                    ? 'bg-grhiit-red border-grhiit-red shadow-glow-red'
-                    : 'bg-grhiit-gray-900 border-grhiit-gray-600'
-                ]"
-              >
-                <span class="font-mono text-xs font-bold text-grhiit-white">{{ phase.weekNum }}</span>
-                <div
-                  v-if="activePhase >= index"
-                  class="absolute inset-0 rounded-full bg-grhiit-red animate-ping opacity-30"
-                ></div>
-              </div>
-
-              <!-- Content below marker -->
-              <div class="mt-8">
-                <div class="font-display font-bold text-lg uppercase tracking-tight text-grhiit-white">
-                  {{ phase.weeks }}
-                </div>
-                <div class="mt-2 font-mono text-2xl md:text-3xl font-bold text-grhiit-red">
-                  {{ phase.ratio }}
-                </div>
-                <div class="mt-3 font-body text-sm text-grhiit-white/50">
-                  {{ phase.description }}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Timeline - Mobile vertical -->
-        <div class="lg:hidden relative max-w-sm mx-auto">
-          <!-- Vertical line -->
-          <div class="absolute top-0 bottom-0 left-5 w-[2px] bg-grhiit-gray-800">
-            <div
-              ref="progressLineMobile"
-              class="w-full bg-grhiit-red origin-top"
-              style="transform: scaleY(0); height: 100%;"
-            ></div>
-          </div>
-
-          <!-- Phase items -->
-          <div class="space-y-10">
-            <div
-              v-for="(phase, index) in phases"
-              :key="phase.weeks"
-              ref="phaseBlocksMobile"
-              class="relative flex items-start gap-6 opacity-0"
-            >
-              <!-- Marker dot -->
-              <div
-                class="relative z-10 flex-shrink-0 w-10 h-10 rounded-full border-2 transition-all duration-500 flex items-center justify-center"
-                :class="[
-                  activePhase >= index
-                    ? 'bg-grhiit-red border-grhiit-red shadow-glow-red'
-                    : 'bg-grhiit-gray-900 border-grhiit-gray-600'
-                ]"
-              >
-                <span class="font-mono text-xs font-bold text-grhiit-white">{{ phase.weekNum }}</span>
-              </div>
-
-              <!-- Content -->
-              <div class="pt-1 flex-1">
-                <div class="font-display font-bold text-lg uppercase tracking-tight text-grhiit-white">
-                  {{ phase.weeks }}
-                </div>
-                <div class="mt-1 font-mono text-2xl font-bold text-grhiit-red">
-                  {{ phase.ratio }}
-                </div>
-                <div class="mt-2 font-body text-sm text-grhiit-white/50">
-                  {{ phase.description }}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bottom statements -->
-        <div ref="bottomBlock" class="mt-16 md:mt-24 max-w-3xl mx-auto opacity-0">
-          <p class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-grhiit-white mb-4">
-            The sessions don't get easier. The mental escape routes disappear.
-          </p>
-          <p class="text-xl md:text-2xl font-body text-grhiit-white/70 mb-4">
-            You learn to sustain intensity when quitting feels like the only option.
-          </p>
-          <p class="text-2xl md:text-3xl font-display font-extrabold uppercase tracking-tight text-grhiit-red">
-            That rewires everything.
-          </p>
-        </div>
-      </div>
+      <p class="mt-16 font-body text-lg text-bone/60">It does not get easier. <span class="text-bone">The exits close.</span></p>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-const { $gsap } = useNuxtApp()
-
-const timelineSection = ref<HTMLElement | null>(null)
-const header = ref<HTMLElement | null>(null)
-const progressLine = ref<HTMLElement | null>(null)
-const progressLineMobile = ref<HTMLElement | null>(null)
-const phaseBlocks = ref<HTMLElement[]>([])
-const phaseBlocksMobile = ref<HTMLElement[]>([])
-const bottomBlock = ref<HTMLElement | null>(null)
-
-const activePhase = ref(-1)
-
-interface Phase {
-  weeks: string
-  weekNum: string
-  ratio: string
-  description: string
-}
-
-const phases: Phase[] = [
-  { weeks: 'Week 1-2', weekNum: '01', ratio: '3×2', description: 'Shorter bursts. More mental escape routes. Learning to show up.' },
-  { weeks: 'Week 3-4', weekNum: '02', ratio: '3×4', description: 'Recovery windows shrink. Your body starts obeying your will.' },
-  { weeks: 'Week 5-6', weekNum: '03', ratio: '3×6', description: 'Sustained effort. Discomfort becomes familiar.' },
-  { weeks: 'Week 7-8', weekNum: '04', ratio: '3×8', description: 'Four uninterrupted minutes of maximum output. You\'re not the same person who started.' },
+// Work:rest intervals per phase are TBD until the 6-week Cycle content is final.
+const phases = [
+  { num: 'I', weeks: '1–2', sessions: '1–6', ratio: '[TBD]', line: 'Learn to show up.' },
+  { num: 'II', weeks: '3–4', sessions: '7–12', ratio: '[TBD]', line: 'The body obeys.' },
+  { num: 'III', weeks: '5–6', sessions: '13–18', ratio: '[TBD]', line: 'Hold when you want to leave.' },
 ]
-
-onMounted(() => {
-  if (!$gsap || !timelineSection.value) return
-
-  // Animate header
-  $gsap.set(header.value, { y: 30, opacity: 0 })
-  $gsap.to(header.value, {
-    scrollTrigger: {
-      trigger: timelineSection.value,
-      start: 'top 70%',
-      toggleActions: 'play none none reverse',
-    },
-    y: 0,
-    opacity: 1,
-    duration: 0.7,
-    ease: 'power3.out',
-  })
-
-  // Desktop timeline
-  if (progressLine.value && phaseBlocks.value.length) {
-    $gsap.set(phaseBlocks.value, { y: 30, opacity: 0 })
-
-    $gsap.to(phaseBlocks.value, {
-      scrollTrigger: {
-        trigger: progressLine.value,
-        start: 'top 70%',
-        toggleActions: 'play none none reverse',
-      },
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      stagger: 0.2,
-      ease: 'power3.out',
-      onStart: () => {
-        phases.forEach((_, index) => {
-          setTimeout(() => {
-            activePhase.value = index
-          }, index * 400)
-        })
-      },
-    })
-
-    $gsap.to(progressLine.value, {
-      scrollTrigger: {
-        trigger: progressLine.value,
-        start: 'top 70%',
-        toggleActions: 'play none none reverse',
-      },
-      scaleX: 1,
-      duration: 1.6,
-      ease: 'power2.inOut',
-    })
-  }
-
-  // Mobile timeline
-  if (progressLineMobile.value && phaseBlocksMobile.value.length) {
-    $gsap.set(phaseBlocksMobile.value, { x: -20, opacity: 0 })
-
-    $gsap.to(phaseBlocksMobile.value, {
-      scrollTrigger: {
-        trigger: progressLineMobile.value,
-        start: 'top 70%',
-        toggleActions: 'play none none reverse',
-      },
-      x: 0,
-      opacity: 1,
-      duration: 0.5,
-      stagger: 0.15,
-      ease: 'power3.out',
-    })
-
-    $gsap.to(progressLineMobile.value, {
-      scrollTrigger: {
-        trigger: progressLineMobile.value,
-        start: 'top 70%',
-        toggleActions: 'play none none reverse',
-      },
-      scaleY: 1,
-      duration: 1.2,
-      ease: 'power2.inOut',
-    })
-  }
-
-  // Bottom block
-  $gsap.set(bottomBlock.value, { y: 30, opacity: 0 })
-  $gsap.to(bottomBlock.value, {
-    scrollTrigger: {
-      trigger: bottomBlock.value,
-      start: 'top 85%',
-      toggleActions: 'play none none reverse',
-    },
-    y: 0,
-    opacity: 1,
-    duration: 0.7,
-    ease: 'power2.out',
-  })
-})
 </script>

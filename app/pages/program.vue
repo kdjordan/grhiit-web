@@ -1,171 +1,105 @@
 <template>
-  <div>
-    <!-- Program Hero -->
-    <section class="py-20 bg-grhiit-black border-b border-grhiit-gray">
-      <div class="container mx-auto px-4">
-        <h1 class="text-5xl md:text-6xl font-primary font-bold mb-6">
-          THE <span class="text-grhiit-red">GRHIIT</span> METHOD
-        </h1>
-        <p class="text-xl text-gray-300 max-w-3xl">
-          Structured HIIT refined over decades of coaching. Built around short, brutal intervals with progressive overload. 
-          Bodyweight-only for safety, speed, and universal accessibility.
+  <div class="bg-obsidian text-bone">
+    <!-- Hero -->
+    <section class="relative overflow-hidden min-h-[80svh] flex items-end pt-24">
+      <img src="/images/sections/stone-steps.webp" alt="" class="absolute inset-0 w-full h-full object-cover object-[70%_50%]" />
+      <div class="absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/70 to-obsidian/10"></div>
+      <div class="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-12 pb-20 md:pb-28">
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-ember">The Cycle</p>
+        <h1 class="mt-4 font-display uppercase leading-brutal tracking-wide text-6xl md:text-8xl">You<br />versus you.</h1>
+        <p class="mt-8 font-body text-lg md:text-xl text-bone/80 max-w-md">6 weeks. 18 Sessions. Bodyweight. A number to hold.</p>
+      </div>
+    </section>
+
+    <!-- Not a video -->
+    <section class="py-24 md:py-32 border-t border-iron">
+      <div class="max-w-6xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-16">
+        <div class="font-display uppercase tracking-wide text-3xl md:text-5xl leading-tight">
+          <p class="text-bone/40">60 seconds of jumping jacks.</p>
+          <p class="text-bone/40">30 seconds off.</p>
+          <p class="mt-6 text-bone">That is a video.</p>
+        </div>
+        <div class="font-body text-lg md:text-xl text-bone/75 space-y-2 md:pt-3">
+          <p>Six seconds. Ten reps.</p>
+          <p>You count. You hold it.</p>
+          <p>Next week, fifteen.</p>
+          <p class="text-bone">Then it changes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The math -->
+    <section class="py-24 md:py-32 bg-graphite">
+      <div class="max-w-6xl mx-auto px-6 md:px-12">
+        <h2 class="font-display uppercase leading-brutal tracking-wide text-5xl md:text-7xl">The math.</h2>
+        <div class="mt-12 grid sm:grid-cols-3 gap-px bg-iron">
+          <div v-for="l in levers" :key="l" class="bg-graphite p-8">
+            <p class="font-display uppercase tracking-wide text-2xl md:text-3xl">{{ l }}</p>
+          </div>
+        </div>
+        <ul class="mt-12 flex flex-wrap gap-3 font-mono text-sm uppercase tracking-widest">
+          <li v-for="r in ratios" :key="r" class="px-4 py-2 border border-iron-ash/40 text-bone/70">{{ r }}</li>
+        </ul>
+        <p class="mt-8 font-body text-lg text-bone/60">6 on, 3 off. Two weeks later, 6 on, 2 off. <span class="text-bone">It adds up.</span></p>
+      </div>
+    </section>
+
+    <!-- The summit -->
+    <section class="relative overflow-hidden py-28 md:py-40">
+      <img src="/images/sections/ridge-path.webp" alt="" class="absolute inset-0 w-full h-full object-cover object-[60%_50%]" loading="lazy" />
+      <div class="absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/75 to-obsidian/10"></div>
+      <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12">
+        <h2 class="font-display uppercase leading-brutal tracking-wide text-5xl md:text-7xl">Past<br />the summit.</h2>
+        <div class="mt-10 font-body text-lg md:text-xl text-bone/75 space-y-2 max-w-md">
+          <p>The climb builds. It peaks. It comes back down.</p>
+          <p>The easy move from the start returns.</p>
+          <p class="text-bone">Same precision. Now.</p>
+        </div>
+        <p class="mt-12 font-display uppercase tracking-wide text-3xl md:text-5xl leading-tight">
+          Gassed.<br />Called up.<br /><span class="text-ember">Same rep.</span>
         </p>
       </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="py-20 bg-grhiit-gray">
-      <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-primary font-bold mb-12">HOW IT WORKS</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="border-l-4 border-grhiit-red pl-6">
-            <h3 class="text-xl font-bold mb-3 text-grhiit-red">STEP 1</h3>
-            <h4 class="text-lg font-bold mb-2">Start at Workout 1</h4>
-            <p class="text-gray-400">No endless confusion. Clear path forward.</p>
-          </div>
-          <div class="border-l-4 border-grhiit-red pl-6">
-            <h3 class="text-xl font-bold mb-3 text-grhiit-red">STEP 2</h3>
-            <h4 class="text-lg font-bold mb-2">8-Week Cycles</h4>
-            <p class="text-gray-400">Measurable progression. More volume, less rest, better form.</p>
-          </div>
-          <div class="border-l-4 border-grhiit-red pl-6">
-            <h3 class="text-xl font-bold mb-3 text-grhiit-red">STEP 3</h3>
-            <h4 class="text-lg font-bold mb-2">Core Movements</h4>
-            <p class="text-gray-400">Squats, burpees, eight-counts. Master the basics.</p>
-          </div>
-          <div class="border-l-4 border-grhiit-red pl-6">
-            <h3 class="text-xl font-bold mb-3 text-grhiit-red">STEP 4</h3>
-            <h4 class="text-lg font-bold mb-2">Form Under Fatigue</h4>
-            <p class="text-gray-400">Coaching cues for breathing and mental checkpoints.</p>
-          </div>
+    <!-- Movements -->
+    <section class="py-24 md:py-32 border-t border-iron">
+      <div class="max-w-6xl mx-auto px-6 md:px-12">
+        <h2 class="font-display uppercase leading-brutal tracking-wide text-5xl md:text-7xl">Your body<br />is the load.</h2>
+        <p class="mt-8 font-body text-lg text-bone/70">Fail safe. No spotter. The load you carry for life.</p>
+        <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-px bg-iron">
+          <p v-for="m in movements" :key="m" class="bg-obsidian p-6 md:p-8 font-display uppercase tracking-wide text-xl md:text-2xl">{{ m }}</p>
         </div>
       </div>
     </section>
 
-    <!-- Workout Structure -->
-    <section class="py-20 bg-grhiit-black">
-      <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-primary font-bold mb-12">WORKOUT STRUCTURE</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-grhiit-gray p-8">
-            <h3 class="text-2xl font-bold text-grhiit-red mb-4">20:10</h3>
-            <p class="text-gray-300 mb-4">Classic Tabata Protocol</p>
-            <ul class="space-y-2 text-gray-400">
-              <li>→ 20 seconds work</li>
-              <li>→ 10 seconds rest</li>
-              <li>→ 8 rounds total</li>
-              <li>→ 4 minutes of hell</li>
-            </ul>
-          </div>
-          <div class="bg-grhiit-gray p-8">
-            <h3 class="text-2xl font-bold text-grhiit-red mb-4">6:3</h3>
-            <p class="text-gray-300 mb-4">Sprint Intervals</p>
-            <ul class="space-y-2 text-gray-400">
-              <li>→ 6 seconds all-out</li>
-              <li>→ 3 seconds recovery</li>
-              <li>→ Maximum power output</li>
-              <li>→ CNS recruitment</li>
-            </ul>
-          </div>
-          <div class="bg-grhiit-gray p-8">
-            <h3 class="text-2xl font-bold text-grhiit-red mb-4">60:20</h3>
-            <p class="text-gray-300 mb-4">Endurance Builder</p>
-            <ul class="space-y-2 text-gray-400">
-              <li>→ 60 seconds sustained</li>
-              <li>→ 20 seconds recovery</li>
-              <li>→ Mental toughness</li>
-              <li>→ Lactate tolerance</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Core Movements -->
-    <section class="py-20 bg-grhiit-gray">
-      <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-primary font-bold mb-12">CORE MOVEMENTS</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div>
-            <h3 class="text-xl font-bold text-grhiit-red mb-3">SQUATS</h3>
-            <p class="text-gray-400">Foundation of lower body power. Perfect form, explosive drive.</p>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-grhiit-red mb-3">JUMP SQUATS</h3>
-            <p class="text-gray-400">Plyometric power. Maximum recruitment, controlled landing.</p>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-grhiit-red mb-3">BURPEES</h3>
-            <p class="text-gray-400">Full-body destroyer. No push-up variation for speed.</p>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-grhiit-red mb-3">EIGHT-COUNTS</h3>
-            <p class="text-gray-400">Military-style bodybuilders. Coordination under fatigue.</p>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-grhiit-red mb-3">FLYING SQUATS</h3>
-            <p class="text-gray-400">Lateral explosive movement. Agility meets power.</p>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-grhiit-red mb-3">PROGRESSIONS</h3>
-            <p class="text-gray-400">Scale up or down. Meet yourself where you are.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why It Works -->
-    <section class="py-20 bg-grhiit-black">
-      <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-primary font-bold mb-12">WHY IT WORKS</h2>
-        <div class="max-w-4xl">
-          <div class="space-y-6">
-            <div class="flex items-start">
-              <span class="text-grhiit-red text-2xl mr-4">01</span>
-              <div>
-                <h3 class="text-xl font-bold mb-2">Time-Boxed Intensity</h3>
-                <p class="text-gray-400">Predictable workload, easy adherence. You know exactly what's coming.</p>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <span class="text-grhiit-red text-2xl mr-4">02</span>
-              <div>
-                <h3 class="text-xl font-bold mb-2">Zero Equipment Needed</h3>
-                <p class="text-gray-400">Removes all friction. Can't miss a workout when you need nothing but floor space.</p>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <span class="text-grhiit-red text-2xl mr-4">03</span>
-              <div>
-                <h3 class="text-xl font-bold mb-2">CNS-Respectful Progressions</h3>
-                <p class="text-gray-400">Sustainable intensity without wrecking joints or burning out.</p>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <span class="text-grhiit-red text-2xl mr-4">04</span>
-              <div>
-                <h3 class="text-xl font-bold mb-2">Mindset First</h3>
-                <p class="text-gray-400">We train discipline, not just quads. Mental toughness is the real gain.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- You vs you -->
+    <section class="py-24 md:py-32 bg-graphite">
+      <div class="max-w-6xl mx-auto px-6 md:px-12 font-display uppercase tracking-wide leading-tight text-3xl md:text-5xl">
+        <p class="text-bone/40">Who were you yesterday.</p>
+        <p class="text-bone/70 md:pl-24">Who are you today.</p>
+        <p class="text-bone md:pl-48">What are you becoming.</p>
+        <p class="mt-12 font-body normal-case tracking-normal text-lg md:text-xl text-bone/60">Each Session ends in a review. Yesterday is the number to beat.</p>
+        <p class="mt-10 font-display uppercase tracking-wide text-2xl md:text-4xl leading-tight">Virtue is the good.<br /><span class="text-bone/45">Fitness is the side effect.</span></p>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="py-20 bg-grhiit-gray border-t border-grhiit-light-gray">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-4xl font-primary font-bold mb-6">
-          READY TO DO <span class="text-grhiit-red">HARD THINGS</span>?
-        </h2>
-        <p class="text-xl text-gray-300 mb-8">
-          Join the first 1,000 members. Get the complete program.
-        </p>
-        <button class="bg-grhiit-red text-white px-8 py-4 text-lg uppercase font-bold tracking-wide hover:bg-red-700 transition-colors">
-          Start Your 8 Weeks
-        </button>
-      </div>
+    <section class="py-24 md:py-32 text-center border-t border-iron">
+      <h2 class="font-display uppercase leading-brutal tracking-wide text-6xl md:text-8xl">Begin.</h2>
+      <p class="mt-6 font-body text-lg text-bone/70">One Cycle. One price. Once.<br />Paid once. Nothing to cancel.</p>
+      <NuxtLink to="/#begin" class="inline-block mt-10 px-10 py-5 bg-ember text-bone font-display uppercase tracking-widest text-lg hover:bg-ember-dark transition-colors">Begin Cycle I</NuxtLink>
     </section>
   </div>
 </template>
+
+<script setup lang="ts">
+const levers = ['Longer work.', 'Harder movement.', 'Less rest.']
+const ratios = ['6 / 3', '6 / 2', '20 / 10', '30 / 15', '60 / 30', '60 / 60']
+const movements = ['Burpees', 'Squat thrusts', 'Jump squats', 'Lunges', 'Pushups', '8-count bodybuilders', 'Squats', 'Planks']
+useSeoMeta({
+  title: 'The Cycle',
+  description: 'You versus you. 6 weeks. 18 Sessions. Bodyweight. A number to hold.',
+  ogTitle: 'GRHIIT — The Cycle',
+  ogDescription: 'Longer work. Harder movement. Less rest. You count. You hold it.',
+})
+</script>

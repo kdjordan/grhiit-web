@@ -68,11 +68,41 @@
               @click="emit('openWaitlist'); mobileMenuOpen = false"
               class="mt-3 border border-white/20 bg-[#f0e8df] px-6 py-3 font-mono text-xs font-bold uppercase tracking-[0.16em] text-black"
             >
-              Begin Free
+              Begin
             </button>
           </div>
         </div>
-      </Transition>
+
+        <!-- Mobile menu -->
+        <Transition
+          enter-active-class="transition duration-200 ease-out"
+          enter-from-class="opacity-0 -translate-y-2"
+          enter-to-class="opacity-100 translate-y-0"
+          leave-active-class="transition duration-150 ease-in"
+          leave-from-class="opacity-100 translate-y-0"
+          leave-to-class="opacity-0 -translate-y-2"
+        >
+          <div v-if="mobileMenuOpen" class="md:hidden py-4 border-t border-grhiit-gray-800">
+            <div class="flex flex-col gap-4">
+              <NuxtLink
+                v-for="link in navLinks"
+                :key="link.to"
+                :to="link.to"
+                class="font-display text-sm uppercase tracking-widest text-grhiit-white/70 hover:text-grhiit-red transition-colors py-2"
+                @click="mobileMenuOpen = false"
+              >
+                {{ link.label }}
+              </NuxtLink>
+              <button
+                @click="emit('openWaitlist'); mobileMenuOpen = false"
+                class="mt-2 px-5 py-3 bg-grhiit-red text-grhiit-white font-display font-semibold text-sm uppercase tracking-widest hover:bg-grhiit-red-dark transition-all duration-300 w-full"
+              >
+                Begin
+              </button>
+            </div>
+          </div>
+        </Transition>
+      </div>
     </nav>
   </header>
 </template>
@@ -85,9 +115,9 @@ const emit = defineEmits<{
 const mobileMenuOpen = ref(false)
 
 const navLinks = [
-  { to: '/#what-is-grhiit', label: 'The Practice' },
-  { to: '/#app', label: 'The App' },
-  { to: '/#method', label: 'The Method' },
+  { to: '/', label: 'Home' },
+  { to: '/program', label: 'Cycle' },
+  { to: '/articles', label: 'Articles' },
   { to: '/about', label: 'About' },
   { to: '/articles', label: 'Blog' },
 ]

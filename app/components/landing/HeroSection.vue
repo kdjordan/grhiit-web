@@ -1,107 +1,37 @@
 <template>
-  <section class="relative min-h-screen overflow-hidden bg-[#020202] text-white">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_58%_45%,rgba(255,255,255,0.08),transparent_27%),linear-gradient(90deg,#020202_0%,#030303_35%,#050505_67%,#020202_100%)]"></div>
+  <section class="hero relative overflow-hidden bg-obsidian">
+    <picture class="absolute inset-0">
+      <source media="(orientation: portrait), (max-aspect-ratio: 1/1)" srcset="/images/hero/hero-canyon-mobile.webp" />
+      <img src="/images/hero/hero-canyon.webp" alt="" class="hero-img w-full h-full object-cover" fetchpriority="high" />
+    </picture>
+    <div class="hero-shade absolute inset-0"></div>
 
-    <div class="absolute inset-y-0 left-[39%] hidden w-[31%] md:block">
-      <img
-        src="/images/brand/threshold-hero.png"
-        alt="A lone figure standing at a threshold of light"
-        class="h-full w-full object-cover object-center opacity-72 grayscale contrast-125"
-      />
-      <div class="absolute inset-0 bg-gradient-to-r from-[#020202] via-transparent to-[#020202]"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#020202] via-transparent to-[#020202]/75"></div>
-    </div>
+    <div class="hero-inner relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
+      <div class="hero-copy">
+        <p class="mb-5 font-mono text-xs uppercase tracking-[0.3em] text-ember">iPhone app</p>
+        <h1 class="hero-title font-display uppercase text-bone tracking-wide">
+          The path<br />of most<br />resistance.
+        </h1>
+        <p class="mt-6 font-display uppercase tracking-wide text-xl md:text-2xl text-bone/80 leading-tight">
+          Stop working out.<br class="sm:hidden" /> Start training.
+        </p>
+        <p class="mt-5 font-body text-base md:text-lg text-bone/75 max-w-md">
+          A scripted bodyweight program for iPhone.<br />Six weeks. Eighteen Sessions.
+        </p>
+        <p class="mt-6 font-mono text-xs uppercase tracking-widest text-bone/50">
+          6 weeks <span class="text-ember">·</span> 18 Sessions <span class="text-ember">·</span> Forward only
+        </p>
 
-    <div class="absolute inset-0 opacity-[0.055] noise-overlay pointer-events-none"></div>
-    <div class="absolute inset-0 shadow-[inset_0_0_160px_rgba(0,0,0,0.95)]"></div>
-
-    <div class="relative z-10 mx-auto flex min-h-screen max-w-[1180px] items-center px-5 pb-14 pt-24 md:px-8 md:pt-28">
-      <div class="grid w-full items-center gap-8 lg:grid-cols-[0.92fr_0.36fr_0.54fr]">
-        <div class="max-w-[620px] pt-8 md:pt-0">
-          <h1 class="font-display uppercase leading-[0.82] tracking-[0.02em] text-[#d9d1c7] text-shadow-brutal text-[clamp(5.4rem,14vw,12rem)] lg:text-[clamp(6.5rem,10vw,11.5rem)]">
-            <span class="block">Hard</span>
-            <span class="block">is</span>
-            <span class="block">Misunderstood.</span>
-          </h1>
-
-          <p class="mt-7 max-w-[470px] font-body text-base leading-relaxed text-[#e2ded8]/82 md:text-lg">
-            A bodyweight practice for expanding threshold through sustained intensity and continuity.
-          </p>
-
-          <div class="mt-7 flex flex-col items-start gap-3">
-            <button
-              @click="$emit('openWaitlist')"
-              class="border border-white/20 bg-[#f0e8df] px-10 py-4 font-mono text-[12px] font-extrabold uppercase tracking-[0.13em] text-black transition-all duration-300 hover:bg-white hover:shadow-[0_0_36px_rgba(255,255,255,0.18)]"
-            >
-              Begin Free
-            </button>
-            <p class="font-mono text-[11px] tracking-[0.06em] text-white/38">
-              First 2 sessions included.
-            </p>
-          </div>
-        </div>
-
-        <div class="hidden h-[58vh] min-h-[460px] md:block"></div>
-
-        <div id="app" class="relative flex justify-center lg:justify-end">
-          <div class="absolute -inset-14 rounded-full bg-white/[0.04] blur-[70px]"></div>
-          <div class="phone-shell relative h-[600px] w-[292px] rounded-[3rem] border border-white/22 bg-[#090909] p-3 shadow-[0_38px_120px_rgba(0,0,0,0.9)] md:h-[640px] md:w-[312px]">
-            <div class="absolute right-[-4px] top-28 h-20 w-[4px] rounded-r bg-white/18"></div>
-            <div class="absolute left-[-3px] top-32 h-12 w-[3px] rounded-l bg-white/15"></div>
-            <div class="h-full overflow-hidden rounded-[2.35rem] border border-white/10 bg-[linear-gradient(180deg,#171717_0%,#090909_47%,#030303_100%)]">
-              <div class="relative h-full px-7 pb-7 pt-12">
-                <div class="absolute left-1/2 top-0 h-7 w-32 -translate-x-1/2 rounded-b-3xl bg-black"></div>
-                <div class="absolute inset-0 opacity-[0.045] noise-overlay"></div>
-                <div class="relative flex h-full flex-col">
-                  <div class="flex items-center justify-center font-mono text-[11px] uppercase tracking-[0.42em] text-white/82">
-                    GRHIIT
-                  </div>
-
-                  <div class="mt-12 text-center font-mono text-[10px] uppercase tracking-[0.24em] text-white/48">
-                    Cycle 1
-                  </div>
-                  <div class="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.24em] text-white/45">
-                    Week 2 · Session 3
-                  </div>
-
-                  <div class="mt-7 text-center font-display text-[4.4rem] uppercase leading-none tracking-[0.03em] text-[#d9d1c7]">
-                    Exposure
-                  </div>
-
-                  <div class="mt-8 text-center font-mono text-2xl text-white/86">
-                    20:43
-                  </div>
-                  <div class="mt-1 text-center font-mono text-[9px] uppercase tracking-[0.24em] text-white/34">
-                    Remaining Time
-                  </div>
-
-                  <button class="mx-auto mt-7 w-36 border border-white/12 bg-white/[0.08] py-3 font-mono text-[9px] uppercase tracking-[0.16em] text-white/78">
-                    View Session
-                  </button>
-
-                  <div class="mt-auto">
-                    <div class="font-mono text-[9px] uppercase tracking-[0.2em] text-white/36">Week Progress</div>
-                    <div class="mt-4 grid grid-cols-6 gap-3">
-                      <div
-                        v-for="n in 6"
-                        :key="n"
-                        class="flex h-7 w-7 items-center justify-center rounded-full border text-[10px]"
-                        :class="n <= 3 ? 'border-[#d9d1c7]/55 bg-[#d9d1c7]/12 text-[#d9d1c7]' : 'border-white/12 text-white/20'"
-                      >
-                        <span v-if="n <= 3">✓</span>
-                      </div>
-                    </div>
-
-                    <div class="mt-8 grid grid-cols-4 gap-3 border-t border-white/8 pt-5 text-center font-mono text-[8px] uppercase tracking-[0.06em] text-white/28">
-                      <div class="text-grhiit-red/70">Train</div>
-                      <div>Explore</div>
-                      <div>Reflect</div>
-                      <div>Profile</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="mt-8 flex flex-wrap gap-3 items-stretch">
+          <button @click="$emit('openWaitlist')" class="px-8 py-4 bg-ember text-bone font-display uppercase tracking-widest text-base md:text-lg hover:bg-ember-dark transition-colors">
+            Begin Cycle I
+          </button>
+          <a v-if="appStore.live && appStore.url" :href="appStore.url" target="_blank" rel="noopener" class="inline-flex items-center">
+            <img :src="appStore.badge" alt="Download on the App Store" class="h-[3.25rem] md:h-[3.6rem] w-auto" />
+          </a>
+          <div v-else class="store-soon inline-flex flex-col justify-center px-6 py-2 border border-bone/25 bg-obsidian/60 text-bone" aria-label="Coming soon to the App Store">
+            <span class="font-body text-[10px] uppercase tracking-[0.2em] text-bone/50 leading-tight">Coming soon to the</span>
+            <span class="font-display uppercase tracking-widest text-base md:text-lg leading-tight">App Store</span>
           </div>
         </div>
       </div>
@@ -110,23 +40,38 @@
 </template>
 
 <script setup lang="ts">
-defineEmits<{
-  (e: 'openWaitlist'): void
-}>()
+defineEmits<{ (e: 'openWaitlist'): void }>()
+const { appStore } = useAppConfig()
 </script>
 
 <style scoped>
-.phone-shell::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: 3rem;
-  pointer-events: none;
-  background: linear-gradient(135deg, rgba(255,255,255,0.22), transparent 28%, transparent 72%, rgba(255,255,255,0.11));
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  padding: 1px;
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
+.hero { --nav: 4rem; min-height: 100svh; display: flex; padding-top: var(--nav); }
+@media (min-width: 768px) { .hero { --nav: 5rem; } }
+
+.hero-inner { display: flex; align-items: center; padding-block: clamp(2rem, 6svh, 5rem); }
+.hero-title { line-height: 0.88; font-size: clamp(2.6rem, min(7.2vw, 10svh), 7.25rem); }
+
+.hero-img { object-position: 70% 85%; }
+.hero-copy { max-width: min(40rem, 54%); }
+.hero-shade { background: linear-gradient(to right, rgba(11,11,11,.92) 0%, rgba(11,11,11,.75) 35%, rgba(11,11,11,.15) 60%, transparent 75%); }
+
+@media (orientation: portrait), (max-aspect-ratio: 1/1) {
+  .hero-img { object-position: 50% 100%; }
+  .hero-inner { align-items: flex-start; padding-top: clamp(1.25rem, 18svh, 14rem); padding-bottom: 34svh; }
+  .hero-copy { max-width: 36rem; }
+  .hero-title { font-size: clamp(2.4rem, min(13vw, 7svh), 5.5rem); }
+  .hero-shade { background: linear-gradient(to bottom, rgba(11,11,11,.15) 0%, rgba(11,11,11,.72) 28%, rgba(11,11,11,.72) 58%, rgba(11,11,11,0) 70%); }
+}
+
+@media (max-height: 720px) and (orientation: landscape) {
+  .hero-inner { align-items: flex-start; padding-block: 0.4rem 0.85rem; }
+  .hero-title { font-size: clamp(2.15rem, 7.2svh, 4.1rem); }
+  .hero-copy > p.mb-5 { margin-bottom: 0.4rem; }
+  .hero-copy > .mt-6 { margin-top: 0.55rem; }
+  .hero-copy > .mt-5 { margin-top: 0.4rem; }
+  .hero-copy > .mt-8 { margin-top: 0.7rem; }
+  .hero-copy .px-8 { padding-top: 0.7rem; padding-bottom: 0.7rem; }
+  .hero-copy .text-xl { font-size: 1.15rem; }
+  .hero-copy .md\:text-2xl { font-size: 1.25rem; }
 }
 </style>

@@ -17,7 +17,7 @@
               GRHIIT
             </h3>
             <p class="font-body text-grhiit-white/60 leading-relaxed">
-              An 8-week bodyweight practice for recalibrating what hard feels like. Fitness is the byproduct. Identity is the product.
+              A practice of voluntary discomfort. No equipment. No fluff.
             </p>
           </div>
 
@@ -27,10 +27,10 @@
               Principles
             </h4>
             <ul class="space-y-2 font-body text-grhiit-white/60">
-              <li>Discomfort over comfort</li>
-              <li>Continuity over motivation</li>
-              <li>Forward-only progression</li>
-              <li>Safety over ego</li>
+              <li>Effort over time.</li>
+              <li>Discipline over mood.</li>
+              <li>Return over perfect.</li>
+              <li>Form over ego.</li>
             </ul>
           </div>
 
@@ -40,13 +40,13 @@
               Connect
             </h4>
             <p class="font-body text-grhiit-white/60 mb-6">
-              All it takes is all you've got.
+              Do not negotiate.
             </p>
             <button
               @click="openWaitlistModal"
               class="px-6 py-3 bg-grhiit-red text-grhiit-white font-display font-semibold text-sm uppercase tracking-widest hover:bg-grhiit-red-dark hover:shadow-glow-red transition-all duration-300"
             >
-              Get Started
+              Begin
             </button>
           </div>
         </div>
@@ -54,10 +54,10 @@
         <!-- Bottom bar -->
         <div class="border-t border-grhiit-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p class="font-body text-sm text-grhiit-white/40">
-            &copy; 2025 GRHIIT. Do hard things.
+            &copy; 2026 GRHIIT. Do hard things on purpose.
           </p>
           <p class="font-mono text-xs text-grhiit-white/30 uppercase tracking-widest">
-            One day. One second. One rep.
+            One Session. One second. One rep.
           </p>
         </div>
       </div>

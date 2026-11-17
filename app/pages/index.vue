@@ -1,24 +1,15 @@
 <template>
-  <div class="bg-grhiit-black min-h-screen">
-    <!-- Hero Section -->
+  <div class="bg-obsidian min-h-screen">
     <LandingHeroSection @open-waitlist="openWaitlistModal" />
-
-    <!-- Problem/Commitment Section -->
-    <LandingProblemSection />
-
-    <!-- What is GRHIIT / System Explainer -->
-    <LandingSystemExplainer />
-
-    <!-- 8-Week Timeline -->
-    <LandingTimelineRoadmap />
-
-    <!-- Transformation Section -->
-    <LandingTransformSection />
-
-    <!-- Final CTA Section -->
+    <LandingCreedSection />
+    <LandingDiffSection />
+    <LandingAppScreens />
+    <LandingMathSection />
+    <LandingSummitSection />
+    <LandingCountSection />
+    <LandingLoadSection />
+    <LandingIdentitySection />
     <LandingCtaSection @open-waitlist="openWaitlistModal" />
-
-    <!-- Waitlist Modal -->
     <UiWaitlistModal
       :is-open="isWaitlistModalOpen"
       @close="closeWaitlistModal"
@@ -29,15 +20,8 @@
 
 <script setup lang="ts">
 const isWaitlistModalOpen = ref(false)
-
-const openWaitlistModal = () => {
-  isWaitlistModalOpen.value = true
-}
-
-const closeWaitlistModal = () => {
-  isWaitlistModalOpen.value = false
-}
-
+const openWaitlistModal = () => { isWaitlistModalOpen.value = true }
+const closeWaitlistModal = () => { isWaitlistModalOpen.value = false }
 const handleWaitlistSubmit = (data: { email: string; name: string; success: boolean }) => {
   console.log('ConvertKit waitlist signup:', {
     email: data.email,
@@ -47,13 +31,15 @@ const handleWaitlistSubmit = (data: { email: string; name: string; success: bool
   })
 }
 
-// SEO
+useHead({ titleTemplate: null })
 useSeoMeta({
-  title: "GRHIIT - Hard Is Misunderstood.",
-  description:
-    "GRHIIT is an 8-week bodyweight practice for iOS built around sustained intensity, incomplete recovery, and forward-only progression. Start two sessions free. Unlock Cycle 1 for $24.99.",
-  ogTitle: "GRHIIT - Hard Is Misunderstood.",
-  ogDescription:
-    "Not a workout app. An 8-week bodyweight practice that recalibrates what hard feels like. Fitness is the byproduct. Identity is the product.",
+  title: "GRHIIT — The path of most resistance.",
+  description: "A scripted bodyweight program for iPhone. Six weeks. Eighteen Sessions. Paid once. Nothing to cancel.",
+  ogTitle: "GRHIIT — The path of most resistance.",
+  ogDescription: "A scripted bodyweight program for iPhone. Six weeks. Eighteen Sessions. Paid once. Nothing to cancel.",
+  ogImage: "https://grhiit.com/og/og-default.jpg",
+  twitterTitle: "GRHIIT — The path of most resistance.",
+  twitterDescription: "A scripted bodyweight program for iPhone. Six weeks. Eighteen Sessions. Paid once. Nothing to cancel.",
+  twitterImage: "https://grhiit.com/og/og-default.jpg",
 })
 </script>

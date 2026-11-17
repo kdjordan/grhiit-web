@@ -1,65 +1,52 @@
 <template>
-  <section id="method" class="py-24 md:py-40 bg-grhiit-black relative overflow-hidden">
-    <div class="absolute inset-0 opacity-[0.025] pointer-events-none" style="background-image: linear-gradient(rgba(250,250,250,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(250,250,250,0.12) 1px, transparent 1px); background-size: 70px 70px;"></div>
-    <div class="absolute -right-20 top-20 w-96 h-96 bg-grhiit-red/10 blur-[130px] pointer-events-none"></div>
+  <section id="what-is-grhiit" class="relative overflow-hidden bg-graphite py-28 md:py-40">
+    <div class="ridge-img" role="presentation"></div>
+    <div class="ridge-shade"></div>
 
-    <div class="container mx-auto px-4 md:px-8 relative z-10">
-      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        <div class="lg:col-span-5 lg:sticky lg:top-28">
-          <div class="font-mono text-xs uppercase tracking-[0.35em] text-grhiit-red mb-5">The method</div>
-          <h2 class="font-display text-4xl md:text-6xl uppercase text-grhiit-white tracking-wide leading-brutal skew-forward">
-            The timer does not negotiate.
-          </h2>
-          <p class="mt-8 text-xl font-body text-grhiit-white/65 leading-relaxed">
-            8 weeks. 24 sessions. Three sessions per week. A small vocabulary of bodyweight movements, repeated under changing pressure until your old gauge stops working.
-          </p>
-        </div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12">
+      <h2 class="font-display uppercase text-bone leading-brutal tracking-wide text-5xl md:text-7xl">
+        Hard,<br />redefined.
+      </h2>
+      <p class="mt-8 font-body text-lg md:text-xl text-bone/80">
+        Not more weight. Less rest.
+      </p>
 
-        <div class="lg:col-span-7">
-          <div class="grid md:grid-cols-2 gap-5">
-            <div v-for="feature in features" :key="feature.title" class="group relative bg-grhiit-gray-900/80 p-6 md:p-8 border border-grhiit-white/10 hover:border-grhiit-red/50 transition-colors duration-300">
-              <div class="font-mono text-xs uppercase tracking-[0.28em] text-grhiit-red">{{ feature.kicker }}</div>
-              <h3 class="mt-5 font-display text-3xl uppercase tracking-wide text-grhiit-white leading-none">{{ feature.title }}</h3>
-              <p class="mt-5 font-body text-grhiit-white/60 leading-relaxed">{{ feature.description }}</p>
-            </div>
-          </div>
-
-          <div class="mt-8 border border-grhiit-red/30 bg-grhiit-red/5 p-6 md:p-8">
-            <div class="font-display text-3xl md:text-4xl uppercase text-grhiit-white leading-none skew-forward">
-              You cannot buy Cycle 2.
-              <span class="block mt-2 text-grhiit-red">You earn it.</span>
-            </div>
-            <p class="mt-5 font-body text-grhiit-white/60 text-lg leading-relaxed">
-              Subsequent cycles unlock only after the first 8-week cycle is completed. GRHIIT is not an infinite library you browse. It is a path you finish.
-            </p>
-          </div>
+      <div class="ridge-spacer" aria-hidden="true"></div>
+      <div class="grid sm:grid-cols-2 gap-px bg-iron">
+        <div v-for="(f, i) in features" :key="f.title" class="bg-graphite/95 p-8">
+          <span class="font-mono text-xs text-ember">0{{ i + 1 }}</span>
+          <h3 class="mt-3 font-display uppercase tracking-wide text-2xl text-bone">{{ f.title }}</h3>
+          <p class="mt-3 font-body text-bone/60 leading-relaxed">{{ f.body }}</p>
         </div>
       </div>
+
+      <p class="mt-14 font-display uppercase tracking-wide text-2xl md:text-3xl leading-tight"><span class="text-bone">No one is watching.</span><br /><span class="text-bone/45">Prove it anyway.</span></p>
+
+      <NuxtLink to="/program" class="inline-block mt-12 font-display uppercase tracking-widest text-bone/70 hover:text-bone transition-colors">
+        See the Cycle →
+      </NuxtLink>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
 const features = [
-  {
-    kicker: 'Bodyweight only',
-    title: 'No equipment. No hiding.',
-    description: 'Pushups, burpees, squat thrusts, bodyweight squats, jumps, and other simple movements. The difficulty comes from execution, not gear.',
-  },
-  {
-    kicker: 'Incomplete recovery',
-    title: 'Move before ready.',
-    description: 'Rest is intentionally limited. You learn to produce effort while still carrying the last interval.',
-  },
-  {
-    kicker: 'Forward only',
-    title: 'No repeated sessions.',
-    description: 'Each session is unique. Once it is done, it is done. The cycle moves forward, or you restart.',
-  },
-  {
-    kicker: 'One-time unlock',
-    title: '$24.99 for Cycle 1.',
-    description: 'The first two sessions are free. Unlock the full 8-week Cycle 1 with a one-time purchase. No subscription.',
-  },
+  { title: 'Press play', body: 'It calls work. It calls rest. You go. You count.' },
+  { title: 'Less rest', body: 'Your body is the load you carry for life. Fail safe, no spotter. Rest shrinks, Session by Session.' },
+  { title: 'The math', body: 'Longer work. Harder movement. Less rest. 6 on, 3 off becomes 6 on, 2 off. It adds up.' },
+  { title: 'Hold the count', body: 'Hold your count. Every round. Your number, not the app\'s.' },
 ]
 </script>
+
+<style scoped>
+/* Stone steps (focal right half) stay visible: image is a top band at its natural ratio, faded into Graphite; cards start below the trail's climb */
+.ridge-img { background: url(/images/sections/stone-steps.webp) center / cover no-repeat; position: absolute; top: 0; left: 0; width: 100%; height: 72svh; background-position: 80% 50%;
+  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); }
+.ridge-shade { position: absolute; inset: 0 0 auto 0; height: 72svh; background: linear-gradient(to bottom, rgba(20,20,20,.6), rgba(20,20,20,.1) 45%, transparent); }
+.ridge-spacer { height: 30svh; }
+@media (min-width: 768px) {
+  .ridge-img { height: auto; aspect-ratio: 16 / 9; max-height: 100%; background-position: 50% 50%; }
+  .ridge-shade { height: auto; aspect-ratio: 16 / 9; background: linear-gradient(to right, rgba(20,20,20,.7), rgba(20,20,20,.15) 45%, transparent 70%); }
+  .ridge-spacer { height: clamp(6rem, 18vw, 22rem); }
+}
+</style>
