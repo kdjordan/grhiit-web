@@ -78,7 +78,8 @@
         <p class="text-bone/40">Who were you yesterday.</p>
         <p class="text-bone/70 md:pl-24">Who are you today.</p>
         <p class="text-bone md:pl-48">What are you becoming.</p>
-        <p class="mt-12 font-body normal-case tracking-normal text-lg md:text-xl text-bone/60">Yesterday is the number to beat.</p>
+        <p class="mt-12 font-body normal-case tracking-normal text-lg md:text-xl text-bone/60">Each Session ends in a review. Yesterday is the number to beat.</p>
+        <p class="mt-10 font-display uppercase tracking-wide text-2xl md:text-4xl leading-tight">Virtue is the good.<br /><span class="text-bone/45">Fitness is the side effect.</span></p>
       </div>
     </section>
 

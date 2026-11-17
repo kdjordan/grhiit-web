@@ -15,6 +15,10 @@
           <span class="text-bone/45">Your number,<br />not the app's.</span>
         </p>
       </div>
+      <div class="mt-16 md:mt-24 max-w-3xl font-display uppercase tracking-wide text-2xl md:text-4xl leading-tight">
+        <p>You control the count. The effort.<br class="md:hidden" /> The return.</p>
+        <p class="mt-3 text-bone/45">Not the outcome. Not the mood.<br class="md:hidden" /> Not the audience.</p>
+      </div>
     </div>
   </section>
 </template>

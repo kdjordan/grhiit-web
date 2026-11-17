@@ -9,9 +9,13 @@
         <p class="text-bone/70 md:pl-16">Who are you today.</p>
         <p class="text-bone md:pl-32">What are you becoming.</p>
       </div>
-      <p class="mt-12 font-body text-lg md:text-xl text-bone/60">Yesterday is the number to beat.</p>
+      <p class="mt-12 font-body text-lg md:text-xl text-bone/60">Each Session ends in a review. Yesterday is the number to beat.</p>
       <div class="mt-20 h-px w-16 bg-ember"></div>
       <p class="mt-8 font-display uppercase tracking-wide text-3xl md:text-5xl leading-tight">
+        Virtue is the good.<br />
+        <span class="text-bone/45">Fitness is the side effect.</span>
+      </p>
+      <p class="mt-10 font-display uppercase tracking-wide text-3xl md:text-5xl leading-tight">
         Fitness is what<br class="md:hidden" /> your body can do.<br />
         <span class="text-bone/45">Not how it looks.</span>
       </p>

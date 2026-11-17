@@ -33,7 +33,8 @@
     </section>
 
     <section class="py-24 md:py-32 text-center border-t border-iron">
-      <p class="font-display uppercase tracking-wide text-4xl md:text-6xl leading-tight">The obstacle<br /><span class="text-bone/50">is the path.</span></p>
+      <p class="font-mono text-xs uppercase tracking-[0.3em] text-ember">Rooted in Stoicism.</p>
+      <p class="mt-6 font-display uppercase tracking-wide text-4xl md:text-6xl leading-tight">The obstacle<br /><span class="text-bone/50">is the path.</span></p>
       <NuxtLink to="/#begin" class="inline-block mt-12 px-10 py-5 bg-ember text-bone font-display uppercase tracking-widest text-lg hover:bg-ember-dark transition-colors">Begin</NuxtLink>
     </section>
   </div>

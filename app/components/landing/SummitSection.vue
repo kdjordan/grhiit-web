@@ -39,6 +39,12 @@
       <p class="mt-12 font-display uppercase tracking-wide text-3xl md:text-5xl leading-tight">
         Gassed.<br />Called up.<br /><span class="text-ember">Same rep.</span>
       </p>
+      <blockquote class="mt-16 md:mt-20 max-w-xl">
+        <p class="font-body text-lg md:text-xl text-bone/80 leading-relaxed">
+          That which is a hindrance is made a furtherance to an act;<br />and that which is an obstacle on the road helps us on&nbsp;this&nbsp;road.
+        </p>
+        <footer class="mt-4 font-mono text-[11px] uppercase tracking-[0.2em] text-bone/40">Marcus Aurelius, Meditations 5.20</footer>
+      </blockquote>
     </div>
   </section>
 </template>

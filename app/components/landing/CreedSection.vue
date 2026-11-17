@@ -6,16 +6,24 @@
         The path<br />of most<br />resistance.
       </h2>
       <p class="mt-8 font-body text-lg md:text-xl text-bone/75 max-w-lg">
-        We choose the hardest thing we can.
+        We choose the hardest thing we can. On purpose.
       </p>
 
       <ul class="no-list mt-16 md:mt-24 font-display uppercase tracking-wide leading-none">
         <li v-for="(line, i) in refusals" :key="line" :style="{ marginLeft: offset(i) }">{{ line }}</li>
       </ul>
 
+      <blockquote class="mt-16 md:mt-24 max-w-xl">
+        <p class="font-body text-lg md:text-xl text-bone/70 leading-relaxed">
+          If you would not have a man flinch when the crisis comes, train him before it comes.
+        </p>
+        <footer class="mt-4 font-mono text-[11px] uppercase tracking-[0.2em] text-bone/35">Seneca, Moral Letters 18</footer>
+      </blockquote>
+
       <p class="mt-20 md:mt-28 font-display uppercase tracking-wide text-5xl md:text-7xl text-bone leading-none">
         Do the work.
       </p>
+      <p class="mt-8 font-mono text-xs uppercase tracking-[0.3em] text-ember">Rooted in Stoicism.</p>
     </div>
   </section>
 </template>
